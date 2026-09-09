@@ -1,0 +1,23 @@
+# Python-generated files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Local analysis and temporary files
+.codex_tmp_data_explanation/
+.graph_dataset_audit_*/
+*.tmp
+*.temp
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Microsoft Office temporary files
+~$*.docx
+~$*.xlsx
+~$*.pptx
+
