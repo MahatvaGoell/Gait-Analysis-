@@ -1,0 +1,3472 @@
+{
+  "reference": "C:\\Users\\MAHATVA GOEL\\.codex\\plugins\\cache\\openai-curated-remote\\openai-templates\\0.1.1\\skills\\artifact-template-experiment-analysis\\assets\\reference.docx",
+  "reference_sha256": "d823cd0115186b34c01c6e4b4da3be28b64ee73cac849dbd62d6f4bb6385b0fb",
+  "paragraph_count": 106,
+  "paragraph_style_counts": {
+    "Heading 2": 1,
+    "normal": 78,
+    "Title": 2,
+    "Heading 3": 7,
+    "Heading 1": 18
+  },
+  "paragraphs": [
+    {
+      "index": 0,
+      "style": "Heading 2",
+      "text": "Experiment Report",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "Experiment Report",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": "1A703A"
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        },
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "style": "Title",
+      "text": "Experiment ",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "Experiment ",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": "1A703A"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "style": "Title",
+      "text": "Report Name",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "Report Name",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": "1A703A"
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "style": "Heading 3",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "style": "Heading 3",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "style": "Heading 3",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "style": "Heading 3",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "style": "Heading 3",
+      "text": "Author",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "Author",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": "000000"
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "style": "Heading 3",
+      "text": "Month DD, YYYY",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "Month DD, YYYY",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": "000000"
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "style": "Heading 3",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        },
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "style": "Heading 1",
+      "text": "Document Control",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "Document Control",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "style": "Heading 1",
+      "text": "Purpose",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "Purpose",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "style": "normal",
+      "text": "[Describe what this document records, including the experiment objective, execution, analysis, and decision it supports. Note the product surface and intended scope.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Describe what this document records, including the experiment objective, execution, analysis, and decision it supports. Note the product surface and intended scope.]",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "style": "normal",
+      "text": "[Explain why this record is being maintained, who should use it, and how it supports auditability, replication, or future decision-making.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Explain why this record is being maintained, who should use it, and how it supports auditability, replication, or future decision-making.]",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "style": "normal",
+      "text": "",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "style": "Heading 1",
+      "text": "Business Context",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "Business Context",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "style": "normal",
+      "text": "[Describe the company, product, user journey, and observed problem or opportunity. Summarize the evidence that motivated the experiment and where the issue appears in the experience.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Describe the company, product, user journey, and observed problem or opportunity. Summarize the evidence that motivated the experiment and where the issue appears in the experience.]",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "style": "normal",
+      "text": "[Explain why this test surface and intervention were selected, including expected value, operational risk, reversibility, and any important alternatives that remained unchanged.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Explain why this test surface and intervention were selected, including expected value, operational risk, reversibility, and any important alternatives that remained unchanged.]",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "style": "Heading 1",
+      "text": "Experiment Summary",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "Experiment Summary",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "style": "Heading 1",
+      "text": "Design Notes",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "Design Notes",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "style": "normal",
+      "text": "[Describe the experimental design and the single change being tested. Explain how the design supports causal interpretation and which elements remained unchanged.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Describe the experimental design and the single change being tested. Explain how the design supports causal interpretation and which elements remained unchanged.]",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "style": "normal",
+      "text": "[Describe eligibility, assignment, exclusions, runtime, and other choices made to reduce contamination or bias. Note any platform, geography, or device constraints.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Describe eligibility, assignment, exclusions, runtime, and other choices made to reduce contamination or bias. Note any platform, geography, or device constraints.]",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "style": "normal",
+      "text": "",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "style": "Heading 1",
+      "text": "Hypothesis",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "Hypothesis",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "style": "normal",
+      "text": "[Write an if/then hypothesis naming the control, treatment, audience, expected metric direction, and causal rationale.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Write an if/then hypothesis naming the control, treatment, audience, expected metric direction, and causal rationale.]",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "style": "normal",
+      "text": "",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "style": "Heading 1",
+      "text": "Success Criteria",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "Success Criteria",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "style": "normal",
+      "text": "[Define the primary success metric, guardrail metrics, decision thresholds, and the conditions required to declare a winner or proceed.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Define the primary success metric, guardrail metrics, decision thresholds, and the conditions required to declare a winner or proceed.]",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "style": "Heading 1",
+      "text": "Pre-Launch Validation",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "Pre-Launch Validation",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "style": "normal",
+      "text": "[Confirm that only the intended treatment differs between variants.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Confirm that only the intended treatment differs between variants.]",
+          "font": "Georgia",
+          "size_pt": 12.0,
+          "bold": null,
+          "italic": false,
+          "color": "000000"
+        },
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 51,
+      "style": "normal",
+      "text": "[Confirm assignment persistence, randomization unit, and allocation logic.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Confirm assignment persistence, randomization unit, and allocation logic.]",
+          "font": "Georgia",
+          "size_pt": 12.0,
+          "bold": null,
+          "italic": false,
+          "color": "000000"
+        },
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 52,
+      "style": "normal",
+      "text": "[Validate exposure, outcome, and guardrail instrumentation.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Validate exposure, outcome, and guardrail instrumentation.]",
+          "font": "Georgia",
+          "size_pt": 12.0,
+          "bold": null,
+          "italic": false,
+          "color": "000000"
+        },
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 53,
+      "style": "normal",
+      "text": "[Document traffic exclusions and data-quality filters.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Document traffic exclusions and data-quality filters.]",
+          "font": "Georgia",
+          "size_pt": 12.0,
+          "bold": null,
+          "italic": false,
+          "color": "000000"
+        },
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 54,
+      "style": "normal",
+      "text": "[Record staging, A/A, or other pre-launch validation results.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Record staging, A/A, or other pre-launch validation results.]",
+          "font": "Georgia",
+          "size_pt": 12.0,
+          "bold": null,
+          "italic": false,
+          "color": "000000"
+        },
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 55,
+      "style": "normal",
+      "text": "",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 56,
+      "style": "Heading 1",
+      "text": "Sample and Exposure Summary",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "Sample and Exposure Summary",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 57,
+      "style": "normal",
+      "text": "[Summarize achieved sample size, exposure balance, runtime, and any sample-ratio or eligibility findings. State whether the data are suitable for analysis.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Summarize achieved sample size, exposure balance, runtime, and any sample-ratio or eligibility findings. State whether the data are suitable for analysis.]",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 58,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 59,
+      "style": "Heading 1",
+      "text": "Primary Outcome",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "Primary Outcome",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 60,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 61,
+      "style": "normal",
+      "text": "[Summarize the primary metric result, uncertainty, statistical significance, and practical effect size. Avoid claims beyond the experiment scope.]",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "[Summarize the primary metric result, uncertainty, statistical significance, and practical effect size. Avoid claims beyond the experiment scope.]",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 62,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 63,
+      "style": "Heading 1",
+      "text": "Guardrail Metrics",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "Guardrail Metrics",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 64,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 65,
+      "style": "normal",
+      "text": "[Summarize each guardrail result, note any threshold breaches, and explain whether the risk profile supports the proposed decision.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Summarize each guardrail result, note any threshold breaches, and explain whether the risk profile supports the proposed decision.]",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 66,
+      "style": "Heading 1",
+      "text": "Segment Results",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "Segment Results",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 67,
+      "style": "normal",
+      "text": "[Describe which segments were pre-specified, why they matter, and whether the experiment was powered for subgroup comparisons. Distinguish confirmatory from directional analysis.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Describe which segments were pre-specified, why they matter, and whether the experiment was powered for subgroup comparisons. Distinguish confirmatory from directional analysis.]",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 68,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 69,
+      "style": "normal",
+      "text": "[Summarize the most decision-relevant segment patterns and plausible mechanisms. Note uncertainty, multiplicity, or sample-size caveats.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Summarize the most decision-relevant segment patterns and plausible mechanisms. Note uncertainty, multiplicity, or sample-size caveats.]",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 70,
+      "style": "normal",
+      "text": "",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 71,
+      "style": "Heading 1",
+      "text": "Data Quality and Limitations",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "Data Quality and Limitations",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 72,
+      "style": "normal",
+      "text": "[List concurrent launches, operational events, or external factors that could affect interpretation.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[List concurrent launches, operational events, or external factors that could affect interpretation.]",
+          "font": "Georgia",
+          "size_pt": 12.0,
+          "bold": null,
+          "italic": false,
+          "color": "000000"
+        },
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 73,
+      "style": "normal",
+      "text": "[Describe traffic-mix or eligibility changes during the experiment.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Describe traffic-mix or eligibility changes during the experiment.]",
+          "font": "Georgia",
+          "size_pt": 12.0,
+          "bold": null,
+          "italic": false,
+          "color": "000000"
+        },
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 74,
+      "style": "normal",
+      "text": "[Document logging, pipeline, or warehouse incidents and their resolution.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Document logging, pipeline, or warehouse incidents and their resolution.]",
+          "font": "Georgia",
+          "size_pt": 12.0,
+          "bold": null,
+          "italic": false,
+          "color": "000000"
+        },
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 75,
+      "style": "normal",
+      "text": "[State platform, geography, audience, or time-window limitations.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[State platform, geography, audience, or time-window limitations.]",
+          "font": "Georgia",
+          "size_pt": 12.0,
+          "bold": null,
+          "italic": false,
+          "color": "000000"
+        },
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 76,
+      "style": "normal",
+      "text": "[Note treatment-specific risks, policy constraints, or generalizability limits.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Note treatment-specific risks, policy constraints, or generalizability limits.]",
+          "font": "Georgia",
+          "size_pt": 12.0,
+          "bold": null,
+          "italic": false,
+          "color": "000000"
+        },
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 77,
+      "style": "normal",
+      "text": "[Explain how these limitations affect the recommendation and clearly define where the evidence should and should not be generalized.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Explain how these limitations affect the recommendation and clearly define where the evidence should and should not be generalized.]",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 78,
+      "style": "normal",
+      "text": "",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 79,
+      "style": "Heading 1",
+      "text": "Interpretation",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "Interpretation",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 80,
+      "style": "normal",
+      "text": "[Connect the observed results to the hypothesis and proposed mechanism. Explain whether the effect is statistically credible, practically meaningful, and consistent across key measures.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Connect the observed results to the hypothesis and proposed mechanism. Explain whether the effect is statistically credible, practically meaningful, and consistent across key measures.]",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 81,
+      "style": "normal",
+      "text": "[Translate the result into business or product impact, including expected upside, cost, reversibility, and remaining uncertainty. State the recommended decision posture.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Translate the result into business or product impact, including expected upside, cost, reversibility, and remaining uncertainty. State the recommended decision posture.]",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 82,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 83,
+      "style": "Heading 1",
+      "text": "Decision Log",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "Decision Log",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 84,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 85,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 86,
+      "style": "Heading 1",
+      "text": "Post Test Actions",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "Post Test Actions",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 87,
+      "style": "normal",
+      "text": "[Describe the rollout or implementation sequence.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Describe the rollout or implementation sequence.]",
+          "font": "Georgia",
+          "size_pt": 12.0,
+          "bold": null,
+          "italic": false,
+          "color": "000000"
+        },
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 88,
+      "style": "normal",
+      "text": "[Define post-launch monitoring metrics, cadence, and duration.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Define post-launch monitoring metrics, cadence, and duration.]",
+          "font": "Georgia",
+          "size_pt": 12.0,
+          "bold": null,
+          "italic": false,
+          "color": "000000"
+        },
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 89,
+      "style": "normal",
+      "text": "[List replication or follow-up experiments.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[List replication or follow-up experiments.]",
+          "font": "Georgia",
+          "size_pt": 12.0,
+          "bold": null,
+          "italic": false,
+          "color": "000000"
+        },
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 90,
+      "style": "normal",
+      "text": "[Identify additional analysis or product opportunities.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Identify additional analysis or product opportunities.]",
+          "font": "Georgia",
+          "size_pt": 12.0,
+          "bold": null,
+          "italic": false,
+          "color": "000000"
+        },
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 91,
+      "style": "normal",
+      "text": "[Document archival, reporting, and ownership requirements.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Document archival, reporting, and ownership requirements.]",
+          "font": "Georgia",
+          "size_pt": 12.0,
+          "bold": null,
+          "italic": false,
+          "color": "000000"
+        },
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 92,
+      "style": "normal",
+      "text": "",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 93,
+      "style": "Heading 1",
+      "text": "Appendix A: Metric Definitions",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "Appendix A: Metric Definitions",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 94,
+      "style": "normal",
+      "text": "[Metric name 1]: [Define numerator, denominator, eligibility, event source, and calculation.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Metric name 1]",
+          "font": "Georgia",
+          "size_pt": 12.0,
+          "bold": true,
+          "italic": false,
+          "color": "000000"
+        },
+        {
+          "text": ": [Define numerator, denominator, eligibility, event source, and calculation.]",
+          "font": "Georgia",
+          "size_pt": 12.0,
+          "bold": null,
+          "italic": false,
+          "color": "000000"
+        },
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 95,
+      "style": "normal",
+      "text": "[Metric name 2]: [Define numerator, denominator, eligibility, event source, and calculation.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Metric name 2]",
+          "font": "Georgia",
+          "size_pt": 12.0,
+          "bold": true,
+          "italic": false,
+          "color": "000000"
+        },
+        {
+          "text": ": [Define numerator, denominator, eligibility, event source, and calculation.]",
+          "font": "Georgia",
+          "size_pt": 12.0,
+          "bold": null,
+          "italic": false,
+          "color": "000000"
+        },
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 96,
+      "style": "normal",
+      "text": "[Metric name 3]: [Define numerator, denominator, eligibility, event source, and calculation.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Metric name 3]",
+          "font": "Georgia",
+          "size_pt": 12.0,
+          "bold": true,
+          "italic": false,
+          "color": "000000"
+        },
+        {
+          "text": ": [Define numerator, denominator, eligibility, event source, and calculation.]",
+          "font": "Georgia",
+          "size_pt": 12.0,
+          "bold": null,
+          "italic": false,
+          "color": "000000"
+        },
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 97,
+      "style": "normal",
+      "text": "[Metric name 4]: [Define numerator, denominator, eligibility, event source, and calculation.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Metric name 4]",
+          "font": "Georgia",
+          "size_pt": 12.0,
+          "bold": true,
+          "italic": false,
+          "color": "000000"
+        },
+        {
+          "text": ": [Define numerator, denominator, eligibility, event source, and calculation.]",
+          "font": "Georgia",
+          "size_pt": 12.0,
+          "bold": null,
+          "italic": false,
+          "color": "000000"
+        },
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 98,
+      "style": "normal",
+      "text": "[Metric name 5]: [Define numerator, denominator, eligibility, event source, and calculation.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Metric name 5]",
+          "font": "Georgia",
+          "size_pt": 12.0,
+          "bold": true,
+          "italic": false,
+          "color": "000000"
+        },
+        {
+          "text": ": [Define numerator, denominator, eligibility, event source, and calculation.]",
+          "font": "Georgia",
+          "size_pt": 12.0,
+          "bold": null,
+          "italic": false,
+          "color": "000000"
+        },
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 99,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 100,
+      "style": "Heading 1",
+      "text": "Appendix B: Analyst Notes",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "Appendix B: Analyst Notes",
+          "font": "Georgia",
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 101,
+      "style": "normal",
+      "text": "[Document the statistical method, confidence level, and software or query version used.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Document the statistical method, confidence level, and software or query version used.]",
+          "font": "Georgia",
+          "size_pt": 12.0,
+          "bold": null,
+          "italic": false,
+          "color": "000000"
+        },
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 102,
+      "style": "normal",
+      "text": "[Record stopping rules, interim reads, or deviations from the analysis plan.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Record stopping rules, interim reads, or deviations from the analysis plan.]",
+          "font": "Georgia",
+          "size_pt": 12.0,
+          "bold": null,
+          "italic": false,
+          "color": "000000"
+        },
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 103,
+      "style": "normal",
+      "text": "[Summarize data reconciliation, backfills, and reviewer sign-off.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Summarize data reconciliation, backfills, and reviewer sign-off.]",
+          "font": "Georgia",
+          "size_pt": 12.0,
+          "bold": null,
+          "italic": false,
+          "color": "000000"
+        },
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 104,
+      "style": "normal",
+      "text": "[Add any remaining assumptions, caveats, or provenance notes.]",
+      "alignment": "JUSTIFY (3)",
+      "runs": [
+        {
+          "text": "[Add any remaining assumptions, caveats, or provenance notes.]",
+          "font": "Georgia",
+          "size_pt": 12.0,
+          "bold": null,
+          "italic": false,
+          "color": "000000"
+        },
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 105,
+      "style": "normal",
+      "text": "",
+      "alignment": null,
+      "runs": [
+        {
+          "text": "",
+          "font": null,
+          "size_pt": null,
+          "bold": null,
+          "italic": null,
+          "color": null
+        }
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "index": 0,
+      "style": null,
+      "rows": 6,
+      "cols": 2,
+      "grid_widths_twips": [
+        "2405",
+        "6945"
+      ],
+      "content": [
+        {
+          "row": 0,
+          "cells": [
+            {
+              "text": "Version",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Version]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "cells": [
+            {
+              "text": "Prepared By",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Prepared by / team]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "cells": [
+            {
+              "text": "Reviewers",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Reviewer roles or names]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "cells": [
+            {
+              "text": "Date Prepared",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Date prepared]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "cells": [
+            {
+              "text": "Reporting Window",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Reporting start date] to [Reporting end date]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "cells": [
+            {
+              "text": "Status",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Draft / In review / Final]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "style": null,
+      "rows": 17,
+      "cols": 2,
+      "grid_widths_twips": [
+        "2547",
+        "6803"
+      ],
+      "content": [
+        {
+          "row": 0,
+          "cells": [
+            {
+              "text": "Field",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "Details",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "cells": [
+            {
+              "text": "Experiment Name",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Experiment name]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "cells": [
+            {
+              "text": "Experiment Key",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Experiment key]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "cells": [
+            {
+              "text": "Owner Team",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Owner team]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "cells": [
+            {
+              "text": "Business Owner",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Business owner]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "cells": [
+            {
+              "text": "Product Surface",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Product surface]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 6,
+          "cells": [
+            {
+              "text": "Primary Objective",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Primary objective]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 7,
+          "cells": [
+            {
+              "text": "Control (Variant A)",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Describe the control experience]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 8,
+          "cells": [
+            {
+              "text": "Treatment (Variant B)",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Describe the treatment experience]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 9,
+          "cells": [
+            {
+              "text": "Allocation",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Variant allocation]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 10,
+          "cells": [
+            {
+              "text": "Unit of Randomization",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Randomization unit]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 11,
+          "cells": [
+            {
+              "text": "Audience",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Eligible audience]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 12,
+          "cells": [
+            {
+              "text": "Exclusions",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Traffic or user exclusions]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 13,
+          "cells": [
+            {
+              "text": "Start Date",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Start date]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 14,
+          "cells": [
+            {
+              "text": "End Date",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[End date]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 15,
+          "cells": [
+            {
+              "text": "Planned Runtime",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Planned runtime]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 16,
+          "cells": [
+            {
+              "text": "Actual Runtime",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Actual runtime]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "style": null,
+      "rows": 6,
+      "cols": 2,
+      "grid_widths_twips": [
+        "2405",
+        "6945"
+      ],
+      "content": [
+        {
+          "row": 0,
+          "cells": [
+            {
+              "text": "Metric",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "Target/Rule",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "cells": [
+            {
+              "text": "Primary Metric",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Define the primary metric threshold and statistical decision rule]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "cells": [
+            {
+              "text": "Guardrail 1",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Define guardrail metric and acceptable threshold]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "cells": [
+            {
+              "text": "Guardrail 2",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Define guardrail metric and acceptable threshold]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "cells": [
+            {
+              "text": "Guardrail 3",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Define guardrail metric and acceptable threshold]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "cells": [
+            {
+              "text": "Decision Rule",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[State the full launch, hold, or rollback rule]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "style": null,
+      "rows": 6,
+      "cols": 3,
+      "grid_widths_twips": [
+        "3823",
+        "2693",
+        "2834"
+      ],
+      "content": [
+        {
+          "row": 0,
+          "cells": [
+            {
+              "text": "Metric",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "Variant A (Control)",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "Variant B (Treatment)",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "cells": [
+            {
+              "text": "[Sample metric 1]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Variant A value]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Variant B value]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "cells": [
+            {
+              "text": "[Sample metric 2]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Variant A value]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Variant B value]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "cells": [
+            {
+              "text": "[Outcome count]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Variant A value]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Variant B value]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "cells": [
+            {
+              "text": "[Exposure or allocation share]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Variant A value]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Variant B value]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "cells": [
+            {
+              "text": "Sample Ratio Check",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Pass / Fail]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Pass / Fail]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "style": null,
+      "rows": 5,
+      "cols": 5,
+      "grid_widths_twips": [
+        "1870",
+        "1870",
+        "1870",
+        "1870",
+        "1870"
+      ],
+      "content": [
+        {
+          "row": 0,
+          "cells": [
+            {
+              "text": "Measure",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "Variant A",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "Variant B",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "Absolute Delta",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "Relative Delta",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "cells": [
+            {
+              "text": "[Primary outcome metric]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Variant A value]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Variant B value]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Absolute delta]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Relative delta]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "cells": [
+            {
+              "text": "95% Confidence Interval",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[N/A if not applicable]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[N/A if not applicable]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Confidence interval]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[N/A if not applicable]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "cells": [
+            {
+              "text": "Two-Sided p-value",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[N/A if not applicable]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[N/A if not applicable]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[p-value]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[N/A if not applicable]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "cells": [
+            {
+              "text": "Outcome Narrative",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[N/A]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[N/A]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Describe effect and practical significance]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[N/A]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "style": null,
+      "rows": 5,
+      "cols": 5,
+      "grid_widths_twips": [
+        "2263",
+        "1843",
+        "1843",
+        "1701",
+        "1700"
+      ],
+      "content": [
+        {
+          "row": 0,
+          "cells": [
+            {
+              "text": "Guardrail Metric",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "Variant A",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "Variant B",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "Delta",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "Status",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "cells": [
+            {
+              "text": "[Guardrail metric 1]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Variant A value]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Variant B value]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Delta]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Pass / Fail]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "cells": [
+            {
+              "text": "[Guardrail metric 2]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Variant A value]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Variant B value]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Delta]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Pass / Fail]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "cells": [
+            {
+              "text": "[Guardrail metric 3]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Variant A value]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Variant B value]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Delta]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Pass / Fail]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "cells": [
+            {
+              "text": "[Guardrail metric 4]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Variant A value]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Variant B value]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Delta]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Pass / Fail]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "style": null,
+      "rows": 6,
+      "cols": 5,
+      "grid_widths_twips": [
+        "1870",
+        "1870",
+        "1870",
+        "1870",
+        "1870"
+      ],
+      "content": [
+        {
+          "row": 0,
+          "cells": [
+            {
+              "text": "Segment",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "Control Value",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "Treatment Value",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "Absolute Delta",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "Interpretation",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "cells": [
+            {
+              "text": "[Segment 1]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Control value]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Treatment value]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Absolute delta]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Interpret result]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "cells": [
+            {
+              "text": "[Segment 2]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Control value]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Treatment value]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Absolute delta]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Interpret result]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "cells": [
+            {
+              "text": "[Segment 3]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Control value]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Treatment value]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Absolute delta]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Interpret result]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "cells": [
+            {
+              "text": "[Segment 4]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Control value]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Treatment value]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Absolute delta]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Interpret result]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "cells": [
+            {
+              "text": "[Segment 5]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Control value]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Treatment value]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Absolute delta]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Interpret result]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "style": null,
+      "rows": 7,
+      "cols": 2,
+      "grid_widths_twips": [
+        "2263",
+        "7087"
+      ],
+      "content": [
+        {
+          "row": 0,
+          "cells": [
+            {
+              "text": "Item",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "Decision",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "cells": [
+            {
+              "text": "Final Decision",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[State final decision and scope]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "cells": [
+            {
+              "text": "Decision Date",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Decision date]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "cells": [
+            {
+              "text": "Approvers",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Approver roles or names]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "cells": [
+            {
+              "text": "Rollout Type",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Describe rollout or implementation approach]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "cells": [
+            {
+              "text": "Rollback Trigger",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Define rollback threshold or stop condition]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        },
+        {
+          "row": 6,
+          "cells": [
+            {
+              "text": "Follow Up",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            },
+            {
+              "text": "[Describe required follow-up validation]",
+              "width_in": null,
+              "vertical_alignment": "CENTER (1)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "index": 0,
+      "page_width_in": 8.5,
+      "page_height_in": 11.0,
+      "left_margin_in": 1.0,
+      "right_margin_in": 1.0,
+      "top_margin_in": 1.0,
+      "bottom_margin_in": 1.0,
+      "header_distance_in": 0.5,
+      "footer_distance_in": 0.5,
+      "different_first_page_header_footer": false,
+      "header_paragraphs": [
+        {
+          "index": 0,
+          "style": "normal",
+          "text": "",
+          "alignment": null,
+          "runs": [
+            {
+              "text": "",
+              "font": null,
+              "size_pt": null,
+              "bold": null,
+              "italic": null,
+              "color": null
+            }
+          ]
+        }
+      ],
+      "footer_paragraphs": [
+        {
+          "index": 0,
+          "style": "normal",
+          "text": "",
+          "alignment": null,
+          "runs": [
+            {
+              "text": "",
+              "font": null,
+              "size_pt": null,
+              "bold": null,
+              "italic": null,
+              "color": null
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "style": "normal",
+          "text": "",
+          "alignment": null,
+          "runs": [
+            {
+              "text": "",
+              "font": null,
+              "size_pt": null,
+              "bold": null,
+              "italic": null,
+              "color": null
+            }
+          ]
+        }
+      ],
+      "footer_tables": []
+    }
+  ],
+  "styles": [
+    {
+      "name": "Heading 1",
+      "type": "PARAGRAPH (1)",
+      "base_style": "normal",
+      "font": {
+        "name": "Georgia",
+        "size_pt": 18.0,
+        "bold": true,
+        "italic": null,
+        "color": "1A703A"
+      },
+      "paragraph": {
+        "alignment": null,
+        "space_before_pt": 18.0,
+        "space_after_pt": 4.0,
+        "line_spacing": null,
+        "keep_with_next": true,
+        "keep_together": true,
+        "page_break_before": null,
+        "left_indent_in": null,
+        "right_indent_in": null,
+        "first_line_indent_in": null
+      }
+    },
+    {
+      "name": "Heading 2",
+      "type": "PARAGRAPH (1)",
+      "base_style": "normal",
+      "font": {
+        "name": "Georgia",
+        "size_pt": 16.0,
+        "bold": null,
+        "italic": null,
+        "color": "592382"
+      },
+      "paragraph": {
+        "alignment": "CENTER (1)",
+        "space_before_pt": 8.0,
+        "space_after_pt": null,
+        "line_spacing": null,
+        "keep_with_next": true,
+        "keep_together": true,
+        "page_break_before": null,
+        "left_indent_in": null,
+        "right_indent_in": null,
+        "first_line_indent_in": null
+      }
+    },
+    {
+      "name": "Heading 3",
+      "type": "PARAGRAPH (1)",
+      "base_style": "normal",
+      "font": {
+        "name": "Georgia",
+        "size_pt": null,
+        "bold": null,
+        "italic": null,
+        "color": "592382"
+      },
+      "paragraph": {
+        "alignment": "CENTER (1)",
+        "space_before_pt": 8.0,
+        "space_after_pt": null,
+        "line_spacing": null,
+        "keep_with_next": true,
+        "keep_together": true,
+        "page_break_before": null,
+        "left_indent_in": null,
+        "right_indent_in": null,
+        "first_line_indent_in": null
+      }
+    },
+    {
+      "name": "Title",
+      "type": "PARAGRAPH (1)",
+      "base_style": "normal",
+      "font": {
+        "name": null,
+        "size_pt": 40.0,
+        "bold": true,
+        "italic": null,
+        "color": "4A2E5F"
+      },
+      "paragraph": {
+        "alignment": "CENTER (1)",
+        "space_before_pt": null,
+        "space_after_pt": 4.0,
+        "line_spacing": null,
+        "keep_with_next": null,
+        "keep_together": null,
+        "page_break_before": null,
+        "left_indent_in": null,
+        "right_indent_in": null,
+        "first_line_indent_in": null
+      }
+    },
+    {
+      "name": "normal",
+      "type": "PARAGRAPH (1)",
+      "base_style": null,
+      "font": {
+        "name": null,
+        "size_pt": null,
+        "bold": null,
+        "italic": null,
+        "color": null
+      },
+      "paragraph": {
+        "alignment": null,
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "line_spacing": null,
+        "keep_with_next": null,
+        "keep_together": null,
+        "page_break_before": null,
+        "left_indent_in": null,
+        "right_indent_in": null,
+        "first_line_indent_in": null
+      }
+    }
+  ],
+  "package_parts": [
+    {
+      "path": "[Content_Types].xml",
+      "size": 1541,
+      "sha256": "acab6355fcbf2804d10c17279adc776568ba1f4090e8722c8206380bd0b19ef8"
+    },
+    {
+      "path": "_rels/.rels",
+      "size": 298,
+      "sha256": "77494e8e16bbf29213e494792349e3d49d2397a4007b2816a058337d804e79a1"
+    },
+    {
+      "path": "word/_rels/document.xml.rels",
+      "size": 1200,
+      "sha256": "3e605c0042be606f29c86b3ce8095c7e28ff70813ad8808e0b6f01ea631bd34c"
+    },
+    {
+      "path": "word/_rels/fontTable.xml.rels",
+      "size": 449,
+      "sha256": "18b9c91ee35007ae3d239898d32c7287b7eb5574de0f45216e4cb95ee560d2a6"
+    },
+    {
+      "path": "word/document.xml",
+      "size": 160160,
+      "sha256": "14193ccf0b7d47c89c2380e058663c0566f172a5ab1299bdefff0a5e140e811f"
+    },
+    {
+      "path": "word/fontTable.xml",
+      "size": 2010,
+      "sha256": "f0ecf22349646bb37f6c6e3a3ad0ea4abcfbef6143653cf98e3fb405ad8656ea"
+    },
+    {
+      "path": "word/fonts/NotoSansSymbols-bold.ttf",
+      "size": 183344,
+      "sha256": "afc2a6b7050df884f5deb2618ebbdecb9fa2f163d3ca66ca75f8b069febc6741"
+    },
+    {
+      "path": "word/fonts/NotoSansSymbols-regular.ttf",
+      "size": 183620,
+      "sha256": "3c9c40311ae6012f7d3c4a4ff98952b2c7bbc0d4c89a93ba22986ff1f1884af5"
+    },
+    {
+      "path": "word/footer1.xml",
+      "size": 5532,
+      "sha256": "43600114841d1c450b57986bfa5aca3ccfa7a5e9f2135a0e27a71750c44dc986"
+    },
+    {
+      "path": "word/header1.xml",
+      "size": 1791,
+      "sha256": "a06e51104c1d1da7889e9d733c189bf2267fff63e556f196bbfd45e4a51079b3"
+    },
+    {
+      "path": "word/media/image1.png",
+      "size": 70,
+      "sha256": "18d840af2c50eff9a5241d4b50833a596e6b71af0cee87cf2b3435345f2f7aba"
+    },
+    {
+      "path": "word/numbering.xml",
+      "size": 14759,
+      "sha256": "7e32d1fff31b749d1ca67e8033e2f3b294b6336df93dd0061e50ba466fbd5edb"
+    },
+    {
+      "path": "word/settings.xml",
+      "size": 2152,
+      "sha256": "fb088d0a3dbf7f5e5a5a399b898acf16aa2a6fc3b2984bc3eb0d4946f73ac005"
+    },
+    {
+      "path": "word/styles.xml",
+      "size": 8499,
+      "sha256": "e8ce096575d68df59dc88798985b642f7d127ae82bb21f1ea1880f42ac867660"
+    },
+    {
+      "path": "word/theme/theme1.xml",
+      "size": 7642,
+      "sha256": "742bf86bb312d06389e21644f7e861273fe4f124f422c57cce0c28360b06f32d"
+    }
+  ]
+}

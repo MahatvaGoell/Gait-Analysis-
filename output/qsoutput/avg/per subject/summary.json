@@ -1,0 +1,4 @@
+{
+  "subject_average_graphs_created": 10,
+  "method": "For each subject, all valid left and right QS trials from every source recording are resampled to a common 0\u2013100% QS phase, then averaged point by point."
+}

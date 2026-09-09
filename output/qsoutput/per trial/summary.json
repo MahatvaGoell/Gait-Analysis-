@@ -1,0 +1,9 @@
+{
+  "plots_available": 729,
+  "rendered_this_run": 0,
+  "existing_pngs_preserved": 729,
+  "unavailable_entries": 0,
+  "synchronized_pairs": 115,
+  "pairs_needing_review": 23,
+  "method": "Each graph begins at a trial-start trigger and ends at the first sustained FMG departure from the standing baseline. Insole traces are aligned by matching trigger position and trial phase or nominal sampling rate."
+}

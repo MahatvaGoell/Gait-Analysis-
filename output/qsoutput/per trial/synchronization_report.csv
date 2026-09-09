@@ -1,0 +1,139 @@
+fmg_invalid_rows_skipped,fmg_trigger_rising_edges,insole_invalid_rows_skipped,insole_trigger_rising_edges,p95_relative_trigger_error_seconds,plots_created,record,side,status,subject,sync_status
+3,20,4,20,0.0105,,jitu_1,L,,Sub01_A,trigger sequence synchronized
+3,20,2,20,0.01,,jitu_1,R,,Sub01_A,trigger sequence synchronized
+3,20,4,20,0.01,,jitu_21,L,,Sub01_A,trigger sequence synchronized
+3,20,2,20,0.01,,jitu_21,R,,Sub01_A,trigger sequence synchronized
+18,36,5,36,0.01,,abh_1,L,,Sub01_H,trigger sequence synchronized
+18,36,3,36,0.01,,abh_1,R,,Sub01_H,trigger sequence synchronized
+49,42,7,44,,,abh_21,L,,Sub01_H,trigger count mismatch 42 vs 44
+49,42,4,44,,,abh_21,R,,Sub01_H,trigger count mismatch 42 vs 44
+3,24,3,24,0.0185,,vipin_1,L,,Sub02_A,trigger sequence synchronized
+3,24,4,24,0.0185,,vipin_1,R,,Sub02_A,trigger sequence synchronized
+3,20,3,20,0.02,,vipin_21,L,,Sub02_A,trigger sequence synchronized
+3,20,0,20,0.02,,vipin_21,R,,Sub02_A,trigger sequence synchronized
+5,40,5,40,0.0105,,Alif_1,L,,Sub02_H,trigger sequence synchronized
+5,40,2,40,0.01,,Alif_1,R,,Sub02_H,trigger sequence synchronized
+3,18,6,17,,,Alif_21,L,,Sub02_H,trigger count mismatch 18 vs 17
+3,18,3,18,0.02,,Alif_21,R,,Sub02_H,trigger sequence synchronized
+8,26,5,26,0.01,,Alif_30,L,,Sub02_H,trigger sequence synchronized
+8,26,2,26,0.02,,Alif_30,R,,Sub02_H,trigger sequence synchronized
+8,59,8,59,0.02,,Amit_1,L,,Sub03_H,trigger sequence synchronized
+8,59,6,59,0.01,,Amit_1,R,,Sub03_H,trigger sequence synchronized
+4,40,4,39,,,Amit_21,L,,Sub03_H,trigger count mismatch 40 vs 39
+4,40,4,40,0.02,,Amit_21,R,,Sub03_H,trigger sequence synchronized
+60,37,17,155,,,ashu_1,L,,Sub04_H,trigger count mismatch 37 vs 155
+60,37,4,39,,,ashu_1,R,,Sub04_H,trigger count mismatch 37 vs 39
+47,40,13,607,,,ashu_21,L,,Sub04_H,trigger count mismatch 40 vs 607
+47,40,7,40,0.2405,,ashu_21,R,,Sub04_H,trigger sequence synchronized
+7,40,4,40,0.01,,sub_1,L,,Sub05_H,trigger sequence synchronized
+7,40,6,40,0.01,,sub_1,R,,Sub05_H,trigger sequence synchronized
+5,40,0,39,,,sub_21,L,,Sub05_H,trigger count mismatch 40 vs 39
+5,40,5,40,0.0105,,sub_21,R,,Sub05_H,trigger sequence synchronized
+,,,,,0,Rishabh_1,both,no FMG trigger start,Sub06_H,
+32,1,5,1,0.0,,Rishabh_2,L,,Sub06_H,single trigger matched
+32,1,2,1,0.0,,Rishabh_2,R,,Sub06_H,single trigger matched
+8,1,13,0,,,Rishabh_3,L,,Sub06_H,missing trigger event
+8,1,4,1,0.0,,Rishabh_3,R,,Sub06_H,single trigger matched
+21,1,8,1,0.0,,Rishabh_4,L,,Sub06_H,single trigger matched
+21,1,9,1,0.0,,Rishabh_4,R,,Sub06_H,single trigger matched
+,,,,,0,Rishabh_5,both,no FMG trigger start,Sub06_H,
+,,,,,0,Rishabh_6,both,no FMG trigger start,Sub06_H,
+9,1,12,1,0.0,,Rishabh_7,L,,Sub06_H,single trigger matched
+9,1,5,1,0.0,,Rishabh_7,R,,Sub06_H,single trigger matched
+,,,,,0,Rishabh_8,both,no FMG trigger start,Sub06_H,
+24,1,6,0,,,Rishabh_9,L,,Sub06_H,missing trigger event
+24,1,2,1,0.0,,Rishabh_9,R,,Sub06_H,single trigger matched
+35,1,8,1,0.0,,Rishabh_10,L,,Sub06_H,single trigger matched
+35,1,8,1,0.0,,Rishabh_10,R,,Sub06_H,single trigger matched
+7,1,9,0,,,Rishabh_11,L,,Sub06_H,missing trigger event
+7,1,4,1,0.0,,Rishabh_11,R,,Sub06_H,single trigger matched
+53,1,7,1,0.0,,Rishabh_12,L,,Sub06_H,single trigger matched
+53,1,3,1,0.0,,Rishabh_12,R,,Sub06_H,single trigger matched
+26,1,6,1,0.0,,Rishabh_13,L,,Sub06_H,single trigger matched
+26,1,5,1,0.0,,Rishabh_13,R,,Sub06_H,single trigger matched
+35,1,7,1,0.0,,Rishabh_14,L,,Sub06_H,single trigger matched
+35,1,3,1,0.0,,Rishabh_14,R,,Sub06_H,single trigger matched
+18,1,3,1,0.0,,Rishabh_15,L,,Sub06_H,single trigger matched
+18,1,4,1,0.0,,Rishabh_15,R,,Sub06_H,single trigger matched
+8,1,8,1,0.0,,Rishabh_16,L,,Sub06_H,single trigger matched
+8,1,4,1,0.0,,Rishabh_16,R,,Sub06_H,single trigger matched
+14,1,6,1,0.0,,Rishabh_17,L,,Sub06_H,single trigger matched
+14,1,2,1,0.0,,Rishabh_17,R,,Sub06_H,single trigger matched
+19,1,5,1,0.0,,Rishabh_18,L,,Sub06_H,single trigger matched
+19,1,3,1,0.0,,Rishabh_18,R,,Sub06_H,single trigger matched
+4,1,2,1,0.0,,Rishabh_19,L,,Sub06_H,single trigger matched
+4,1,1,1,0.0,,Rishabh_19,R,,Sub06_H,single trigger matched
+5,1,8,1,0.0,,Rishabh_20,L,,Sub06_H,single trigger matched
+5,1,4,1,0.0,,Rishabh_20,R,,Sub06_H,single trigger matched
+,,,,,0,Rishabh_21,both,no FMG trigger start,Sub06_H,
+,,,,,0,Rishabh_22,both,no FMG trigger start,Sub06_H,
+3,1,5,1,0.0,,Rishabh_23,L,,Sub06_H,single trigger matched
+3,1,2,1,0.0,,Rishabh_23,R,,Sub06_H,single trigger matched
+3,1,4,1,0.0,,Rishabh_24,L,,Sub06_H,single trigger matched
+3,1,5,1,0.0,,Rishabh_24,R,,Sub06_H,single trigger matched
+28,1,4,1,0.0,,Rishabh_25,L,,Sub06_H,single trigger matched
+28,1,5,1,0.0,,Rishabh_25,R,,Sub06_H,single trigger matched
+20,1,6,1,0.0,,Rishabh_26,L,,Sub06_H,single trigger matched
+20,1,5,1,0.0,,Rishabh_26,R,,Sub06_H,single trigger matched
+5,1,4,1,0.0,,Rishabh_27,L,,Sub06_H,single trigger matched
+5,1,3,1,0.0,,Rishabh_27,R,,Sub06_H,single trigger matched
+3,1,5,1,0.0,,Rishabh_28,L,,Sub06_H,single trigger matched
+3,1,3,1,0.0,,Rishabh_28,R,,Sub06_H,single trigger matched
+3,1,2,1,0.0,,Rishabh_29,L,,Sub06_H,single trigger matched
+3,1,5,1,0.0,,Rishabh_29,R,,Sub06_H,single trigger matched
+7,1,6,1,0.0,,Rishabh_30,L,,Sub06_H,single trigger matched
+7,1,3,1,0.0,,Rishabh_30,R,,Sub06_H,single trigger matched
+4,1,4,1,0.0,,Rishabh_31,L,,Sub06_H,single trigger matched
+4,1,1,1,0.0,,Rishabh_31,R,,Sub06_H,single trigger matched
+15,1,5,1,0.0,,Rishabh_32,L,,Sub06_H,single trigger matched
+15,1,3,1,0.0,,Rishabh_32,R,,Sub06_H,single trigger matched
+5,1,3,1,0.0,,Rishabh_33,L,,Sub06_H,single trigger matched
+5,1,4,1,0.0,,Rishabh_33,R,,Sub06_H,single trigger matched
+15,1,4,1,0.0,,Rishabh_34,L,,Sub06_H,single trigger matched
+15,1,3,1,0.0,,Rishabh_34,R,,Sub06_H,single trigger matched
+7,1,4,1,0.0,,Rishabh_35,L,,Sub06_H,single trigger matched
+7,1,1,1,0.0,,Rishabh_35,R,,Sub06_H,single trigger matched
+4,1,9,1,0.0,,Rishabh_36,L,,Sub06_H,single trigger matched
+4,1,4,1,0.0,,Rishabh_36,R,,Sub06_H,single trigger matched
+7,1,5,1,0.0,,Rishabh_37,L,,Sub06_H,single trigger matched
+7,1,4,1,0.0,,Rishabh_37,R,,Sub06_H,single trigger matched
+6,1,6,1,0.0,,Rishabh_38,L,,Sub06_H,single trigger matched
+6,1,4,1,0.0,,Rishabh_38,R,,Sub06_H,single trigger matched
+13,1,4,1,0.0,,Rishabh_39,L,,Sub06_H,single trigger matched
+13,1,5,1,0.0,,Rishabh_39,R,,Sub06_H,single trigger matched
+4,1,4,1,0.0,,Rishabh_40,L,,Sub06_H,single trigger matched
+4,1,7,1,0.0,,Rishabh_40,R,,Sub06_H,single trigger matched
+3,1,,0,,,rohan_1,L,,Sub07_H,missing insole
+3,1,18,1,0.0,,rohan_1,R,,Sub07_H,single trigger matched
+3,1,5,1,0.0,,rohan_2,L,,Sub07_H,single trigger matched
+3,1,9,1,0.0,,rohan_2,R,,Sub07_H,single trigger matched
+18,2,28,2,537.4435,,rohan_3,L,,Sub07_H,trigger timing mismatch
+18,2,22,2,537.605,,rohan_3,R,,Sub07_H,trigger timing mismatch
+15,1,13,1,0.0,,rohan_4,L,,Sub07_H,single trigger matched
+15,1,7,1,0.0,,rohan_4,R,,Sub07_H,single trigger matched
+4,1,8,1,0.0,,rohan_5,L,,Sub07_H,single trigger matched
+4,1,4,1,0.0,,rohan_5,R,,Sub07_H,single trigger matched
+10,1,13,1,0.0,,rohan_6,L,,Sub07_H,single trigger matched
+10,1,6,0,,,rohan_6,R,,Sub07_H,missing trigger event
+3,1,13,1,0.0,,rohan_7,L,,Sub07_H,single trigger matched
+3,1,4,1,0.0,,rohan_7,R,,Sub07_H,single trigger matched
+10,1,12,1,0.0,,rohan_8,L,,Sub07_H,single trigger matched
+10,1,15,1,0.0,,rohan_8,R,,Sub07_H,single trigger matched
+3,1,13,1,0.0,,rohan_9,L,,Sub07_H,single trigger matched
+3,1,3,1,0.0,,rohan_9,R,,Sub07_H,single trigger matched
+4,1,13,1,0.0,,rohan_10,L,,Sub07_H,single trigger matched
+4,1,13,1,0.0,,rohan_10,R,,Sub07_H,single trigger matched
+3,1,6,1,0.0,,rohan_11,L,,Sub07_H,single trigger matched
+3,1,4,1,0.0,,rohan_11,R,,Sub07_H,single trigger matched
+10,2,4,2,0.0095,,rohan_12,L,,Sub07_H,trigger sequence synchronized
+10,2,5,2,0.0,,rohan_12,R,,Sub07_H,trigger sequence synchronized
+96,15,4,20,,,rohan_13,L,,Sub07_H,trigger count mismatch 15 vs 20
+96,15,4,20,,,rohan_13,R,,Sub07_H,trigger count mismatch 15 vs 20
+20,18,3,18,0.01,,rohan_21,L,,Sub07_H,trigger sequence synchronized
+20,18,4,18,0.02,,rohan_21,R,,Sub07_H,trigger sequence synchronized
+3,22,4,22,0.02,,rohan_30,L,,Sub07_H,trigger sequence synchronized
+3,22,4,22,0.01,,rohan_30,R,,Sub07_H,trigger sequence synchronized
+8,42,5,42,0.02,,sir_1,L,,Sub08_H,trigger sequence synchronized
+8,42,4,42,0.01,,sir_1,R,,Sub08_H,trigger sequence synchronized
+16,40,12,40,0.02,,sir_21,L,,Sub08_H,trigger sequence synchronized
+16,40,5,40,0.01,,sir_21,R,,Sub08_H,trigger sequence synchronized
