@@ -1,0 +1,6 @@
+{
+  "gi_per_trial_graphs": 687,
+  "gi_per_record_average_graphs": 127,
+  "gi_per_subject_average_graphs": 10,
+  "method": "Each figure shows a 0.5 second QS reference followed by the fixed 3.0-4.0 second GI interval after each matched trial-start trigger. The dashed boundary marks GI start."
+}

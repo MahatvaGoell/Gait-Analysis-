@@ -1,0 +1,5 @@
+fmg_trigger_rising_edges,insole_trigger_rising_edges,p95_relative_trigger_error_seconds,record,side,subject,sync_status
+42,42,0.02,sir_1,L,Sub08_H,trigger sequence synchronized
+42,42,0.01,sir_1,R,Sub08_H,trigger sequence synchronized
+40,40,0.02,sir_21,L,Sub08_H,trigger sequence synchronized
+40,40,0.01,sir_21,R,Sub08_H,trigger sequence synchronized

@@ -245,14 +245,21 @@ def draw_axis(draw: ImageDraw.ImageDraw, rect: tuple[int, int, int, int], x_max:
         draw.text(((left + right - (box[2] - box[0])) / 2, bottom + 42), x_label, fill=axis_color, font=label_font)
 
 
-def display_lane(values: np.ndarray, anchor: float, gain: float, smoothing_width: int) -> np.ndarray:
+def display_lane(
+    values: np.ndarray,
+    anchor: float,
+    gain: float,
+    smoothing_width: int,
+    baseline_samples: int | None = None,
+) -> np.ndarray:
     """Use a fixed, non-normalising display scale around a QS baseline."""
     values = np.asarray(values, dtype=np.float64)
     finite = values[np.isfinite(values)]
     if not len(finite):
         return np.full(len(values), anchor)
     smoothed = moving_mean(values, smoothing_width)
-    baseline_count = min(len(smoothed), max(20, smoothing_width * 3))
+    default_count = max(20, smoothing_width * 3)
+    baseline_count = min(len(smoothed), baseline_samples if baseline_samples is not None else default_count)
     baseline = float(np.median(smoothed[:baseline_count]))
     return anchor + (smoothed - baseline) * gain
 
@@ -273,8 +280,19 @@ def render_plot(
     average_trials: int | None = None,
     normalized_qs_phase: bool = False,
     custom_title: str | None = None,
+    phase_title: str = "Quiet Standing (QS)",
+    phase_short: str = "QS",
+    phase_window_label: str = "QS-only window",
+    phase_note: str = "QS data only. A 0.25 s moving average removes sensor quantisation noise; fixed lane offsets preserve each trace's recorded variation.",
+    normalized_phase_label: str = "Normalised QS phase (%)",
+    baseline_samples: int | None = None,
+    phase_boundary_sample: int | None = None,
+    pre_phase_label: str | None = None,
+    phase_markers: list[tuple[int, str]] | None = None,
+    fmg_gain: float = 0.65,
+    channel_offsets_override: list[float] | None = None,
 ) -> None:
-    """Draw a single, QS-only, vertically offset view of all ten signals."""
+    """Draw one vertically offset ten-signal view for the selected gait phase."""
     width, height = 1920, 960
     image = Image.new("RGB", (width, height), "white")
     draw = ImageDraw.Draw(image)
@@ -289,7 +307,7 @@ def render_plot(
         fmg_x = np.linspace(0.0, 100.0, len(fmg_values))
         insole_x = np.linspace(0.0, 100.0, len(cop))
         x_max = 100.0
-        x_label = "Normalised QS phase (%)"
+        x_label = normalized_phase_label
     else:
         fmg_x = np.arange(len(fmg_values), dtype=float)
         insole_x = np.linspace(0, max(len(fmg_values) - 1, 1), len(cop), dtype=float)
@@ -299,11 +317,11 @@ def render_plot(
     if custom_title is not None:
         title = custom_title
     elif average_trials is None:
-        title = f"Quiet Standing (QS) — {subject}  |  Record {record}  |  Trial {trial_number:02d}  |  {side} limb"
+        title = f"{phase_title} — {subject}  |  Record {record}  |  Trial {trial_number:02d}  |  {side} limb"
     else:
-        title = f"Average Quiet Standing (QS) — {subject}  |  Data {record}  |  {side} limb  |  n = {average_trials} trials"
+        title = f"Average {phase_title} — {subject}  |  Data {record}  |  {side} limb  |  n = {average_trials} trials"
     draw.text((left, 28), title, fill=(0, 0, 0), font=title_font)
-    detail = f"QS-only window • recorded values displayed with 0.25 s smoothing • alignment: {sync_status}"
+    detail = f"{phase_window_label} • recorded values displayed with 0.25 s smoothing • alignment: {sync_status}"
     draw.text((left, 76), detail, fill=(70, 70, 70), font=small_font)
 
     draw_axis(draw, chart, x_max, 0.0, 500.0, "Digitally offset amplitude", x_label, label_font, small_font)
@@ -311,26 +329,52 @@ def render_plot(
         (78, 121, 167), (242, 142, 43), (225, 87, 89), (118, 183, 178),
         (89, 161, 79), (237, 201, 72), (176, 122, 161), (255, 157, 167),
     ]
-    channel_offsets = [195, 170, 145, 120, 95, 70, 45, 20]
+    channel_offsets = channel_offsets_override or [195, 170, 145, 120, 95, 70, 45, 20]
     fmg_smoothing = max(5, int(round(0.25 / max(fmg_dt, 0.001))))
     for index in range(8):
-        displayed = display_lane(fmg_values[:, index], channel_offsets[index], 0.65, fmg_smoothing)
+        displayed = display_lane(fmg_values[:, index], channel_offsets[index], fmg_gain, fmg_smoothing, baseline_samples)
         points = line_points(fmg_x, displayed, chart, x_max, 0.0, 500.0)
         draw.line(points, fill=channel_colors[index], width=2)
 
     # CoP and vGRF are intentionally positioned above all eight FMG lanes.
     insole_smoothing = max(5, int(round(0.25 / max(insole_dt, 0.001))))
-    cop_points = line_points(insole_x, display_lane(cop, 285.0, 2.50, insole_smoothing), chart, x_max, 0.0, 500.0)
-    vgrf_points = line_points(insole_x, display_lane(vgrf, 390.0, 0.08, insole_smoothing), chart, x_max, 0.0, 500.0)
+    cop_points = line_points(insole_x, display_lane(cop, 285.0, 2.50, insole_smoothing, baseline_samples), chart, x_max, 0.0, 500.0)
+    vgrf_points = line_points(insole_x, display_lane(vgrf, 390.0, 0.08, insole_smoothing, baseline_samples), chart, x_max, 0.0, 500.0)
     draw.line(cop_points, fill=(102, 102, 102), width=3)
     draw.line(vgrf_points, fill=(214, 148, 0), width=3)
 
-    qs_bar_y = 138
-    draw.line((left, qs_bar_y, right, qs_bar_y), fill=(40, 40, 40), width=4)
-    qs_text = "QS"
-    qs_box = draw.textbbox((0, 0), qs_text, font=label_font)
-    draw.rectangle((left + 20, qs_bar_y - 30, left + 20 + qs_box[2] - qs_box[0] + 16, qs_bar_y - 4), fill="white")
-    draw.text((left + 28, qs_bar_y - 31), qs_text, fill=(0, 0, 0), font=label_font)
+    phase_bar_y = 138
+    draw.line((left, phase_bar_y, right, phase_bar_y), fill=(40, 40, 40), width=4)
+    if phase_markers:
+        markers = sorted(
+            ((max(0, min(int(sample), len(fmg_values) - 1)), label) for sample, label in phase_markers),
+            key=lambda item: item[0],
+        )
+        for index, (sample, label) in enumerate(markers):
+            next_sample = markers[index + 1][0] if index + 1 < len(markers) else len(fmg_values) - 1
+            start_x = left + sample / max(len(fmg_values) - 1, 1) * (right - left)
+            end_x = left + next_sample / max(len(fmg_values) - 1, 1) * (right - left)
+            label_box = draw.textbbox((0, 0), label, font=label_font)
+            label_x = max(left + 8, min((start_x + end_x - (label_box[2] - label_box[0])) / 2, right - (label_box[2] - label_box[0]) - 8))
+            draw.rectangle((label_x - 8, phase_bar_y - 30, label_x + label_box[2] - label_box[0] + 8, phase_bar_y - 4), fill="white")
+            draw.text((label_x, phase_bar_y - 31), label, fill=(0, 0, 0), font=label_font)
+            if index:
+                for y in range(chart[1], chart[3], 18):
+                    draw.line((start_x, y, start_x, min(y + 10, chart[3])), fill=(35, 35, 35), width=3)
+    else:
+        first_phase_label = pre_phase_label if phase_boundary_sample is not None and pre_phase_label else phase_short
+        phase_box = draw.textbbox((0, 0), first_phase_label, font=label_font)
+        draw.rectangle((left + 20, phase_bar_y - 30, left + 20 + phase_box[2] - phase_box[0] + 16, phase_bar_y - 4), fill="white")
+        draw.text((left + 28, phase_bar_y - 31), first_phase_label, fill=(0, 0, 0), font=label_font)
+
+    if phase_boundary_sample is not None and not phase_markers:
+        boundary_fraction = phase_boundary_sample / max(len(fmg_values) - 1, 1)
+        boundary_x = left + boundary_fraction * (right - left)
+        for y in range(chart[1], chart[3], 18):
+            draw.line((boundary_x, y, boundary_x, min(y + 10, chart[3])), fill=(35, 35, 35), width=3)
+        label_box = draw.textbbox((0, 0), phase_short, font=label_font)
+        draw.rectangle((boundary_x + 14, phase_bar_y - 30, boundary_x + 30 + label_box[2] - label_box[0], phase_bar_y - 4), fill="white")
+        draw.text((boundary_x + 22, phase_bar_y - 31), phase_short, fill=(0, 0, 0), font=label_font)
 
     legend_x, legend_y = 1610, 190
     draw.text((legend_x, legend_y - 42), "Signals", fill=(0, 0, 0), font=legend_font)
@@ -344,8 +388,7 @@ def render_plot(
     draw.line((legend_x, legend_y + 82, legend_x + 40, legend_y + 82), fill=(214, 148, 0), width=4)
     draw.text((legend_x + 50, legend_y + 67), "vGRF", fill=(30, 30, 30), font=legend_font)
 
-    note = "QS data only. A 0.25 s moving average removes sensor quantisation noise; fixed lane offsets preserve each trace's recorded variation."
-    draw.text((left, 870), note, fill=(70, 70, 70), font=small_font)
+    draw.text((left, 870), phase_note, fill=(70, 70, 70), font=small_font)
     destination.parent.mkdir(parents=True, exist_ok=True)
     image.save(destination, format="PNG", optimize=True)
 
