@@ -1,0 +1,16 @@
+{
+  "method_version": "1.0-provisional",
+  "raw_sha256": {
+    "Sub08_H\\sir_1": "f4f2401bcb38e649d21ce8807910387c74f59a29ac58764aeb73211b32230308",
+    "Sub08_H\\sir_1L": "ab5f6378cbfd0307bd4a63715a79856cf5a1c2c0e54cd6c39deb21dec6ad4509",
+    "Sub08_H\\sir_1R": "cc51796e0b5ff28e186b81fc178f90643cf7e39f3b846917ca17556034cb3842",
+    "Sub08_H\\sir_21": "985a068a77063eab3d6a221ea361e8268baf4350b04a90756745bc06489596b0",
+    "Sub08_H\\sir_21L": "c96a885f78e3d016691aa2b292098575d38f85308f574c58455117eff12e1c6f",
+    "Sub08_H\\sir_21R": "dafcde33303bc451120585faf83aa1c87d801dcb4428d456753b6aacff9c7ef1"
+  },
+  "script_sha256": "3dc5d78b9f70999e08ba229ee32a2cd7c8a14484bb43280ad54e5d55efa303f4",
+  "assumption": "User-requested short-to-long sequence; not verified by step-length measurements",
+  "validation": "Signal/layout consistency only; no ground-truth event validation",
+  "completed_trials": 41,
+  "completed_plots": 82
+}

@@ -1,0 +1,13 @@
+{
+  "verified_pngs": 80,
+  "verified_numeric_exports": 80,
+  "provisional_trials": 39,
+  "inferred_end_trigger_intervals": [
+    "sub_21/trial_16/L"
+  ],
+  "min_duration_seconds": 18.03,
+  "max_duration_seconds": 24.44,
+  "subject08_and_existing_tempgraphs_unchanged": true,
+  "raw_subject05_unchanged": true,
+  "scope": "Numerical consistency and file preservation; not validation of gait-event labels"
+}

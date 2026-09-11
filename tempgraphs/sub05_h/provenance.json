@@ -1,0 +1,2968 @@
+{
+  "summary": {
+    "recorded_trials": 40,
+    "graphs": 80,
+    "provisional_trials": 39,
+    "support_counts": {
+      "weak/ambiguous pattern evidence": 36,
+      "moderate pattern evidence": 3,
+      "unresolved": 1
+    },
+    "unresolved_trials": [
+      {
+        "record": "sub_21",
+        "trial": 13,
+        "reason": "All events provisional; pressure extrema are not heel-strike labels; sustained onset with initial standing not resolved"
+      }
+    ],
+    "subject08_and_existing_tempgraphs_unchanged": true,
+    "raw_subject05_unchanged": true
+  },
+  "protected_files_before": {
+    "dataset\\Sub05_H\\sub_1": {
+      "sha256": "5460c756e0e159ee1516953118322d900d22279124295d0a35e03f711fc75f87",
+      "bytes": 6552516,
+      "mtime_ns": 1639135246000000000
+    },
+    "dataset\\Sub05_H\\sub_1L": {
+      "sha256": "dc9bf445490ced9e9e0f07e072357180ebe5a7da4f481454c8ee37ce59175619",
+      "bytes": 1326584,
+      "mtime_ns": 1639135242000000000
+    },
+    "dataset\\Sub05_H\\sub_1R": {
+      "sha256": "9afbf14cccec4ca980b1bfbcc3b9a82e7db54eae4df752883a83db20e0a3ca1d",
+      "bytes": 1321999,
+      "mtime_ns": 1639135250000000000
+    },
+    "dataset\\Sub05_H\\sub_21": {
+      "sha256": "6653e65490d511972613657638c98134afad24e3107274e971c515c64cf90fbc",
+      "bytes": 5888432,
+      "mtime_ns": 1639135794000000000
+    },
+    "dataset\\Sub05_H\\sub_21L": {
+      "sha256": "91dc111022d4fbe20b2eb06169f0432aa3d1c608bc8ad08af2e4be75b13e7138",
+      "bytes": 1226535,
+      "mtime_ns": 1639135790000000000
+    },
+    "dataset\\Sub05_H\\sub_21R": {
+      "sha256": "67583e1702dbd84f4d0f4a2684dc3efbec183a321feda4313d3dbef8cf625a19",
+      "bytes": 1232854,
+      "mtime_ns": 1639135796000000000
+    },
+    "dataset\\Sub08_H\\sir_1": {
+      "sha256": "f4f2401bcb38e649d21ce8807910387c74f59a29ac58764aeb73211b32230308",
+      "bytes": 9185541,
+      "mtime_ns": 1638887388000000000
+    },
+    "dataset\\Sub08_H\\sir_1L": {
+      "sha256": "ab5f6378cbfd0307bd4a63715a79856cf5a1c2c0e54cd6c39deb21dec6ad4509",
+      "bytes": 1917589,
+      "mtime_ns": 1638887382000000000
+    },
+    "dataset\\Sub08_H\\sir_1R": {
+      "sha256": "cc51796e0b5ff28e186b81fc178f90643cf7e39f3b846917ca17556034cb3842",
+      "bytes": 1857984,
+      "mtime_ns": 1638887384000000000
+    },
+    "dataset\\Sub08_H\\sir_21": {
+      "sha256": "985a068a77063eab3d6a221ea361e8268baf4350b04a90756745bc06489596b0",
+      "bytes": 8386679,
+      "mtime_ns": 1638888470000000000
+    },
+    "dataset\\Sub08_H\\sir_21L": {
+      "sha256": "c96a885f78e3d016691aa2b292098575d38f85308f574c58455117eff12e1c6f",
+      "bytes": 1822291,
+      "mtime_ns": 1638888468000000000
+    },
+    "dataset\\Sub08_H\\sir_21R": {
+      "sha256": "dafcde33303bc451120585faf83aa1c87d801dcb4428d456753b6aacff9c7ef1",
+      "bytes": 1806849,
+      "mtime_ns": 1638888474000000000
+    },
+    "generate_tempgraphs.py": {
+      "sha256": "7c4bc38150ba8982b06469031c65826b0501511c475bdd713130f3ae041c271c",
+      "bytes": 22532,
+      "mtime_ns": 1789145766107934700
+    },
+    "subject08_review.py": {
+      "sha256": "2e57c0138cb4755ce9c4a7a6bcfdc721fe96288a8ed7bd334c0cd98f0831df67",
+      "bytes": 12967,
+      "mtime_ns": 1789145677443673100
+    },
+    "subject08_segmentation.py": {
+      "sha256": "3dc5d78b9f70999e08ba229ee32a2cd7c8a14484bb43280ad54e5d55efa303f4",
+      "bytes": 16405,
+      "mtime_ns": 1789145764650436900
+    },
+    "tempgraphs\\_before_sequence_segmentation\\complete_trial_manifest.csv": {
+      "sha256": "9737c3bdfd3cc971896dd942c39d79ddc206c26fbe0fb61ea5d0c37b47416c27",
+      "bytes": 20934,
+      "mtime_ns": 1789144335310804400
+    },
+    "tempgraphs\\_before_sequence_segmentation\\display_transforms.csv": {
+      "sha256": "6048f0d5c19d0d0acfc41d86391f6aafbc54e4238eebabdfc56eecf699ac980e",
+      "bytes": 39971,
+      "mtime_ns": 1789144335313870900
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_01_l_complete.png": {
+      "sha256": "4bf21d8702f116a58263fe118f8d4f5ecf0a1aa91a9c046c910230650a2254c3",
+      "bytes": 108097,
+      "mtime_ns": 1789144316742554100
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_01_r_complete.png": {
+      "sha256": "bf4e57b022f545bbe1b572de2f21430d57a98c3aeab372fe4d79d87e7368e2a8",
+      "bytes": 114885,
+      "mtime_ns": 1789144321548689900
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_02_l_complete.png": {
+      "sha256": "b2b116cdbcdb2348fc3c0b325ad1d8a985b783302a4c5f7370453a2396754f5f",
+      "bytes": 92989,
+      "mtime_ns": 1789144316932405900
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_02_r_complete.png": {
+      "sha256": "9d436df47391231a93fbf60b9fe06f2938d4350d9e6fc990f31bba3811ab8c38",
+      "bytes": 99359,
+      "mtime_ns": 1789144321721914800
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_03_l_complete.png": {
+      "sha256": "c627389e105a47a8383d35df0b87a7e5aaf397118ec9b994f37ae926461f060c",
+      "bytes": 110790,
+      "mtime_ns": 1789144317168080400
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_03_r_complete.png": {
+      "sha256": "5f31e8f9d55b0b7c1b9e0d0ada762541d10d95df064a88d8c734dd98cc7619fe",
+      "bytes": 114012,
+      "mtime_ns": 1789144321960722500
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_04_l_complete.png": {
+      "sha256": "6ec70855192bac1558900c5a22f03ca1b01a98415cc3246329c7b6d1583436d2",
+      "bytes": 108198,
+      "mtime_ns": 1789144317384638000
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_04_r_complete.png": {
+      "sha256": "ae16dc696914bda79cdfe7710cf328896b316f4a3b084c7b6179e24b5328697b",
+      "bytes": 110962,
+      "mtime_ns": 1789144322169921500
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_05_l_complete.png": {
+      "sha256": "0520287c58d2fa5a59773df044897f60e7078aeb856cd2b8980ac70e667834b2",
+      "bytes": 106565,
+      "mtime_ns": 1789144317620821500
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_05_r_complete.png": {
+      "sha256": "56b88e57c33c678b7126255e1512d23b03994da5197f11b253752a7b6f6c776c",
+      "bytes": 110415,
+      "mtime_ns": 1789144322402088700
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_06_l_complete.png": {
+      "sha256": "9687f234acf9622dc96a228ec334e9308848216203073c17539f1f00e3538ed3",
+      "bytes": 107635,
+      "mtime_ns": 1789144317869305500
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_06_r_complete.png": {
+      "sha256": "45a3a3580e62c77fea7daea99e3f04cc541c2d6bb169fa8cdd0b8ff0d7213d2d",
+      "bytes": 111629,
+      "mtime_ns": 1789144322604026400
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_07_l_complete.png": {
+      "sha256": "7cb32b0ceb3e1f7cbd1ebeb751d223fb806834adee4ed010e36262aef70d5a46",
+      "bytes": 108658,
+      "mtime_ns": 1789144318086948000
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_07_r_complete.png": {
+      "sha256": "2fdbe5509a59f3dc90096d7973d2c1fa280f14dc57c28e7ecc4c148f2bb63636",
+      "bytes": 113585,
+      "mtime_ns": 1789144322805886500
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_08_l_complete.png": {
+      "sha256": "246972da075b01f7e9d394cc85bcf5ffea714d6bac1146cf4130bf0e6ec90e42",
+      "bytes": 107748,
+      "mtime_ns": 1789144318307922600
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_08_r_complete.png": {
+      "sha256": "4bffe29b947e75c7968f2d2256499ecd46927def99774716cfbced8669306fa5",
+      "bytes": 112566,
+      "mtime_ns": 1789144323004223300
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_09_l_complete.png": {
+      "sha256": "7e6c010f78be648daf5c0e1f7655f4b10b2f0472c08f1cc013929c76ec442707",
+      "bytes": 109081,
+      "mtime_ns": 1789144318521362100
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_09_r_complete.png": {
+      "sha256": "b975a38f26b15873969ebc4afdedff97f0957903f3544bea25063d015e146cb1",
+      "bytes": 109652,
+      "mtime_ns": 1789144323236241100
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_10_l_complete.png": {
+      "sha256": "64c8b912f1932639510456101f5071e87cee6f5edcda8cece612012d105dc987",
+      "bytes": 110002,
+      "mtime_ns": 1789144318733567300
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_10_r_complete.png": {
+      "sha256": "0e357bf0e6bbad9cd127b408ce938dfe99ad173dc75dda51217173285bb27125",
+      "bytes": 113687,
+      "mtime_ns": 1789144323438073900
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_11_l_complete.png": {
+      "sha256": "4b6843994edf7be492c846e9f179fc9a7e935c656b965512343270500b89fdcc",
+      "bytes": 108223,
+      "mtime_ns": 1789144318937695200
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_11_r_complete.png": {
+      "sha256": "37039da6ffc81584823c9b73ed32f2cb7b189115f3d04e32fb85deaa464d8015",
+      "bytes": 110317,
+      "mtime_ns": 1789144323649406100
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_12_l_complete.png": {
+      "sha256": "805720f945200f6be5bc6300d3c4af510112413edcf9fa0205e6bf8381e1ef15",
+      "bytes": 107379,
+      "mtime_ns": 1789144319153707100
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_12_r_complete.png": {
+      "sha256": "92b2e95870facf4bc56491fa50cee7328dcf3306ce0354454a6431e93e761610",
+      "bytes": 111288,
+      "mtime_ns": 1789144323868649000
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_13_l_complete.png": {
+      "sha256": "a1e62b42abb0048518b7480c08182322ba99f0623098eed051d0f4f6ec2ea4d0",
+      "bytes": 108800,
+      "mtime_ns": 1789144319377082500
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_13_r_complete.png": {
+      "sha256": "6c7a52b58945b4504dafa6ad55f6a01a05de1a79b1b3e14fa2c256b1b3cfcf19",
+      "bytes": 115838,
+      "mtime_ns": 1789144324091017200
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_14_l_complete.png": {
+      "sha256": "b34c88eebd19fe7c7440296bb982295cda4513f8ded1f58f38f6fe4f56a6fd98",
+      "bytes": 105689,
+      "mtime_ns": 1789144319609904200
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_14_r_complete.png": {
+      "sha256": "d98743dc148f75bcc202e38d82831a5495d9dc66a3310ad05050c0677bca2418",
+      "bytes": 110223,
+      "mtime_ns": 1789144324340965400
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_15_l_complete.png": {
+      "sha256": "ed702df7fdd7fad6694cbb6fe6375f22d2458dbf83beeb9a44da7390d4f81706",
+      "bytes": 106376,
+      "mtime_ns": 1789144319839237300
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_15_r_complete.png": {
+      "sha256": "2838c07c9387248c90de13bd7dea59ff557c07ee371c7eb2884d734c3b0fc25c",
+      "bytes": 112614,
+      "mtime_ns": 1789144324562887500
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_16_l_complete.png": {
+      "sha256": "a349ec94a13f02719c5a94b2f3845dc78e489e2817780cdb664e6f7846fbc37f",
+      "bytes": 108333,
+      "mtime_ns": 1789144320054677300
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_16_r_complete.png": {
+      "sha256": "82ac69f0eac98fea8a5ef5b360f78af2ee14033d570dc2d5ca61b736c9ba34e0",
+      "bytes": 111402,
+      "mtime_ns": 1789144324771108300
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_17_l_complete.png": {
+      "sha256": "3472382751314788977ebfb068bb4c39ed2ef62d40c9e236bf210c9c3f7a49ae",
+      "bytes": 107086,
+      "mtime_ns": 1789144320271875900
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_17_r_complete.png": {
+      "sha256": "1aa19ffd6aa4ca42462c31e5ef09718c517fbd419a9f3d8beab4af0c183d2bbb",
+      "bytes": 111177,
+      "mtime_ns": 1789144324989925300
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_18_l_complete.png": {
+      "sha256": "4d05aeaab38a2f9d6f52b48569ef258cee177597e23ed64f3d55a2377f541564",
+      "bytes": 110980,
+      "mtime_ns": 1789144320486283600
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_18_r_complete.png": {
+      "sha256": "3a7549213bdfae9424763ca5e8bb5091c7dcb1fcaf123ea8aa11fda55b21f375",
+      "bytes": 114911,
+      "mtime_ns": 1789144325187263500
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_19_l_complete.png": {
+      "sha256": "b3a91654a013fc22c47dae1b82c8bb27274ad7c0e5b0686435a0635feb07f53d",
+      "bytes": 106553,
+      "mtime_ns": 1789144320721449700
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_19_r_complete.png": {
+      "sha256": "1df304dc115cf92508f913eb4ae6c7586ac95e741ff1defaa5e62e211a18257c",
+      "bytes": 111150,
+      "mtime_ns": 1789144325403910900
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_20_l_complete.png": {
+      "sha256": "776de5d9cf33c29636fa16991fd2b082cc6dcf73b455c2f43349f14c0b7f92c4",
+      "bytes": 107041,
+      "mtime_ns": 1789144320937699700
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_20_r_complete.png": {
+      "sha256": "d9d37c395f5cb530e4cb75d424885c90ee951f2c6ba47820b1f16a230fd5658d",
+      "bytes": 109499,
+      "mtime_ns": 1789144325637371700
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_21_l_complete.png": {
+      "sha256": "015b776af69e9890f7e0d970dda9bf83a9742bb93be6ef18f3a97377b342100a",
+      "bytes": 107095,
+      "mtime_ns": 1789144321156160700
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_21_r_complete.png": {
+      "sha256": "4d57adae4707f1f2aaa19ce751df543e92924507fbb24375f5ef57f48e64d457",
+      "bytes": 110777,
+      "mtime_ns": 1789144325838158600
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_01_l_complete.png": {
+      "sha256": "ffeba04aed97d88825f11789023a74a8d431f9f748e1833454977a49079b0275",
+      "bytes": 106491,
+      "mtime_ns": 1789144326946330600
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_01_r_complete.png": {
+      "sha256": "266b701a26e0900c11d8d579034374b73932e08efbc4f711acec408b768c437b",
+      "bytes": 107790,
+      "mtime_ns": 1789144331418210900
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_02_l_complete.png": {
+      "sha256": "5921ba4b15c5b52abbe068baa2b6d80a56dbafd535d5536a78f2537d7e14a197",
+      "bytes": 109936,
+      "mtime_ns": 1789144327154314200
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_02_r_complete.png": {
+      "sha256": "dad2c8ea8df76ca45f40505963ef9c82b672f4e9e0f79f1faef32c820f124ee5",
+      "bytes": 114884,
+      "mtime_ns": 1789144331621714700
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_03_l_complete.png": {
+      "sha256": "157b5f5d5a615497b00a6332f32b640f34f8c2290da5daa641f1b9cc2d7dfe41",
+      "bytes": 109244,
+      "mtime_ns": 1789144327387612200
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_03_r_complete.png": {
+      "sha256": "5b076a83db828031788d779da497fc6aac00ea9972146959c2ce1a1fd7e46d5b",
+      "bytes": 113432,
+      "mtime_ns": 1789144331840211500
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_04_l_complete.png": {
+      "sha256": "d43c6283d5c54bd9b2b21aad757e614a398bf7fe574b9db399b88d143b39900c",
+      "bytes": 107768,
+      "mtime_ns": 1789144327621214200
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_04_r_complete.png": {
+      "sha256": "52409aa835bccb84d57b9adc456ce9dcf5210e7fa303d466317d4ffd0b0e7857",
+      "bytes": 113644,
+      "mtime_ns": 1789144332063535400
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_05_l_complete.png": {
+      "sha256": "86e1d93899402a6f3171851edb39713ab179ff8ca4204929cec18730ee22d857",
+      "bytes": 109007,
+      "mtime_ns": 1789144327823402900
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_05_r_complete.png": {
+      "sha256": "8df8824cc1e27c99da8b32dde5f1a1768e576a0f5a69ee55947c6d8d8bfb6669",
+      "bytes": 114838,
+      "mtime_ns": 1789144332254622700
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_06_l_complete.png": {
+      "sha256": "58346bd34165b56bd50a28aee6bbe8e4eafd995a28d5728107ed213b3803bba3",
+      "bytes": 112355,
+      "mtime_ns": 1789144328057736100
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_06_r_complete.png": {
+      "sha256": "2a5c5fad6ddf5e194a860e1a8272f87d664b84dc5293ff5d8d5ad3ce23a23cc1",
+      "bytes": 112630,
+      "mtime_ns": 1789144332471643200
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_07_l_complete.png": {
+      "sha256": "e8c6b3f400e3b0dc43f482047fd6e97b748c6bcfb6e6b10bd578dad348cb2637",
+      "bytes": 107445,
+      "mtime_ns": 1789144328271865900
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_07_r_complete.png": {
+      "sha256": "98ab37b0f0f918f70e38ed0f3b7124b817d49a2ea2889e27b281d085c549e830",
+      "bytes": 112679,
+      "mtime_ns": 1789144332669814800
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_08_l_complete.png": {
+      "sha256": "9ec28f6f3cfbc6b864ee71543df952061a46a8a1755b6e5d34451a836f8d3401",
+      "bytes": 107407,
+      "mtime_ns": 1789144328506022100
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_08_r_complete.png": {
+      "sha256": "5705855e0c1dd70bceedbb3416e7060f28e07225807bd3e6bdc4add57b1e7b1a",
+      "bytes": 113233,
+      "mtime_ns": 1789144332869447200
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_09_l_complete.png": {
+      "sha256": "aea702fc36153a69538a0d8093225bdda11571bf6e1e568e390636ae1e99049e",
+      "bytes": 113674,
+      "mtime_ns": 1789144328722392700
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_09_r_complete.png": {
+      "sha256": "b59babc0d955ee8784abcc813db844a30b2b14eae75cfcd8adab09ce9dfd33b6",
+      "bytes": 114710,
+      "mtime_ns": 1789144333070464500
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_10_l_complete.png": {
+      "sha256": "e315be19e37d3ff7808425bdb757637f8862d4642bb16bfdd7a65b1d4188303b",
+      "bytes": 107012,
+      "mtime_ns": 1789144328935056800
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_10_r_complete.png": {
+      "sha256": "2cc8292fb5e47aad0de89016397552b736ef98fdbd5b5bc9d8203068087b7148",
+      "bytes": 111729,
+      "mtime_ns": 1789144333286893800
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_11_l_complete.png": {
+      "sha256": "c7f087b12080c523f4db1472b69cb52eb8dbf0799a61e3224192057d1f91aca7",
+      "bytes": 108691,
+      "mtime_ns": 1789144329119426800
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_11_r_complete.png": {
+      "sha256": "045c2c8f1ae7e30b0566d87acaef9f8f65f1fc40d96e64c15c71d3114c2da193",
+      "bytes": 112498,
+      "mtime_ns": 1789144333475699700
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_12_l_complete.png": {
+      "sha256": "b0e45e02a3a57e6838fdcdc535cb10282275bd73563bdc525f9cdcbdc6bfaf78",
+      "bytes": 108582,
+      "mtime_ns": 1789144329337439700
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_12_r_complete.png": {
+      "sha256": "461ac85fa4272ac659c94be0863219c6fad399650246377558cd5a54e386a46a",
+      "bytes": 113918,
+      "mtime_ns": 1789144333687603900
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_13_l_complete.png": {
+      "sha256": "15ede65008a660c2fb104524fe5b2514b84c485be5d6f99d1cf927b8cd44bcb1",
+      "bytes": 110509,
+      "mtime_ns": 1789144329546910400
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_13_r_complete.png": {
+      "sha256": "64aa116fdfce0d22caeb277814ff5094e5030ee70e404218db9e97236a54ab02",
+      "bytes": 113548,
+      "mtime_ns": 1789144333903136500
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_14_l_complete.png": {
+      "sha256": "71317592276ee6fb49cf9ce5633c6d1efab1a1d40f68d43da81caf29a39fecd3",
+      "bytes": 108020,
+      "mtime_ns": 1789144329760287100
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_14_r_complete.png": {
+      "sha256": "631e09683635c4e352ae02b4264d1033813e032daea1345fb365f9b10dadf275",
+      "bytes": 111954,
+      "mtime_ns": 1789144334093389600
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_15_l_complete.png": {
+      "sha256": "3a76c48355c0c6691f1e65d40e5e42ae138b4fb1471060c98c86773723bfe856",
+      "bytes": 107449,
+      "mtime_ns": 1789144329971335100
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_15_r_complete.png": {
+      "sha256": "69b6fcfed7aa271766de239173c2f736e39a345d998ceb278bd6fd6bbe629fb9",
+      "bytes": 111869,
+      "mtime_ns": 1789144334286807500
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_16_l_complete.png": {
+      "sha256": "39ef8ba89dcd5593d2b75e05bc571551970e6e303ac18492f98c2dc1aba62149",
+      "bytes": 110512,
+      "mtime_ns": 1789144330169462700
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_16_r_complete.png": {
+      "sha256": "73342f2e3de5692e92f90466511826ff8ae83f60f386d61ff2eb406e6c5dde89",
+      "bytes": 114256,
+      "mtime_ns": 1789144334503360600
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_17_l_complete.png": {
+      "sha256": "e2487ffb4fc0898e0a6928efa2373b05e20c3e59e9324d10cb03300d35a1541b",
+      "bytes": 109003,
+      "mtime_ns": 1789144330375281600
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_17_r_complete.png": {
+      "sha256": "20135a5363a05d8f433bfb2055f85e1139f216cb06e320f60df3dfbaff1e7672",
+      "bytes": 116514,
+      "mtime_ns": 1789144334703976100
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_18_l_complete.png": {
+      "sha256": "05bb4d2173d60b36be479f61b230e75a28fa0d5065ca2856f2f38b8ac69a7ef1",
+      "bytes": 108385,
+      "mtime_ns": 1789144330589892500
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_18_r_complete.png": {
+      "sha256": "ff635dde8060750e8bb74b0ae5e19256628799281bf66b6f86ccb6b86e6de576",
+      "bytes": 112928,
+      "mtime_ns": 1789144334902916600
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_19_l_complete.png": {
+      "sha256": "eaeb542ba6a1bad1e367f0ac8c5b19cf628d9a4749a79ccfbecd021f56cca093",
+      "bytes": 110740,
+      "mtime_ns": 1789144330802324300
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_19_r_complete.png": {
+      "sha256": "d8465b469f9925ae103b037ea46cfdcc26c2368294594ddcd89a4f9bef23fb9c",
+      "bytes": 115277,
+      "mtime_ns": 1789144335104593900
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_20_l_complete.png": {
+      "sha256": "e47c17c35f103dc0e3ca513a2c0d39fe99a2a11832a1693a931885075f03aec2",
+      "bytes": 109098,
+      "mtime_ns": 1789144331003102000
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_20_r_complete.png": {
+      "sha256": "c64b1f615752d361824106068c574176398d077bbcaa284bc968d333559cd393",
+      "bytes": 112874,
+      "mtime_ns": 1789144335304266200
+    },
+    "tempgraphs\\_before_sequence_segmentation\\synchronization_report.csv": {
+      "sha256": "aa5a7e0ac1d5f885d8eed7510780ebd7bacd970c92a7340e0594008ace2de068",
+      "bytes": 3178,
+      "mtime_ns": 1789144636132508500
+    },
+    "tempgraphs\\complete_trial_manifest.csv": {
+      "sha256": "e1457fcee5f90a87ef03681ff4e57eeb0a9dc80ddfb19e6baa01043f8cf03946",
+      "bytes": 35341,
+      "mtime_ns": 1789145816581400500
+    },
+    "tempgraphs\\display_transforms.csv": {
+      "sha256": "2ae88fd7f165e9fee38de24226d9b80e4897c6b9e1803b4a7b2f613dd5c38b5a",
+      "bytes": 39971,
+      "mtime_ns": 1789145816584207800
+    },
+    "tempgraphs\\load_landmarks_provisional.csv": {
+      "sha256": "a753e5d798708941e4b276a31bc3d88469fed3de35d3b76e0787e37fb0de11f9",
+      "bytes": 43780,
+      "mtime_ns": 1789145816578718100
+    },
+    "tempgraphs\\phase_boundaries_provisional.csv": {
+      "sha256": "b3599a2499e3a1d0f1a4168ad68014594ba35a059cb018da7bdf0edc9aa4442f",
+      "bytes": 11313,
+      "mtime_ns": 1789145816571272200
+    },
+    "tempgraphs\\phase_intervals_provisional.csv": {
+      "sha256": "01f2ba2f72e8a470a24c452189d9e574ba3cad342254253b9dbb21679abab6d1",
+      "bytes": 25564,
+      "mtime_ns": 1789145816574718700
+    },
+    "tempgraphs\\segmentation_provenance.json": {
+      "sha256": "bcc0adf045fccf8cc8474336f13666ee59865a5bdb344d577111e13a3183100d",
+      "bytes": 946,
+      "mtime_ns": 1789145822023655800
+    },
+    "tempgraphs\\SEGMENTATION_README.md": {
+      "sha256": "449e0f155059a8db7d7c52578698291af15e99469befb47dc10b0990081871fb",
+      "bytes": 6555,
+      "mtime_ns": 1789146056410086900
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_01.png": {
+      "sha256": "15bee8743b0ee973b3afa3a6d49eeb73faf7f2f2f6c783f8123e56e3abf0d354",
+      "bytes": 346736,
+      "mtime_ns": 1789145816803877300
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_02.png": {
+      "sha256": "9f8c76dc83f7b827f5c48a03012884b83120c2f5feb7154bbc66dee0534e091b",
+      "bytes": 413107,
+      "mtime_ns": 1789145817086503400
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_03.png": {
+      "sha256": "b4775ede175b85f1cb2d233ded514c0ee259ade0cd7b794440d9aa61c5fccf4d",
+      "bytes": 402525,
+      "mtime_ns": 1789145817416489900
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_04.png": {
+      "sha256": "2438101cc7edb98b82cd1fec7f5bdec15f8a3c9839d0df8b0a073172d6e5c11f",
+      "bytes": 413594,
+      "mtime_ns": 1789145817574102800
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_05.png": {
+      "sha256": "d5de2ead152c95cbe3ba9a14fd3f98320edf1e632d517bcc9553123b0f653bd7",
+      "bytes": 400903,
+      "mtime_ns": 1789145817816842800
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_06.png": {
+      "sha256": "0e9a1b4347a70ed699165fe9f5ede5639d8956c2691016a7eda6e5c326838945",
+      "bytes": 414291,
+      "mtime_ns": 1789145817995691400
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_07.png": {
+      "sha256": "be56be9f44042116d90c47f1b74d91f487d8551742abd562a708aa0ddc67eeb2",
+      "bytes": 404829,
+      "mtime_ns": 1789145818303406500
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_08.png": {
+      "sha256": "388386d7784e13e3c875e3300577dd85238490bf126705acde6fe7da33d636ec",
+      "bytes": 414343,
+      "mtime_ns": 1789145818615984400
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_09.png": {
+      "sha256": "ae517dabf1e07553ccfd6c795f624d372106bffcf11d375ec94d197c2087b46a",
+      "bytes": 414656,
+      "mtime_ns": 1789145818893452500
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_10.png": {
+      "sha256": "6890ce45f69bf44b52043b2d277167e942347acc2344e2650966c9b2f7eb61ab",
+      "bytes": 395999,
+      "mtime_ns": 1789145819112155900
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_11.png": {
+      "sha256": "7dee6fa00ba85c1b4f2d8d98ed390538e3d19404f07885e6c40e14df82df0141",
+      "bytes": 405830,
+      "mtime_ns": 1789145819401144200
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_12.png": {
+      "sha256": "e3f38d13aec364f167bd9f08cee8783d2171544f8c54ea7b8174b4c612a8061e",
+      "bytes": 412920,
+      "mtime_ns": 1789145819663392900
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_13.png": {
+      "sha256": "7f32052d358b389ea714f12088448e43c5906f5b363eb036f85b98b6725d1ea8",
+      "bytes": 418314,
+      "mtime_ns": 1789145819867826500
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_14.png": {
+      "sha256": "d6b633826f735d2a103ec5a19b8a42a028c51433aecfe2a252a9ac31e35653c7",
+      "bytes": 417864,
+      "mtime_ns": 1789145820146904700
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_15.png": {
+      "sha256": "5b88c307f9db0c6e5dd0d77e61298a7d161300b8c7f08c69336e7439d666011b",
+      "bytes": 421321,
+      "mtime_ns": 1789145820426487300
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_16.png": {
+      "sha256": "a06ca43b30eedceb3635e39fd52bf46b6b2262e6268c9dc44faa5d0063ed508a",
+      "bytes": 410982,
+      "mtime_ns": 1789145820697689000
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_17.png": {
+      "sha256": "68321be602e5f2e44390456394f031097c9aeee20337c79bb92d922b03e940ae",
+      "bytes": 420052,
+      "mtime_ns": 1789145820981692400
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_18.png": {
+      "sha256": "9be5ee13493ecfeea9f7949c7b8fe57275f192ade6f25bd28573970568a1ebab",
+      "bytes": 419149,
+      "mtime_ns": 1789145821235956400
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_19.png": {
+      "sha256": "ece6911e0f36ae4332d38c4728fa80c24c644c4aaec70aae393a8ac4ca497476",
+      "bytes": 426134,
+      "mtime_ns": 1789145821553121300
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_20.png": {
+      "sha256": "aec81f94345d2fefa9da8175ffa04432812ca71ee84f3a111f3daf43e2ca6a75",
+      "bytes": 418368,
+      "mtime_ns": 1789145821889039100
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_21.png": {
+      "sha256": "ece0370d5d6a811a2181c4e8f85f0f8f2591cc1eded18c69d8f6d511c79a9693",
+      "bytes": 210996,
+      "mtime_ns": 1789145822015659000
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_01_l_segmented.csv": {
+      "sha256": "ac0d3ecf21b4bfd81b4c7977dfe556e4ea0dc82a8a5ca1dba8909aa9a18ef9eb",
+      "bytes": 501955,
+      "mtime_ns": 1789145788746178500
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_01_r_segmented.csv": {
+      "sha256": "ebafd123d73a1c82343d4e99d2e9251ad8656f0d47fc6189eb2ff1ac4e45d569",
+      "bytes": 492432,
+      "mtime_ns": 1789145788884161100
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_02_l_segmented.csv": {
+      "sha256": "a736221222110832bb44f41fe770d3122f8ee61ade361d68f90687644b0b3465",
+      "bytes": 216826,
+      "mtime_ns": 1789145788991057400
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_02_r_segmented.csv": {
+      "sha256": "0b8713a995d56e6fb9c0a6b23cf71431aa753553715ce9d7e75811b5f85e5a25",
+      "bytes": 218131,
+      "mtime_ns": 1789145789101748300
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_03_l_segmented.csv": {
+      "sha256": "7f2de74900a4155d65efbe274ced9ff2cb913e64e150cf3d92736ec614e94fcd",
+      "bytes": 494210,
+      "mtime_ns": 1789145789334114200
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_03_r_segmented.csv": {
+      "sha256": "a0333785c878e68970ab782764ba65c81278ecc8113c3bda649941d90d6d8006",
+      "bytes": 487788,
+      "mtime_ns": 1789145789475275600
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_04_l_segmented.csv": {
+      "sha256": "9701d01830bbb6144f14090447e2579ad44d2446a04f0424154a18ff378def5c",
+      "bytes": 476983,
+      "mtime_ns": 1789145789655356700
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_04_r_segmented.csv": {
+      "sha256": "41c23a2d0779602e47fac5f701e23980e502213f1b61a929ab380c9d4a7f81c0",
+      "bytes": 460767,
+      "mtime_ns": 1789145789794210500
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_05_l_segmented.csv": {
+      "sha256": "478619b4030e448d211c4e11d30e2cde591e9267edf0a2e3d2f9ac87c36f6762",
+      "bytes": 526927,
+      "mtime_ns": 1789145790056659400
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_05_r_segmented.csv": {
+      "sha256": "8f559d9daa21ac20c11e9172a8818e1010f09bb425a1643bdf5d9a40d20b7158",
+      "bytes": 519111,
+      "mtime_ns": 1789145790210917700
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_06_l_segmented.csv": {
+      "sha256": "55778943834996450c1db59c0c5dd26ddc0db1909e89a77da9b8a0be89096383",
+      "bytes": 467988,
+      "mtime_ns": 1789145790422658700
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_06_r_segmented.csv": {
+      "sha256": "ddf26fd39fc36579e661f334301e378fa3b48b2c8d98de22f1b05f8cdf49946c",
+      "bytes": 462755,
+      "mtime_ns": 1789145790564041400
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_07_l_segmented.csv": {
+      "sha256": "9cb0130f6cc9da7504136e35ef3bc449bbff748b6f78c25a9a4d9c5ce1eae487",
+      "bytes": 436409,
+      "mtime_ns": 1789145791060314700
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_07_r_segmented.csv": {
+      "sha256": "aaf81dd33b95f57882db9f4a5e83ec7a03f9bb90f79c31ca3aec8cb26e855015",
+      "bytes": 437108,
+      "mtime_ns": 1789145791384436600
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_08_l_segmented.csv": {
+      "sha256": "87846ca9db08ec17c28073d83f821c84d341ee81ba3e01accd9472c5779f1166",
+      "bytes": 451235,
+      "mtime_ns": 1789145791868473700
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_08_r_segmented.csv": {
+      "sha256": "401b3f51ce0a163a06323957f51924403bf0fc1530fc659d1eae0864e881ddc8",
+      "bytes": 449169,
+      "mtime_ns": 1789145792169493900
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_09_l_segmented.csv": {
+      "sha256": "a036388b897549b0f70a4179c7056fccb8a29b67725ff0bc84639d8f3445c608",
+      "bytes": 445274,
+      "mtime_ns": 1789145792638748000
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_09_r_segmented.csv": {
+      "sha256": "b10dbdc70ea7fb2deaf91b54b359e6eb483ecf676d7042c528cfd7ad5316cbbd",
+      "bytes": 440081,
+      "mtime_ns": 1789145792888902400
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_10_l_segmented.csv": {
+      "sha256": "37cdf363071c714f76d6977faf01f62ad487228dc0a1ed2554772beb75050b64",
+      "bytes": 456307,
+      "mtime_ns": 1789145793258302800
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_10_r_segmented.csv": {
+      "sha256": "e3b946fef05a0fded2b813fb41af8434e2f90d8681eb69586b060f4ffac21883",
+      "bytes": 447903,
+      "mtime_ns": 1789145793500469900
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_11_l_segmented.csv": {
+      "sha256": "9230dadff3494032cb73af88c6935f3c3b07c06b0f8b79583a96fadea5677a96",
+      "bytes": 442369,
+      "mtime_ns": 1789145794086976700
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_11_r_segmented.csv": {
+      "sha256": "364959a2b111a3e3a33a29daf6e8d26021f318decad14720d4b7f46207fe4617",
+      "bytes": 426966,
+      "mtime_ns": 1789145794497694300
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_12_l_segmented.csv": {
+      "sha256": "3f64241128c965dbc4f1393bbfb1628373147ae26126fc4cfdfb868f16da254f",
+      "bytes": 468875,
+      "mtime_ns": 1789145794938919800
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_12_r_segmented.csv": {
+      "sha256": "94890874e20ea255f8476807a0289caec67e4513c76d2a2963378545c0abf1cb",
+      "bytes": 464508,
+      "mtime_ns": 1789145795227069700
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_13_l_segmented.csv": {
+      "sha256": "dbd3f4ba5d8c9379f83aac1451333e495a67b7e8dd5765c3be6491aa50d96cea",
+      "bytes": 451259,
+      "mtime_ns": 1789145795526294300
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_13_r_segmented.csv": {
+      "sha256": "5121dc6983cc19ed69cc301237a5b662048ebd8a219964bb8552be7c3285a68e",
+      "bytes": 450050,
+      "mtime_ns": 1789145795763129000
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_14_l_segmented.csv": {
+      "sha256": "a220ee80d94fab2d41e17af131e78099ff85c8d7ef28d5af8bf160d8e5952c74",
+      "bytes": 540613,
+      "mtime_ns": 1789145796135067300
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_14_r_segmented.csv": {
+      "sha256": "ded1e06910be658e213f3d501767f779b333aa2e270ac771cf81eb06fdf03541",
+      "bytes": 530306,
+      "mtime_ns": 1789145796499741600
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_15_l_segmented.csv": {
+      "sha256": "2fa46ef72467a9feb5d42eea855825e1958b3b7576690866ed70d2a023d09304",
+      "bytes": 477919,
+      "mtime_ns": 1789145796892255100
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_15_r_segmented.csv": {
+      "sha256": "c6b9312fa2f69358cd4f482a641bb9a83d72f44b65becc587b25d334e8851f34",
+      "bytes": 467769,
+      "mtime_ns": 1789145797196970600
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_16_l_segmented.csv": {
+      "sha256": "febc3164697a5dac58092365ed9b51c6bdc1cadfb9fc6599f878fe204fc85017",
+      "bytes": 434302,
+      "mtime_ns": 1789145797658111900
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_16_r_segmented.csv": {
+      "sha256": "4398f60dd7b9ac7c58707e9596e13f7ff144a78af4caa952a1bbee1e9afa47f6",
+      "bytes": 434231,
+      "mtime_ns": 1789145797999236900
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_17_l_segmented.csv": {
+      "sha256": "6f97af98e06fe805c126c3cdf0ee5868d48e2d6a3e27164cfc813e1c6d2f3789",
+      "bytes": 495732,
+      "mtime_ns": 1789145798361630000
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_17_r_segmented.csv": {
+      "sha256": "9250cdc579493c0e99d2b0eb79c002b7edb75d9c2c73a8a4093357e298da55d8",
+      "bytes": 478700,
+      "mtime_ns": 1789145798720438800
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_18_l_segmented.csv": {
+      "sha256": "2f0debdf9e67be6978fb1cb8b8e3f726e7e546a40218996f8eee7072718ad9f0",
+      "bytes": 434344,
+      "mtime_ns": 1789145799255768200
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_18_r_segmented.csv": {
+      "sha256": "2e9faf73a7c96e2841e719008c42f1f802fd02611ec50d8f094387a31a773e86",
+      "bytes": 429472,
+      "mtime_ns": 1789145799520733200
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_19_l_segmented.csv": {
+      "sha256": "a68f5ddf6dad644736fb61f5b52362f07e48acdb15f3e8fa11bbcc03c1350998",
+      "bytes": 463283,
+      "mtime_ns": 1789145799993937000
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_19_r_segmented.csv": {
+      "sha256": "5daf936c8da001c72e475c6070a5bc2869e29365cbd6d187f7cec85fd1b21579",
+      "bytes": 450785,
+      "mtime_ns": 1789145800275253300
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_20_l_segmented.csv": {
+      "sha256": "d8f11b7bd121fbbe9bceccbccfc7ab191132801b4c7674b6a14cba168588e154",
+      "bytes": 475646,
+      "mtime_ns": 1789145800690875500
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_20_r_segmented.csv": {
+      "sha256": "0cad927a0053185fb37086df1f11ebafe7770f90267dd3fa9afec18a61ecead3",
+      "bytes": 457855,
+      "mtime_ns": 1789145800995234300
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_21_l_segmented.csv": {
+      "sha256": "f7f93109dbd0834af184b058c0d70d397e7111abd33ab7da73ef7d900b5eaf30",
+      "bytes": 467055,
+      "mtime_ns": 1789145801600910500
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_21_r_segmented.csv": {
+      "sha256": "871aa06f18b4ec35592c94eb832439d50348f72db935e030a24be17eab9de307",
+      "bytes": 451156,
+      "mtime_ns": 1789145801913114700
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_01_l_segmented.csv": {
+      "sha256": "f8c8899a8e6b4a2d7658f80faabc574562357968876a6bb4a08f9e05bd2ceacc",
+      "bytes": 515332,
+      "mtime_ns": 1789145803371440300
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_01_r_segmented.csv": {
+      "sha256": "c02196044d3d3139869297867e0a3dfd67602075cb2d70c139fc8fcfd4de9590",
+      "bytes": 487802,
+      "mtime_ns": 1789145803653101000
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_02_l_segmented.csv": {
+      "sha256": "33e8fc508c96caa05faec8fe5d20976790d9719b0f949e81294e787df9c007df",
+      "bytes": 418567,
+      "mtime_ns": 1789145803981738100
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_02_r_segmented.csv": {
+      "sha256": "c66c66a35f96d9fa217f0a6f389a99249648df5cf8152658bba51cf3ae0f10a5",
+      "bytes": 409648,
+      "mtime_ns": 1789145804300131900
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_03_l_segmented.csv": {
+      "sha256": "edbd37c56f4655bd518145e38ce835588f2bd45d8ebed7eb98f8eb48f9c8776c",
+      "bytes": 522412,
+      "mtime_ns": 1789145804854327500
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_03_r_segmented.csv": {
+      "sha256": "5733d83ba4b7144f8b42c08b48b1e35482d72ac66f27aab52366c7c1ea2bd805",
+      "bytes": 521272,
+      "mtime_ns": 1789145805229284400
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_04_l_segmented.csv": {
+      "sha256": "a921bb9a36c6e2a188a10bb4155705d81d543e80d976c09d9c6dc685a2e59061",
+      "bytes": 457841,
+      "mtime_ns": 1789145805614510900
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_04_r_segmented.csv": {
+      "sha256": "7780833ba45f790ce26584ee6f196e69bdb3b1caf275d5ecb0cf9c17d76a6bff",
+      "bytes": 449944,
+      "mtime_ns": 1789145805952328300
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_05_l_segmented.csv": {
+      "sha256": "99d8c5655c60de2f5a4e3a604ecf8e8a4c120155a93a684af8c82edd3ac049ee",
+      "bytes": 404567,
+      "mtime_ns": 1789145806466030100
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_05_r_segmented.csv": {
+      "sha256": "c6bd4c51c87b122d2a15b5853ba983dcee58878bf459211d95dd15705e6f4276",
+      "bytes": 399515,
+      "mtime_ns": 1789145806751798800
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_06_l_segmented.csv": {
+      "sha256": "dfbe9f5ac09c1b53266ec9f6c928e03aa528207d948445c13dfa4fd3b2379d7c",
+      "bytes": 426379,
+      "mtime_ns": 1789145807121869100
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_06_r_segmented.csv": {
+      "sha256": "3c5c6e6d5623506e7b80314dd242f9f15c553825e53ae84dc2f0506900eaddfe",
+      "bytes": 420043,
+      "mtime_ns": 1789145807315765600
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_07_l_segmented.csv": {
+      "sha256": "d5a25589529294e7d958251ff2a2536ed074ca218a90d2b1d0a08ab8bad40bd0",
+      "bytes": 408291,
+      "mtime_ns": 1789145807720520000
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_07_r_segmented.csv": {
+      "sha256": "4eb4d5213dce8cb06f8dce98209558394580387dc59ab205c27a98f2ea70c17e",
+      "bytes": 405745,
+      "mtime_ns": 1789145807964357500
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_08_l_segmented.csv": {
+      "sha256": "1795f340b1c47d00a673c343b9ca16c7c7d4190e6558ce6fa735383dbd750caa",
+      "bytes": 424713,
+      "mtime_ns": 1789145808296235500
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_08_r_segmented.csv": {
+      "sha256": "30cd37eaed578686830ed418016619bcca6a6d8fb46a8a704fa12ca96d754849",
+      "bytes": 424109,
+      "mtime_ns": 1789145808585205600
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_09_l_segmented.csv": {
+      "sha256": "7686479806bd6223eaebf0a521e666c227ff7b9ec902e9e5379dff693df2f2f8",
+      "bytes": 417429,
+      "mtime_ns": 1789145809051322600
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_09_r_segmented.csv": {
+      "sha256": "24cf48b178c635286192527a4ff0cf2cb1b628795973b571b9ceed26e127ef12",
+      "bytes": 410990,
+      "mtime_ns": 1789145809277029900
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_10_l_segmented.csv": {
+      "sha256": "9e18c095a3d514a78c3e20e7ac6cde1ddd2aba57fb0d66681e81b4a0cc1d2def",
+      "bytes": 436908,
+      "mtime_ns": 1789145809583596400
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_10_r_segmented.csv": {
+      "sha256": "696aa6132af7a456f019d4dc0a978f43ea735c25e4f35e3e45d874d3a2304a4b",
+      "bytes": 431125,
+      "mtime_ns": 1789145809803990400
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_11_l_segmented.csv": {
+      "sha256": "b5fa092c3cc195de5ebe248d5d0ac46860e46b493e0ea03fe931fa2bee52a421",
+      "bytes": 400801,
+      "mtime_ns": 1789145810232867900
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_11_r_segmented.csv": {
+      "sha256": "dc060b04ba80b6bf27e0acfd752c0c6cb31ae9730cd26b4e9679a432e6b0f1c8",
+      "bytes": 398820,
+      "mtime_ns": 1789145810463823100
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_12_l_segmented.csv": {
+      "sha256": "ece2f6d2a29a8fd6c2631a681174358b4f85a72f848d28b47c39ee23eee82d10",
+      "bytes": 429471,
+      "mtime_ns": 1789145810803477200
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_12_r_segmented.csv": {
+      "sha256": "36b69c62ff3b3ab39bd612f706e2e516fb042aac8ab9c76129bc10dc76353a22",
+      "bytes": 422649,
+      "mtime_ns": 1789145810998633900
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_13_l_segmented.csv": {
+      "sha256": "d71d4fcef404ad1d96a88b93493eaec8c080b6d0850f8fb54cf711723bcac3d1",
+      "bytes": 401042,
+      "mtime_ns": 1789145811458387900
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_13_r_segmented.csv": {
+      "sha256": "6a09d1184dc77ff607f26f6b5431dbeab95bb100eae28ebf11b711a0d8a4a272",
+      "bytes": 398342,
+      "mtime_ns": 1789145811687991300
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_14_l_segmented.csv": {
+      "sha256": "78289e7539e726f5bf9e498a476cbbcc9034d1230bb682c5e1f0319f05e14828",
+      "bytes": 417013,
+      "mtime_ns": 1789145812245689200
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_14_r_segmented.csv": {
+      "sha256": "edae36951566e7fc9cd2fef2ab61846efc994cd620a0be006a5cf0d858297e40",
+      "bytes": 404958,
+      "mtime_ns": 1789145812582417300
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_15_l_segmented.csv": {
+      "sha256": "93e153b1af85feddbad0903e1ed9433bd0fb273520eadf7ed2398199ec75f963",
+      "bytes": 386994,
+      "mtime_ns": 1789145812923366300
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_15_r_segmented.csv": {
+      "sha256": "bc956c28a39c168d11400d64660ae5d18de9ff4b02f501eab28bcdceab53ded1",
+      "bytes": 387582,
+      "mtime_ns": 1789145813208524000
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_16_l_segmented.csv": {
+      "sha256": "0b9b656f3d019daa5440a1563046097254c96747a9f891b94c9521475bb34607",
+      "bytes": 411177,
+      "mtime_ns": 1789145813631407700
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_16_r_segmented.csv": {
+      "sha256": "d15da5fb2b3ad2f173488b79d635702be4d9c22d3b3fd8af70281da988b346be",
+      "bytes": 403894,
+      "mtime_ns": 1789145813909960500
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_17_l_segmented.csv": {
+      "sha256": "9ba97cb04a2f03213e469882715b3c3999a6315cfcc8123a8b74b1fc58700f48",
+      "bytes": 390846,
+      "mtime_ns": 1789145814277775300
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_17_r_segmented.csv": {
+      "sha256": "d4ab6746c27e587336c3e08c5fb2f6b37e471b51b014b9b9866568e72486074f",
+      "bytes": 391632,
+      "mtime_ns": 1789145814462986400
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_18_l_segmented.csv": {
+      "sha256": "d26d19e927ceea6a08655b425f17e37912c0e1301df35266b38ac5747f04ec2d",
+      "bytes": 362534,
+      "mtime_ns": 1789145814888746000
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_18_r_segmented.csv": {
+      "sha256": "8cfdb5bfffeb394f8a89a6ffd08b2f19f8c98450caf8de2271fef9a024eb771b",
+      "bytes": 362702,
+      "mtime_ns": 1789145815106957400
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_19_l_segmented.csv": {
+      "sha256": "d11e080ec54d91fb57d38890d7b7318e5179ef945ef2b769b1286b50a0b4105e",
+      "bytes": 383991,
+      "mtime_ns": 1789145815502949800
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_19_r_segmented.csv": {
+      "sha256": "4ce5706f921fd19c62a052d4c4f114f9cd26e26612aa9a9b5c77ae4cdf288ae1",
+      "bytes": 377348,
+      "mtime_ns": 1789145815790081600
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_20_l_segmented.csv": {
+      "sha256": "cc8187849a5f069fc5161aa59da784a2ac0bbe5b00fedc6dbf1ac66f2fe583e3",
+      "bytes": 389307,
+      "mtime_ns": 1789145816196040500
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_20_r_segmented.csv": {
+      "sha256": "71b579133d742da347d63e9753922a067eb71a45e10e9348b87e7a00c8528931",
+      "bytes": 390372,
+      "mtime_ns": 1789145816526360100
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_01_l_complete.png": {
+      "sha256": "635438defd96bf2f63d592e380fd092b53c4e0d549111cccdb57a99777b7e38e",
+      "bytes": 123658,
+      "mtime_ns": 1789145788708561700
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_01_r_complete.png": {
+      "sha256": "22e2386f2fac2d73e64b155e76c9650bc22830ff4cad599498bbadac9f72405f",
+      "bytes": 127145,
+      "mtime_ns": 1789145788841661700
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_02_l_complete.png": {
+      "sha256": "5688ffca4919c83879763ad4f0d0e0f0be0f6a8b0ed7c351bdb6c79acd1f4ece",
+      "bytes": 107911,
+      "mtime_ns": 1789145788963122400
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_02_r_complete.png": {
+      "sha256": "1007a239a2a5cdc724243a6ac2d6b23e36abc7add6cf690745648b54f0c502a1",
+      "bytes": 114438,
+      "mtime_ns": 1789145789079477300
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_03_l_complete.png": {
+      "sha256": "a65f3d27a8a246fdc545bc2ce5ab9dde614e1b96bf9982c0b28924191b48fcaa",
+      "bytes": 125273,
+      "mtime_ns": 1789145789272257600
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_03_r_complete.png": {
+      "sha256": "29e69c7ce3c550f9d328b043d6185eec199ea02113b5b84b161804803c2ce163",
+      "bytes": 128223,
+      "mtime_ns": 1789145789434017000
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_04_l_complete.png": {
+      "sha256": "b0286b0bb9fdf5e6ccabbbed56d4d22946a59338357f7e90ee483f8e505ebaae",
+      "bytes": 123328,
+      "mtime_ns": 1789145789624013100
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_04_r_complete.png": {
+      "sha256": "15511e9d55dbc39737bf8070ad99e2801658b468e73ae0a759d4c215a242d428",
+      "bytes": 125967,
+      "mtime_ns": 1789145789754419900
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_05_l_complete.png": {
+      "sha256": "deb5c4f8576e1766747a84a145c21d7a0856fc0e466b9c15ac5032ee66b3c5eb",
+      "bytes": 121822,
+      "mtime_ns": 1789145789975220100
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_05_r_complete.png": {
+      "sha256": "d2cf23cbf754a6ed3ac59b79bb4531efd66890b6b37de3c6eac69361ab854594",
+      "bytes": 125659,
+      "mtime_ns": 1789145790171325200
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_06_l_complete.png": {
+      "sha256": "e8570dfe9975ddf8d9ab3f53a60c87d39e1e5fdfc200fe4459533cafd7133f0f",
+      "bytes": 122063,
+      "mtime_ns": 1789145790387303300
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_06_r_complete.png": {
+      "sha256": "eacf3b758da84720bd7b60233c9546be409eaac8d20c9b11c7fd12abd1248ce0",
+      "bytes": 126051,
+      "mtime_ns": 1789145790520518000
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_07_l_complete.png": {
+      "sha256": "23726c6d96fc96ee288e6e210cc80e6639eea6f63c3fd95268b6cfdf277b0e66",
+      "bytes": 124233,
+      "mtime_ns": 1789145790960209600
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_07_r_complete.png": {
+      "sha256": "f1494fe4ac7510c42f29e6fd59c7cc3cca7313042c1aeb9189559cc0405fcf49",
+      "bytes": 128896,
+      "mtime_ns": 1789145791323700100
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_08_l_complete.png": {
+      "sha256": "14834294aa2a00ebb0485dbde1ff816dff7ce335e4fbbdd83fe09cedd912191c",
+      "bytes": 122064,
+      "mtime_ns": 1789145791757210000
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_08_r_complete.png": {
+      "sha256": "66028697775f05a4a84a874817e724d83785c8609489498e65b23d0c048b221d",
+      "bytes": 127275,
+      "mtime_ns": 1789145792097040600
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_09_l_complete.png": {
+      "sha256": "6099bd228c7006ad7fbfc1880321ad31a8e9180c823a373589f1a6966aab837a",
+      "bytes": 124184,
+      "mtime_ns": 1789145792543381100
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_09_r_complete.png": {
+      "sha256": "2a642b7518a73934c4f363a14cdd3e9a03d8f831f3837878cb535ba8a5969615",
+      "bytes": 124732,
+      "mtime_ns": 1789145792820423700
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_10_l_complete.png": {
+      "sha256": "953d5a31576628e12b922c9af5333aab8fef896d6df5606fd512dc5da8e8632e",
+      "bytes": 124978,
+      "mtime_ns": 1789145793190882700
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_10_r_complete.png": {
+      "sha256": "9d15f49c77a1111c0f3f3ee56211b132df63f96b29deeeef9c9dbfe8bcf7d183",
+      "bytes": 128782,
+      "mtime_ns": 1789145793399620900
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_11_l_complete.png": {
+      "sha256": "d89e8a5a696b73d85bf4bd024a02912de19613bd9fc0a95f46e994673b15f785",
+      "bytes": 123645,
+      "mtime_ns": 1789145794002788600
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_11_r_complete.png": {
+      "sha256": "62f92e2c3a19fb790ca74ca067232c91a44550375e7e6d52acbdeb10d8eb5e82",
+      "bytes": 125553,
+      "mtime_ns": 1789145794386872700
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_12_l_complete.png": {
+      "sha256": "7feff8f1b9439fb480dc189bf200ffb83190b3b619a0c64d034daeb55e9ce2bf",
+      "bytes": 122115,
+      "mtime_ns": 1789145794828068400
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_12_r_complete.png": {
+      "sha256": "6652ce638fcd91161bdb04b72c4bd2190dad50ae39822448d681d69568fb29d0",
+      "bytes": 125798,
+      "mtime_ns": 1789145795168644100
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_13_l_complete.png": {
+      "sha256": "79dcf547626e866be1557e22bd65cb56553ebd1d24b05b19b486d126c703d1db",
+      "bytes": 123932,
+      "mtime_ns": 1789145795462653200
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_13_r_complete.png": {
+      "sha256": "52da34f8a30d97024bd08653db6abea0c5203287e200ae56d7b49d340fbc80ca",
+      "bytes": 127812,
+      "mtime_ns": 1789145795711102300
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_14_l_complete.png": {
+      "sha256": "7105dcd845b698568d8a72ab59a57a9c8811b7a6dcb1b42104d5ae2190a533ae",
+      "bytes": 120593,
+      "mtime_ns": 1789145796048572500
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_14_r_complete.png": {
+      "sha256": "748207826a478c9a6d449738cd24886fccce10339100c5b6e9c7be366e0d3bc7",
+      "bytes": 124488,
+      "mtime_ns": 1789145796374074800
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_15_l_complete.png": {
+      "sha256": "6e642861685add9c0aa926d3e567661bc5579d66d39cabd7a0cf23d1fc952603",
+      "bytes": 121711,
+      "mtime_ns": 1789145796798877200
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_15_r_complete.png": {
+      "sha256": "378e06d120ea5d1ad5ae26749e1721ce6b67c1a1814e0035a0145428f4a41d83",
+      "bytes": 128164,
+      "mtime_ns": 1789145797083701400
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_16_l_complete.png": {
+      "sha256": "95a7c6f174acf84ce0406bd480ef6bc721788b8b1b9fc2045dc9f2035ccac7c0",
+      "bytes": 122352,
+      "mtime_ns": 1789145797578509100
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_16_r_complete.png": {
+      "sha256": "62248bc9bceb3b88bbadea6369f24c59769de0aa5e1f244cd217acd9c73e3f77",
+      "bytes": 125548,
+      "mtime_ns": 1789145797896079600
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_17_l_complete.png": {
+      "sha256": "afc8deb58c452c654d9aa6119b49c7a7d75fbd8772b10ebdd0d59f47bb91a586",
+      "bytes": 122744,
+      "mtime_ns": 1789145798274462200
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_17_r_complete.png": {
+      "sha256": "c3eeae868694f7c9b031704d63214a683bf2ce4610957501a994817975c3113d",
+      "bytes": 126842,
+      "mtime_ns": 1789145798599631100
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_18_l_complete.png": {
+      "sha256": "d729057649059a11d90fbf5e60dece789dc5399c98a07dade0af0c8fc1da9a32",
+      "bytes": 122466,
+      "mtime_ns": 1789145799171709800
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_18_r_complete.png": {
+      "sha256": "d8ea318aee8638686d7bdcff7d554e83e6da977e696ded9499e8c82939a9d6cf",
+      "bytes": 126245,
+      "mtime_ns": 1789145799441385700
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_19_l_complete.png": {
+      "sha256": "af385d5159494d2be58194499fba35f94cba19e84babc905d4e1f28c801d755f",
+      "bytes": 122435,
+      "mtime_ns": 1789145799912129000
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_19_r_complete.png": {
+      "sha256": "e6f31d9906c123d1f29db118bba1542773df1857155557dbf45bd882d2e1272d",
+      "bytes": 126675,
+      "mtime_ns": 1789145800212222400
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_20_l_complete.png": {
+      "sha256": "e5828216fb88ba9fb2f53394a2c728e7e01d72296eff732cabe7b8b09db4f901",
+      "bytes": 121110,
+      "mtime_ns": 1789145800615019100
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_20_r_complete.png": {
+      "sha256": "4fa724c4be94213db652f6bf2b54a66dddb3d3bcc020637af855258b9f6f31c7",
+      "bytes": 123613,
+      "mtime_ns": 1789145800904853300
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_21_l_complete.png": {
+      "sha256": "801d5859a349d713a9e40687bd8345c844c3638dd0182885a4fcc3dff3d35760",
+      "bytes": 121609,
+      "mtime_ns": 1789145801486039500
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_21_r_complete.png": {
+      "sha256": "39aaf6e95f23cbe9489bb2d37ad1ea46bc3d38c46fccf88b18e25b7d55ef19ec",
+      "bytes": 125196,
+      "mtime_ns": 1789145801852814900
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_01_l_complete.png": {
+      "sha256": "1e4677176a4122c2385855bea92f15a4c682b3c9f9435f1e27cc386b4aac4bcd",
+      "bytes": 121469,
+      "mtime_ns": 1789145803303071600
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_01_r_complete.png": {
+      "sha256": "e39c05c74438629a2a08a9ae588ce96f27c4709dfc5ab7759b863dcf31cf2405",
+      "bytes": 122893,
+      "mtime_ns": 1789145803588744400
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_02_l_complete.png": {
+      "sha256": "3c1d515e6dd183163f00f0f63d8ad3ef2c4f67a13fccc356bbf157af4782ffb5",
+      "bytes": 124960,
+      "mtime_ns": 1789145803916481100
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_02_r_complete.png": {
+      "sha256": "d8ea887dedb41817cfa5ec52c79a46d17bc9458ba026a9a27e73ed758682cda8",
+      "bytes": 129777,
+      "mtime_ns": 1789145804220966100
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_03_l_complete.png": {
+      "sha256": "bb6410ff22c0d1d427f89616cb6d51fd9eee785830ab91fd222fcf603fb6a81b",
+      "bytes": 121670,
+      "mtime_ns": 1789145804762540700
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_03_r_complete.png": {
+      "sha256": "cbc3145794f7baa0b0a7afdc3d4ec15b2dcbca6409c71e13e07dbb1a97b92e6c",
+      "bytes": 129000,
+      "mtime_ns": 1789145805137030100
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_04_l_complete.png": {
+      "sha256": "e230dbf6dbfb2afe1a76f55779f191906e29ca7c4a68b43b52a329a40d45f3a7",
+      "bytes": 122465,
+      "mtime_ns": 1789145805528641400
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_04_r_complete.png": {
+      "sha256": "8eb16c836a40450e0ef6c72689481b44a594295bc3aa58f26301adeac3396428",
+      "bytes": 125149,
+      "mtime_ns": 1789145805857754500
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_05_l_complete.png": {
+      "sha256": "cd105a00bbc719c2b590d5ea0e1b3f7e708adce0ff50c4dd5b7ea22824036761",
+      "bytes": 123105,
+      "mtime_ns": 1789145806362023800
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_05_r_complete.png": {
+      "sha256": "a84a73761abe39c7da8fb2d8f1d5df40c0aa333e79cefe195d9a87ac4ba8cbde",
+      "bytes": 129055,
+      "mtime_ns": 1789145806672863000
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_06_l_complete.png": {
+      "sha256": "7d5da982987afc39d29035fd61cf2d0c591a32da18461d4950576c8f60397fe9",
+      "bytes": 124314,
+      "mtime_ns": 1789145807033085300
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_06_r_complete.png": {
+      "sha256": "0774ce6abdf923a4d882048d516dc52df258615a313de7f8a2cf6def517539d7",
+      "bytes": 128201,
+      "mtime_ns": 1789145807267608400
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_07_l_complete.png": {
+      "sha256": "6bb30bdac5abeaeed5fe7088da9e4a0d0a05a69c068f0dd9a989e3638cbdb75d",
+      "bytes": 122568,
+      "mtime_ns": 1789145807617348200
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_07_r_complete.png": {
+      "sha256": "598cf62e0e99fd5ee6dd0a38b7ed74ebe3ce1af6a500d0144a4a7c368058c079",
+      "bytes": 127963,
+      "mtime_ns": 1789145807898902900
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_08_l_complete.png": {
+      "sha256": "ef76c85038a483400cee300258a8182c2519171af37f49d982051251aecd008d",
+      "bytes": 122981,
+      "mtime_ns": 1789145808234325800
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_08_r_complete.png": {
+      "sha256": "0f52a7a61c7fa35828e8d1e98b9528ef6d1f320713620fdd1e0381bb026b73aa",
+      "bytes": 128418,
+      "mtime_ns": 1789145808486986100
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_09_l_complete.png": {
+      "sha256": "d1cc7ddb0353bd8cfe5147b88b079a2c312c94e20043b12ffafc6ad3cbcb7361",
+      "bytes": 126181,
+      "mtime_ns": 1789145808943317400
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_09_r_complete.png": {
+      "sha256": "680c0c41a87442e6db3f7db11b1e8c65ca7bb8cdcb0f71b087b5d00b2734b521",
+      "bytes": 129701,
+      "mtime_ns": 1789145809224775400
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_10_l_complete.png": {
+      "sha256": "2c15496bfa0015c2d9fa559581c4504b3e12d06f0faaf61fcfbe9d2d1498d32b",
+      "bytes": 121881,
+      "mtime_ns": 1789145809537990600
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_10_r_complete.png": {
+      "sha256": "721892d929903b65e615df9fcc4409ea0c034cfb2cb7c9dcbce02d115fbe1fc5",
+      "bytes": 126905,
+      "mtime_ns": 1789145809711615800
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_11_l_complete.png": {
+      "sha256": "9c79bb074b7ee26ef355547eb61d33a06669f3e1c1f94aa2c6de5828dbced503",
+      "bytes": 122952,
+      "mtime_ns": 1789145810145462500
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_11_r_complete.png": {
+      "sha256": "996930481641cf7f1fcb1a6c76b5ea1eccdb34e3e0963d0e872496751db036fa",
+      "bytes": 126912,
+      "mtime_ns": 1789145810406875700
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_12_l_complete.png": {
+      "sha256": "4f2bf030a882c543a642476ba0ec6defe2b735f7f989b5bd474213a356e79d5e",
+      "bytes": 123771,
+      "mtime_ns": 1789145810745342900
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_12_r_complete.png": {
+      "sha256": "4d4063e6593fcfc6dd294aee67ffedf681b6e449b8da160717d563fc39d92b9b",
+      "bytes": 129217,
+      "mtime_ns": 1789145810944059900
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_13_l_complete.png": {
+      "sha256": "12afdeb563a8c9037333b81d8cc2f347ebc8207f45f35aac2843521c802d4354",
+      "bytes": 126033,
+      "mtime_ns": 1789145811346614700
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_13_r_complete.png": {
+      "sha256": "0f541ff65fe4d404da5ff0d011426785ead90f97678939f1e198460443fedf24",
+      "bytes": 129000,
+      "mtime_ns": 1789145811621437000
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_14_l_complete.png": {
+      "sha256": "ac7ccb3a41c62a0fdea2979a00435a25f04166c8b5f360ef8e3562145911dda1",
+      "bytes": 123629,
+      "mtime_ns": 1789145812144324900
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_14_r_complete.png": {
+      "sha256": "b8fe4a1ad8f511cc3eb2aa4ea7cf3439d231f357cbd638387d98c070eacdf1fb",
+      "bytes": 127572,
+      "mtime_ns": 1789145812496039600
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_15_l_complete.png": {
+      "sha256": "441e645778feeaa9e1e6f5b6e925369f828f6c1bb68c0646bb6a17424a8c3f27",
+      "bytes": 121579,
+      "mtime_ns": 1789145812873515700
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_15_r_complete.png": {
+      "sha256": "f380bde9ef869fa687418aef34e3f62f0569de673b552c15ab60fe4c9fb35244",
+      "bytes": 125909,
+      "mtime_ns": 1789145813128167700
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_16_l_complete.png": {
+      "sha256": "9da6f01b856908b2f3000f08709e798223232588c32fd63c1e70decc478e7387",
+      "bytes": 125763,
+      "mtime_ns": 1789145813527361300
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_16_r_complete.png": {
+      "sha256": "5cdd239c252cff6f995c0ba0e4c43df1920625730182c880538960f99d37a541",
+      "bytes": 129840,
+      "mtime_ns": 1789145813839230800
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_17_l_complete.png": {
+      "sha256": "a20c56e3ae0773cc4faec0e3e2e1cc4356f7c5bdbd235173766b63246c784f8d",
+      "bytes": 123180,
+      "mtime_ns": 1789145814224091800
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_17_r_complete.png": {
+      "sha256": "39549d2e0628d2185a5b58c1d65bc8cbd2d2d0199eac8e8668fb6bd3eb884431",
+      "bytes": 127537,
+      "mtime_ns": 1789145814426265000
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_18_l_complete.png": {
+      "sha256": "06f12820758becfd88c95a1b34223d5e85a0d2e82bcba860c6065320a5482fec",
+      "bytes": 123681,
+      "mtime_ns": 1789145814781914800
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_18_r_complete.png": {
+      "sha256": "79cf927bb33fa69277370f2f1ec96f5125c043b5456acaad4fa329f3b2c418c0",
+      "bytes": 128247,
+      "mtime_ns": 1789145815057131800
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_19_l_complete.png": {
+      "sha256": "81db71d9206d65c9914889dd7e1c8ba28b538333a89621aea65ce0451ceb9557",
+      "bytes": 125483,
+      "mtime_ns": 1789145815413942500
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_19_r_complete.png": {
+      "sha256": "2489f03d17ad38e466cbaf33186cc4443fee30e95fe7a384a10132b00b56e92b",
+      "bytes": 129880,
+      "mtime_ns": 1789145815727546000
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_20_l_complete.png": {
+      "sha256": "17f53343a77f725d34e8ab3238ec93818bf6af2f6b433db54a0c8063853e6542",
+      "bytes": 123972,
+      "mtime_ns": 1789145816111016800
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_20_r_complete.png": {
+      "sha256": "7ebf5f4fcaf256f6ba3ece1de7333168da88454aa3d02c26bb472a36c2cdebbc",
+      "bytes": 127991,
+      "mtime_ns": 1789145816453256200
+    },
+    "tempgraphs\\SUB08_REVIEW.md": {
+      "sha256": "7aaaa73fc292e5c9dc144c5619ef874f57c5b7ba4a52ad17738b3cc17493af9b",
+      "bytes": 3739,
+      "mtime_ns": 1789145873985217700
+    },
+    "tempgraphs\\synchronization_report.csv": {
+      "sha256": "aa5a7e0ac1d5f885d8eed7510780ebd7bacd970c92a7340e0594008ace2de068",
+      "bytes": 3178,
+      "mtime_ns": 1789144636132508500
+    }
+  },
+  "protected_files_after": {
+    "dataset\\Sub05_H\\sub_1": {
+      "sha256": "5460c756e0e159ee1516953118322d900d22279124295d0a35e03f711fc75f87",
+      "bytes": 6552516,
+      "mtime_ns": 1639135246000000000
+    },
+    "dataset\\Sub05_H\\sub_1L": {
+      "sha256": "dc9bf445490ced9e9e0f07e072357180ebe5a7da4f481454c8ee37ce59175619",
+      "bytes": 1326584,
+      "mtime_ns": 1639135242000000000
+    },
+    "dataset\\Sub05_H\\sub_1R": {
+      "sha256": "9afbf14cccec4ca980b1bfbcc3b9a82e7db54eae4df752883a83db20e0a3ca1d",
+      "bytes": 1321999,
+      "mtime_ns": 1639135250000000000
+    },
+    "dataset\\Sub05_H\\sub_21": {
+      "sha256": "6653e65490d511972613657638c98134afad24e3107274e971c515c64cf90fbc",
+      "bytes": 5888432,
+      "mtime_ns": 1639135794000000000
+    },
+    "dataset\\Sub05_H\\sub_21L": {
+      "sha256": "91dc111022d4fbe20b2eb06169f0432aa3d1c608bc8ad08af2e4be75b13e7138",
+      "bytes": 1226535,
+      "mtime_ns": 1639135790000000000
+    },
+    "dataset\\Sub05_H\\sub_21R": {
+      "sha256": "67583e1702dbd84f4d0f4a2684dc3efbec183a321feda4313d3dbef8cf625a19",
+      "bytes": 1232854,
+      "mtime_ns": 1639135796000000000
+    },
+    "dataset\\Sub08_H\\sir_1": {
+      "sha256": "f4f2401bcb38e649d21ce8807910387c74f59a29ac58764aeb73211b32230308",
+      "bytes": 9185541,
+      "mtime_ns": 1638887388000000000
+    },
+    "dataset\\Sub08_H\\sir_1L": {
+      "sha256": "ab5f6378cbfd0307bd4a63715a79856cf5a1c2c0e54cd6c39deb21dec6ad4509",
+      "bytes": 1917589,
+      "mtime_ns": 1638887382000000000
+    },
+    "dataset\\Sub08_H\\sir_1R": {
+      "sha256": "cc51796e0b5ff28e186b81fc178f90643cf7e39f3b846917ca17556034cb3842",
+      "bytes": 1857984,
+      "mtime_ns": 1638887384000000000
+    },
+    "dataset\\Sub08_H\\sir_21": {
+      "sha256": "985a068a77063eab3d6a221ea361e8268baf4350b04a90756745bc06489596b0",
+      "bytes": 8386679,
+      "mtime_ns": 1638888470000000000
+    },
+    "dataset\\Sub08_H\\sir_21L": {
+      "sha256": "c96a885f78e3d016691aa2b292098575d38f85308f574c58455117eff12e1c6f",
+      "bytes": 1822291,
+      "mtime_ns": 1638888468000000000
+    },
+    "dataset\\Sub08_H\\sir_21R": {
+      "sha256": "dafcde33303bc451120585faf83aa1c87d801dcb4428d456753b6aacff9c7ef1",
+      "bytes": 1806849,
+      "mtime_ns": 1638888474000000000
+    },
+    "generate_tempgraphs.py": {
+      "sha256": "7c4bc38150ba8982b06469031c65826b0501511c475bdd713130f3ae041c271c",
+      "bytes": 22532,
+      "mtime_ns": 1789145766107934700
+    },
+    "subject08_review.py": {
+      "sha256": "2e57c0138cb4755ce9c4a7a6bcfdc721fe96288a8ed7bd334c0cd98f0831df67",
+      "bytes": 12967,
+      "mtime_ns": 1789145677443673100
+    },
+    "subject08_segmentation.py": {
+      "sha256": "3dc5d78b9f70999e08ba229ee32a2cd7c8a14484bb43280ad54e5d55efa303f4",
+      "bytes": 16405,
+      "mtime_ns": 1789145764650436900
+    },
+    "tempgraphs\\_before_sequence_segmentation\\complete_trial_manifest.csv": {
+      "sha256": "9737c3bdfd3cc971896dd942c39d79ddc206c26fbe0fb61ea5d0c37b47416c27",
+      "bytes": 20934,
+      "mtime_ns": 1789144335310804400
+    },
+    "tempgraphs\\_before_sequence_segmentation\\display_transforms.csv": {
+      "sha256": "6048f0d5c19d0d0acfc41d86391f6aafbc54e4238eebabdfc56eecf699ac980e",
+      "bytes": 39971,
+      "mtime_ns": 1789144335313870900
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_01_l_complete.png": {
+      "sha256": "4bf21d8702f116a58263fe118f8d4f5ecf0a1aa91a9c046c910230650a2254c3",
+      "bytes": 108097,
+      "mtime_ns": 1789144316742554100
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_01_r_complete.png": {
+      "sha256": "bf4e57b022f545bbe1b572de2f21430d57a98c3aeab372fe4d79d87e7368e2a8",
+      "bytes": 114885,
+      "mtime_ns": 1789144321548689900
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_02_l_complete.png": {
+      "sha256": "b2b116cdbcdb2348fc3c0b325ad1d8a985b783302a4c5f7370453a2396754f5f",
+      "bytes": 92989,
+      "mtime_ns": 1789144316932405900
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_02_r_complete.png": {
+      "sha256": "9d436df47391231a93fbf60b9fe06f2938d4350d9e6fc990f31bba3811ab8c38",
+      "bytes": 99359,
+      "mtime_ns": 1789144321721914800
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_03_l_complete.png": {
+      "sha256": "c627389e105a47a8383d35df0b87a7e5aaf397118ec9b994f37ae926461f060c",
+      "bytes": 110790,
+      "mtime_ns": 1789144317168080400
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_03_r_complete.png": {
+      "sha256": "5f31e8f9d55b0b7c1b9e0d0ada762541d10d95df064a88d8c734dd98cc7619fe",
+      "bytes": 114012,
+      "mtime_ns": 1789144321960722500
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_04_l_complete.png": {
+      "sha256": "6ec70855192bac1558900c5a22f03ca1b01a98415cc3246329c7b6d1583436d2",
+      "bytes": 108198,
+      "mtime_ns": 1789144317384638000
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_04_r_complete.png": {
+      "sha256": "ae16dc696914bda79cdfe7710cf328896b316f4a3b084c7b6179e24b5328697b",
+      "bytes": 110962,
+      "mtime_ns": 1789144322169921500
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_05_l_complete.png": {
+      "sha256": "0520287c58d2fa5a59773df044897f60e7078aeb856cd2b8980ac70e667834b2",
+      "bytes": 106565,
+      "mtime_ns": 1789144317620821500
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_05_r_complete.png": {
+      "sha256": "56b88e57c33c678b7126255e1512d23b03994da5197f11b253752a7b6f6c776c",
+      "bytes": 110415,
+      "mtime_ns": 1789144322402088700
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_06_l_complete.png": {
+      "sha256": "9687f234acf9622dc96a228ec334e9308848216203073c17539f1f00e3538ed3",
+      "bytes": 107635,
+      "mtime_ns": 1789144317869305500
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_06_r_complete.png": {
+      "sha256": "45a3a3580e62c77fea7daea99e3f04cc541c2d6bb169fa8cdd0b8ff0d7213d2d",
+      "bytes": 111629,
+      "mtime_ns": 1789144322604026400
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_07_l_complete.png": {
+      "sha256": "7cb32b0ceb3e1f7cbd1ebeb751d223fb806834adee4ed010e36262aef70d5a46",
+      "bytes": 108658,
+      "mtime_ns": 1789144318086948000
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_07_r_complete.png": {
+      "sha256": "2fdbe5509a59f3dc90096d7973d2c1fa280f14dc57c28e7ecc4c148f2bb63636",
+      "bytes": 113585,
+      "mtime_ns": 1789144322805886500
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_08_l_complete.png": {
+      "sha256": "246972da075b01f7e9d394cc85bcf5ffea714d6bac1146cf4130bf0e6ec90e42",
+      "bytes": 107748,
+      "mtime_ns": 1789144318307922600
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_08_r_complete.png": {
+      "sha256": "4bffe29b947e75c7968f2d2256499ecd46927def99774716cfbced8669306fa5",
+      "bytes": 112566,
+      "mtime_ns": 1789144323004223300
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_09_l_complete.png": {
+      "sha256": "7e6c010f78be648daf5c0e1f7655f4b10b2f0472c08f1cc013929c76ec442707",
+      "bytes": 109081,
+      "mtime_ns": 1789144318521362100
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_09_r_complete.png": {
+      "sha256": "b975a38f26b15873969ebc4afdedff97f0957903f3544bea25063d015e146cb1",
+      "bytes": 109652,
+      "mtime_ns": 1789144323236241100
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_10_l_complete.png": {
+      "sha256": "64c8b912f1932639510456101f5071e87cee6f5edcda8cece612012d105dc987",
+      "bytes": 110002,
+      "mtime_ns": 1789144318733567300
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_10_r_complete.png": {
+      "sha256": "0e357bf0e6bbad9cd127b408ce938dfe99ad173dc75dda51217173285bb27125",
+      "bytes": 113687,
+      "mtime_ns": 1789144323438073900
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_11_l_complete.png": {
+      "sha256": "4b6843994edf7be492c846e9f179fc9a7e935c656b965512343270500b89fdcc",
+      "bytes": 108223,
+      "mtime_ns": 1789144318937695200
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_11_r_complete.png": {
+      "sha256": "37039da6ffc81584823c9b73ed32f2cb7b189115f3d04e32fb85deaa464d8015",
+      "bytes": 110317,
+      "mtime_ns": 1789144323649406100
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_12_l_complete.png": {
+      "sha256": "805720f945200f6be5bc6300d3c4af510112413edcf9fa0205e6bf8381e1ef15",
+      "bytes": 107379,
+      "mtime_ns": 1789144319153707100
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_12_r_complete.png": {
+      "sha256": "92b2e95870facf4bc56491fa50cee7328dcf3306ce0354454a6431e93e761610",
+      "bytes": 111288,
+      "mtime_ns": 1789144323868649000
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_13_l_complete.png": {
+      "sha256": "a1e62b42abb0048518b7480c08182322ba99f0623098eed051d0f4f6ec2ea4d0",
+      "bytes": 108800,
+      "mtime_ns": 1789144319377082500
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_13_r_complete.png": {
+      "sha256": "6c7a52b58945b4504dafa6ad55f6a01a05de1a79b1b3e14fa2c256b1b3cfcf19",
+      "bytes": 115838,
+      "mtime_ns": 1789144324091017200
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_14_l_complete.png": {
+      "sha256": "b34c88eebd19fe7c7440296bb982295cda4513f8ded1f58f38f6fe4f56a6fd98",
+      "bytes": 105689,
+      "mtime_ns": 1789144319609904200
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_14_r_complete.png": {
+      "sha256": "d98743dc148f75bcc202e38d82831a5495d9dc66a3310ad05050c0677bca2418",
+      "bytes": 110223,
+      "mtime_ns": 1789144324340965400
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_15_l_complete.png": {
+      "sha256": "ed702df7fdd7fad6694cbb6fe6375f22d2458dbf83beeb9a44da7390d4f81706",
+      "bytes": 106376,
+      "mtime_ns": 1789144319839237300
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_15_r_complete.png": {
+      "sha256": "2838c07c9387248c90de13bd7dea59ff557c07ee371c7eb2884d734c3b0fc25c",
+      "bytes": 112614,
+      "mtime_ns": 1789144324562887500
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_16_l_complete.png": {
+      "sha256": "a349ec94a13f02719c5a94b2f3845dc78e489e2817780cdb664e6f7846fbc37f",
+      "bytes": 108333,
+      "mtime_ns": 1789144320054677300
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_16_r_complete.png": {
+      "sha256": "82ac69f0eac98fea8a5ef5b360f78af2ee14033d570dc2d5ca61b736c9ba34e0",
+      "bytes": 111402,
+      "mtime_ns": 1789144324771108300
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_17_l_complete.png": {
+      "sha256": "3472382751314788977ebfb068bb4c39ed2ef62d40c9e236bf210c9c3f7a49ae",
+      "bytes": 107086,
+      "mtime_ns": 1789144320271875900
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_17_r_complete.png": {
+      "sha256": "1aa19ffd6aa4ca42462c31e5ef09718c517fbd419a9f3d8beab4af0c183d2bbb",
+      "bytes": 111177,
+      "mtime_ns": 1789144324989925300
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_18_l_complete.png": {
+      "sha256": "4d05aeaab38a2f9d6f52b48569ef258cee177597e23ed64f3d55a2377f541564",
+      "bytes": 110980,
+      "mtime_ns": 1789144320486283600
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_18_r_complete.png": {
+      "sha256": "3a7549213bdfae9424763ca5e8bb5091c7dcb1fcaf123ea8aa11fda55b21f375",
+      "bytes": 114911,
+      "mtime_ns": 1789144325187263500
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_19_l_complete.png": {
+      "sha256": "b3a91654a013fc22c47dae1b82c8bb27274ad7c0e5b0686435a0635feb07f53d",
+      "bytes": 106553,
+      "mtime_ns": 1789144320721449700
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_19_r_complete.png": {
+      "sha256": "1df304dc115cf92508f913eb4ae6c7586ac95e741ff1defaa5e62e211a18257c",
+      "bytes": 111150,
+      "mtime_ns": 1789144325403910900
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_20_l_complete.png": {
+      "sha256": "776de5d9cf33c29636fa16991fd2b082cc6dcf73b455c2f43349f14c0b7f92c4",
+      "bytes": 107041,
+      "mtime_ns": 1789144320937699700
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_20_r_complete.png": {
+      "sha256": "d9d37c395f5cb530e4cb75d424885c90ee951f2c6ba47820b1f16a230fd5658d",
+      "bytes": 109499,
+      "mtime_ns": 1789144325637371700
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_21_l_complete.png": {
+      "sha256": "015b776af69e9890f7e0d970dda9bf83a9742bb93be6ef18f3a97377b342100a",
+      "bytes": 107095,
+      "mtime_ns": 1789144321156160700
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_1\\trial_21_r_complete.png": {
+      "sha256": "4d57adae4707f1f2aaa19ce751df543e92924507fbb24375f5ef57f48e64d457",
+      "bytes": 110777,
+      "mtime_ns": 1789144325838158600
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_01_l_complete.png": {
+      "sha256": "ffeba04aed97d88825f11789023a74a8d431f9f748e1833454977a49079b0275",
+      "bytes": 106491,
+      "mtime_ns": 1789144326946330600
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_01_r_complete.png": {
+      "sha256": "266b701a26e0900c11d8d579034374b73932e08efbc4f711acec408b768c437b",
+      "bytes": 107790,
+      "mtime_ns": 1789144331418210900
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_02_l_complete.png": {
+      "sha256": "5921ba4b15c5b52abbe068baa2b6d80a56dbafd535d5536a78f2537d7e14a197",
+      "bytes": 109936,
+      "mtime_ns": 1789144327154314200
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_02_r_complete.png": {
+      "sha256": "dad2c8ea8df76ca45f40505963ef9c82b672f4e9e0f79f1faef32c820f124ee5",
+      "bytes": 114884,
+      "mtime_ns": 1789144331621714700
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_03_l_complete.png": {
+      "sha256": "157b5f5d5a615497b00a6332f32b640f34f8c2290da5daa641f1b9cc2d7dfe41",
+      "bytes": 109244,
+      "mtime_ns": 1789144327387612200
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_03_r_complete.png": {
+      "sha256": "5b076a83db828031788d779da497fc6aac00ea9972146959c2ce1a1fd7e46d5b",
+      "bytes": 113432,
+      "mtime_ns": 1789144331840211500
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_04_l_complete.png": {
+      "sha256": "d43c6283d5c54bd9b2b21aad757e614a398bf7fe574b9db399b88d143b39900c",
+      "bytes": 107768,
+      "mtime_ns": 1789144327621214200
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_04_r_complete.png": {
+      "sha256": "52409aa835bccb84d57b9adc456ce9dcf5210e7fa303d466317d4ffd0b0e7857",
+      "bytes": 113644,
+      "mtime_ns": 1789144332063535400
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_05_l_complete.png": {
+      "sha256": "86e1d93899402a6f3171851edb39713ab179ff8ca4204929cec18730ee22d857",
+      "bytes": 109007,
+      "mtime_ns": 1789144327823402900
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_05_r_complete.png": {
+      "sha256": "8df8824cc1e27c99da8b32dde5f1a1768e576a0f5a69ee55947c6d8d8bfb6669",
+      "bytes": 114838,
+      "mtime_ns": 1789144332254622700
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_06_l_complete.png": {
+      "sha256": "58346bd34165b56bd50a28aee6bbe8e4eafd995a28d5728107ed213b3803bba3",
+      "bytes": 112355,
+      "mtime_ns": 1789144328057736100
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_06_r_complete.png": {
+      "sha256": "2a5c5fad6ddf5e194a860e1a8272f87d664b84dc5293ff5d8d5ad3ce23a23cc1",
+      "bytes": 112630,
+      "mtime_ns": 1789144332471643200
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_07_l_complete.png": {
+      "sha256": "e8c6b3f400e3b0dc43f482047fd6e97b748c6bcfb6e6b10bd578dad348cb2637",
+      "bytes": 107445,
+      "mtime_ns": 1789144328271865900
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_07_r_complete.png": {
+      "sha256": "98ab37b0f0f918f70e38ed0f3b7124b817d49a2ea2889e27b281d085c549e830",
+      "bytes": 112679,
+      "mtime_ns": 1789144332669814800
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_08_l_complete.png": {
+      "sha256": "9ec28f6f3cfbc6b864ee71543df952061a46a8a1755b6e5d34451a836f8d3401",
+      "bytes": 107407,
+      "mtime_ns": 1789144328506022100
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_08_r_complete.png": {
+      "sha256": "5705855e0c1dd70bceedbb3416e7060f28e07225807bd3e6bdc4add57b1e7b1a",
+      "bytes": 113233,
+      "mtime_ns": 1789144332869447200
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_09_l_complete.png": {
+      "sha256": "aea702fc36153a69538a0d8093225bdda11571bf6e1e568e390636ae1e99049e",
+      "bytes": 113674,
+      "mtime_ns": 1789144328722392700
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_09_r_complete.png": {
+      "sha256": "b59babc0d955ee8784abcc813db844a30b2b14eae75cfcd8adab09ce9dfd33b6",
+      "bytes": 114710,
+      "mtime_ns": 1789144333070464500
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_10_l_complete.png": {
+      "sha256": "e315be19e37d3ff7808425bdb757637f8862d4642bb16bfdd7a65b1d4188303b",
+      "bytes": 107012,
+      "mtime_ns": 1789144328935056800
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_10_r_complete.png": {
+      "sha256": "2cc8292fb5e47aad0de89016397552b736ef98fdbd5b5bc9d8203068087b7148",
+      "bytes": 111729,
+      "mtime_ns": 1789144333286893800
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_11_l_complete.png": {
+      "sha256": "c7f087b12080c523f4db1472b69cb52eb8dbf0799a61e3224192057d1f91aca7",
+      "bytes": 108691,
+      "mtime_ns": 1789144329119426800
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_11_r_complete.png": {
+      "sha256": "045c2c8f1ae7e30b0566d87acaef9f8f65f1fc40d96e64c15c71d3114c2da193",
+      "bytes": 112498,
+      "mtime_ns": 1789144333475699700
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_12_l_complete.png": {
+      "sha256": "b0e45e02a3a57e6838fdcdc535cb10282275bd73563bdc525f9cdcbdc6bfaf78",
+      "bytes": 108582,
+      "mtime_ns": 1789144329337439700
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_12_r_complete.png": {
+      "sha256": "461ac85fa4272ac659c94be0863219c6fad399650246377558cd5a54e386a46a",
+      "bytes": 113918,
+      "mtime_ns": 1789144333687603900
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_13_l_complete.png": {
+      "sha256": "15ede65008a660c2fb104524fe5b2514b84c485be5d6f99d1cf927b8cd44bcb1",
+      "bytes": 110509,
+      "mtime_ns": 1789144329546910400
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_13_r_complete.png": {
+      "sha256": "64aa116fdfce0d22caeb277814ff5094e5030ee70e404218db9e97236a54ab02",
+      "bytes": 113548,
+      "mtime_ns": 1789144333903136500
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_14_l_complete.png": {
+      "sha256": "71317592276ee6fb49cf9ce5633c6d1efab1a1d40f68d43da81caf29a39fecd3",
+      "bytes": 108020,
+      "mtime_ns": 1789144329760287100
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_14_r_complete.png": {
+      "sha256": "631e09683635c4e352ae02b4264d1033813e032daea1345fb365f9b10dadf275",
+      "bytes": 111954,
+      "mtime_ns": 1789144334093389600
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_15_l_complete.png": {
+      "sha256": "3a76c48355c0c6691f1e65d40e5e42ae138b4fb1471060c98c86773723bfe856",
+      "bytes": 107449,
+      "mtime_ns": 1789144329971335100
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_15_r_complete.png": {
+      "sha256": "69b6fcfed7aa271766de239173c2f736e39a345d998ceb278bd6fd6bbe629fb9",
+      "bytes": 111869,
+      "mtime_ns": 1789144334286807500
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_16_l_complete.png": {
+      "sha256": "39ef8ba89dcd5593d2b75e05bc571551970e6e303ac18492f98c2dc1aba62149",
+      "bytes": 110512,
+      "mtime_ns": 1789144330169462700
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_16_r_complete.png": {
+      "sha256": "73342f2e3de5692e92f90466511826ff8ae83f60f386d61ff2eb406e6c5dde89",
+      "bytes": 114256,
+      "mtime_ns": 1789144334503360600
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_17_l_complete.png": {
+      "sha256": "e2487ffb4fc0898e0a6928efa2373b05e20c3e59e9324d10cb03300d35a1541b",
+      "bytes": 109003,
+      "mtime_ns": 1789144330375281600
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_17_r_complete.png": {
+      "sha256": "20135a5363a05d8f433bfb2055f85e1139f216cb06e320f60df3dfbaff1e7672",
+      "bytes": 116514,
+      "mtime_ns": 1789144334703976100
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_18_l_complete.png": {
+      "sha256": "05bb4d2173d60b36be479f61b230e75a28fa0d5065ca2856f2f38b8ac69a7ef1",
+      "bytes": 108385,
+      "mtime_ns": 1789144330589892500
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_18_r_complete.png": {
+      "sha256": "ff635dde8060750e8bb74b0ae5e19256628799281bf66b6f86ccb6b86e6de576",
+      "bytes": 112928,
+      "mtime_ns": 1789144334902916600
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_19_l_complete.png": {
+      "sha256": "eaeb542ba6a1bad1e367f0ac8c5b19cf628d9a4749a79ccfbecd021f56cca093",
+      "bytes": 110740,
+      "mtime_ns": 1789144330802324300
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_19_r_complete.png": {
+      "sha256": "d8465b469f9925ae103b037ea46cfdcc26c2368294594ddcd89a4f9bef23fb9c",
+      "bytes": 115277,
+      "mtime_ns": 1789144335104593900
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_20_l_complete.png": {
+      "sha256": "e47c17c35f103dc0e3ca513a2c0d39fe99a2a11832a1693a931885075f03aec2",
+      "bytes": 109098,
+      "mtime_ns": 1789144331003102000
+    },
+    "tempgraphs\\_before_sequence_segmentation\\Sub08_H\\sir_21\\trial_20_r_complete.png": {
+      "sha256": "c64b1f615752d361824106068c574176398d077bbcaa284bc968d333559cd393",
+      "bytes": 112874,
+      "mtime_ns": 1789144335304266200
+    },
+    "tempgraphs\\_before_sequence_segmentation\\synchronization_report.csv": {
+      "sha256": "aa5a7e0ac1d5f885d8eed7510780ebd7bacd970c92a7340e0594008ace2de068",
+      "bytes": 3178,
+      "mtime_ns": 1789144636132508500
+    },
+    "tempgraphs\\complete_trial_manifest.csv": {
+      "sha256": "e1457fcee5f90a87ef03681ff4e57eeb0a9dc80ddfb19e6baa01043f8cf03946",
+      "bytes": 35341,
+      "mtime_ns": 1789145816581400500
+    },
+    "tempgraphs\\display_transforms.csv": {
+      "sha256": "2ae88fd7f165e9fee38de24226d9b80e4897c6b9e1803b4a7b2f613dd5c38b5a",
+      "bytes": 39971,
+      "mtime_ns": 1789145816584207800
+    },
+    "tempgraphs\\load_landmarks_provisional.csv": {
+      "sha256": "a753e5d798708941e4b276a31bc3d88469fed3de35d3b76e0787e37fb0de11f9",
+      "bytes": 43780,
+      "mtime_ns": 1789145816578718100
+    },
+    "tempgraphs\\phase_boundaries_provisional.csv": {
+      "sha256": "b3599a2499e3a1d0f1a4168ad68014594ba35a059cb018da7bdf0edc9aa4442f",
+      "bytes": 11313,
+      "mtime_ns": 1789145816571272200
+    },
+    "tempgraphs\\phase_intervals_provisional.csv": {
+      "sha256": "01f2ba2f72e8a470a24c452189d9e574ba3cad342254253b9dbb21679abab6d1",
+      "bytes": 25564,
+      "mtime_ns": 1789145816574718700
+    },
+    "tempgraphs\\segmentation_provenance.json": {
+      "sha256": "bcc0adf045fccf8cc8474336f13666ee59865a5bdb344d577111e13a3183100d",
+      "bytes": 946,
+      "mtime_ns": 1789145822023655800
+    },
+    "tempgraphs\\SEGMENTATION_README.md": {
+      "sha256": "449e0f155059a8db7d7c52578698291af15e99469befb47dc10b0990081871fb",
+      "bytes": 6555,
+      "mtime_ns": 1789146056410086900
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_01.png": {
+      "sha256": "15bee8743b0ee973b3afa3a6d49eeb73faf7f2f2f6c783f8123e56e3abf0d354",
+      "bytes": 346736,
+      "mtime_ns": 1789145816803877300
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_02.png": {
+      "sha256": "9f8c76dc83f7b827f5c48a03012884b83120c2f5feb7154bbc66dee0534e091b",
+      "bytes": 413107,
+      "mtime_ns": 1789145817086503400
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_03.png": {
+      "sha256": "b4775ede175b85f1cb2d233ded514c0ee259ade0cd7b794440d9aa61c5fccf4d",
+      "bytes": 402525,
+      "mtime_ns": 1789145817416489900
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_04.png": {
+      "sha256": "2438101cc7edb98b82cd1fec7f5bdec15f8a3c9839d0df8b0a073172d6e5c11f",
+      "bytes": 413594,
+      "mtime_ns": 1789145817574102800
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_05.png": {
+      "sha256": "d5de2ead152c95cbe3ba9a14fd3f98320edf1e632d517bcc9553123b0f653bd7",
+      "bytes": 400903,
+      "mtime_ns": 1789145817816842800
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_06.png": {
+      "sha256": "0e9a1b4347a70ed699165fe9f5ede5639d8956c2691016a7eda6e5c326838945",
+      "bytes": 414291,
+      "mtime_ns": 1789145817995691400
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_07.png": {
+      "sha256": "be56be9f44042116d90c47f1b74d91f487d8551742abd562a708aa0ddc67eeb2",
+      "bytes": 404829,
+      "mtime_ns": 1789145818303406500
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_08.png": {
+      "sha256": "388386d7784e13e3c875e3300577dd85238490bf126705acde6fe7da33d636ec",
+      "bytes": 414343,
+      "mtime_ns": 1789145818615984400
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_09.png": {
+      "sha256": "ae517dabf1e07553ccfd6c795f624d372106bffcf11d375ec94d197c2087b46a",
+      "bytes": 414656,
+      "mtime_ns": 1789145818893452500
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_10.png": {
+      "sha256": "6890ce45f69bf44b52043b2d277167e942347acc2344e2650966c9b2f7eb61ab",
+      "bytes": 395999,
+      "mtime_ns": 1789145819112155900
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_11.png": {
+      "sha256": "7dee6fa00ba85c1b4f2d8d98ed390538e3d19404f07885e6c40e14df82df0141",
+      "bytes": 405830,
+      "mtime_ns": 1789145819401144200
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_12.png": {
+      "sha256": "e3f38d13aec364f167bd9f08cee8783d2171544f8c54ea7b8174b4c612a8061e",
+      "bytes": 412920,
+      "mtime_ns": 1789145819663392900
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_13.png": {
+      "sha256": "7f32052d358b389ea714f12088448e43c5906f5b363eb036f85b98b6725d1ea8",
+      "bytes": 418314,
+      "mtime_ns": 1789145819867826500
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_14.png": {
+      "sha256": "d6b633826f735d2a103ec5a19b8a42a028c51433aecfe2a252a9ac31e35653c7",
+      "bytes": 417864,
+      "mtime_ns": 1789145820146904700
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_15.png": {
+      "sha256": "5b88c307f9db0c6e5dd0d77e61298a7d161300b8c7f08c69336e7439d666011b",
+      "bytes": 421321,
+      "mtime_ns": 1789145820426487300
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_16.png": {
+      "sha256": "a06ca43b30eedceb3635e39fd52bf46b6b2262e6268c9dc44faa5d0063ed508a",
+      "bytes": 410982,
+      "mtime_ns": 1789145820697689000
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_17.png": {
+      "sha256": "68321be602e5f2e44390456394f031097c9aeee20337c79bb92d922b03e940ae",
+      "bytes": 420052,
+      "mtime_ns": 1789145820981692400
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_18.png": {
+      "sha256": "9be5ee13493ecfeea9f7949c7b8fe57275f192ade6f25bd28573970568a1ebab",
+      "bytes": 419149,
+      "mtime_ns": 1789145821235956400
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_19.png": {
+      "sha256": "ece6911e0f36ae4332d38c4728fa80c24c644c4aaec70aae393a8ac4ca497476",
+      "bytes": 426134,
+      "mtime_ns": 1789145821553121300
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_20.png": {
+      "sha256": "aec81f94345d2fefa9da8175ffa04432812ca71ee84f3a111f3daf43e2ca6a75",
+      "bytes": 418368,
+      "mtime_ns": 1789145821889039100
+    },
+    "tempgraphs\\segmentation_review_sheets\\page_21.png": {
+      "sha256": "ece0370d5d6a811a2181c4e8f85f0f8f2591cc1eded18c69d8f6d511c79a9693",
+      "bytes": 210996,
+      "mtime_ns": 1789145822015659000
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_01_l_segmented.csv": {
+      "sha256": "ac0d3ecf21b4bfd81b4c7977dfe556e4ea0dc82a8a5ca1dba8909aa9a18ef9eb",
+      "bytes": 501955,
+      "mtime_ns": 1789145788746178500
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_01_r_segmented.csv": {
+      "sha256": "ebafd123d73a1c82343d4e99d2e9251ad8656f0d47fc6189eb2ff1ac4e45d569",
+      "bytes": 492432,
+      "mtime_ns": 1789145788884161100
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_02_l_segmented.csv": {
+      "sha256": "a736221222110832bb44f41fe770d3122f8ee61ade361d68f90687644b0b3465",
+      "bytes": 216826,
+      "mtime_ns": 1789145788991057400
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_02_r_segmented.csv": {
+      "sha256": "0b8713a995d56e6fb9c0a6b23cf71431aa753553715ce9d7e75811b5f85e5a25",
+      "bytes": 218131,
+      "mtime_ns": 1789145789101748300
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_03_l_segmented.csv": {
+      "sha256": "7f2de74900a4155d65efbe274ced9ff2cb913e64e150cf3d92736ec614e94fcd",
+      "bytes": 494210,
+      "mtime_ns": 1789145789334114200
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_03_r_segmented.csv": {
+      "sha256": "a0333785c878e68970ab782764ba65c81278ecc8113c3bda649941d90d6d8006",
+      "bytes": 487788,
+      "mtime_ns": 1789145789475275600
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_04_l_segmented.csv": {
+      "sha256": "9701d01830bbb6144f14090447e2579ad44d2446a04f0424154a18ff378def5c",
+      "bytes": 476983,
+      "mtime_ns": 1789145789655356700
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_04_r_segmented.csv": {
+      "sha256": "41c23a2d0779602e47fac5f701e23980e502213f1b61a929ab380c9d4a7f81c0",
+      "bytes": 460767,
+      "mtime_ns": 1789145789794210500
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_05_l_segmented.csv": {
+      "sha256": "478619b4030e448d211c4e11d30e2cde591e9267edf0a2e3d2f9ac87c36f6762",
+      "bytes": 526927,
+      "mtime_ns": 1789145790056659400
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_05_r_segmented.csv": {
+      "sha256": "8f559d9daa21ac20c11e9172a8818e1010f09bb425a1643bdf5d9a40d20b7158",
+      "bytes": 519111,
+      "mtime_ns": 1789145790210917700
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_06_l_segmented.csv": {
+      "sha256": "55778943834996450c1db59c0c5dd26ddc0db1909e89a77da9b8a0be89096383",
+      "bytes": 467988,
+      "mtime_ns": 1789145790422658700
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_06_r_segmented.csv": {
+      "sha256": "ddf26fd39fc36579e661f334301e378fa3b48b2c8d98de22f1b05f8cdf49946c",
+      "bytes": 462755,
+      "mtime_ns": 1789145790564041400
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_07_l_segmented.csv": {
+      "sha256": "9cb0130f6cc9da7504136e35ef3bc449bbff748b6f78c25a9a4d9c5ce1eae487",
+      "bytes": 436409,
+      "mtime_ns": 1789145791060314700
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_07_r_segmented.csv": {
+      "sha256": "aaf81dd33b95f57882db9f4a5e83ec7a03f9bb90f79c31ca3aec8cb26e855015",
+      "bytes": 437108,
+      "mtime_ns": 1789145791384436600
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_08_l_segmented.csv": {
+      "sha256": "87846ca9db08ec17c28073d83f821c84d341ee81ba3e01accd9472c5779f1166",
+      "bytes": 451235,
+      "mtime_ns": 1789145791868473700
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_08_r_segmented.csv": {
+      "sha256": "401b3f51ce0a163a06323957f51924403bf0fc1530fc659d1eae0864e881ddc8",
+      "bytes": 449169,
+      "mtime_ns": 1789145792169493900
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_09_l_segmented.csv": {
+      "sha256": "a036388b897549b0f70a4179c7056fccb8a29b67725ff0bc84639d8f3445c608",
+      "bytes": 445274,
+      "mtime_ns": 1789145792638748000
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_09_r_segmented.csv": {
+      "sha256": "b10dbdc70ea7fb2deaf91b54b359e6eb483ecf676d7042c528cfd7ad5316cbbd",
+      "bytes": 440081,
+      "mtime_ns": 1789145792888902400
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_10_l_segmented.csv": {
+      "sha256": "37cdf363071c714f76d6977faf01f62ad487228dc0a1ed2554772beb75050b64",
+      "bytes": 456307,
+      "mtime_ns": 1789145793258302800
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_10_r_segmented.csv": {
+      "sha256": "e3b946fef05a0fded2b813fb41af8434e2f90d8681eb69586b060f4ffac21883",
+      "bytes": 447903,
+      "mtime_ns": 1789145793500469900
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_11_l_segmented.csv": {
+      "sha256": "9230dadff3494032cb73af88c6935f3c3b07c06b0f8b79583a96fadea5677a96",
+      "bytes": 442369,
+      "mtime_ns": 1789145794086976700
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_11_r_segmented.csv": {
+      "sha256": "364959a2b111a3e3a33a29daf6e8d26021f318decad14720d4b7f46207fe4617",
+      "bytes": 426966,
+      "mtime_ns": 1789145794497694300
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_12_l_segmented.csv": {
+      "sha256": "3f64241128c965dbc4f1393bbfb1628373147ae26126fc4cfdfb868f16da254f",
+      "bytes": 468875,
+      "mtime_ns": 1789145794938919800
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_12_r_segmented.csv": {
+      "sha256": "94890874e20ea255f8476807a0289caec67e4513c76d2a2963378545c0abf1cb",
+      "bytes": 464508,
+      "mtime_ns": 1789145795227069700
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_13_l_segmented.csv": {
+      "sha256": "dbd3f4ba5d8c9379f83aac1451333e495a67b7e8dd5765c3be6491aa50d96cea",
+      "bytes": 451259,
+      "mtime_ns": 1789145795526294300
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_13_r_segmented.csv": {
+      "sha256": "5121dc6983cc19ed69cc301237a5b662048ebd8a219964bb8552be7c3285a68e",
+      "bytes": 450050,
+      "mtime_ns": 1789145795763129000
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_14_l_segmented.csv": {
+      "sha256": "a220ee80d94fab2d41e17af131e78099ff85c8d7ef28d5af8bf160d8e5952c74",
+      "bytes": 540613,
+      "mtime_ns": 1789145796135067300
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_14_r_segmented.csv": {
+      "sha256": "ded1e06910be658e213f3d501767f779b333aa2e270ac771cf81eb06fdf03541",
+      "bytes": 530306,
+      "mtime_ns": 1789145796499741600
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_15_l_segmented.csv": {
+      "sha256": "2fa46ef72467a9feb5d42eea855825e1958b3b7576690866ed70d2a023d09304",
+      "bytes": 477919,
+      "mtime_ns": 1789145796892255100
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_15_r_segmented.csv": {
+      "sha256": "c6b9312fa2f69358cd4f482a641bb9a83d72f44b65becc587b25d334e8851f34",
+      "bytes": 467769,
+      "mtime_ns": 1789145797196970600
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_16_l_segmented.csv": {
+      "sha256": "febc3164697a5dac58092365ed9b51c6bdc1cadfb9fc6599f878fe204fc85017",
+      "bytes": 434302,
+      "mtime_ns": 1789145797658111900
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_16_r_segmented.csv": {
+      "sha256": "4398f60dd7b9ac7c58707e9596e13f7ff144a78af4caa952a1bbee1e9afa47f6",
+      "bytes": 434231,
+      "mtime_ns": 1789145797999236900
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_17_l_segmented.csv": {
+      "sha256": "6f97af98e06fe805c126c3cdf0ee5868d48e2d6a3e27164cfc813e1c6d2f3789",
+      "bytes": 495732,
+      "mtime_ns": 1789145798361630000
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_17_r_segmented.csv": {
+      "sha256": "9250cdc579493c0e99d2b0eb79c002b7edb75d9c2c73a8a4093357e298da55d8",
+      "bytes": 478700,
+      "mtime_ns": 1789145798720438800
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_18_l_segmented.csv": {
+      "sha256": "2f0debdf9e67be6978fb1cb8b8e3f726e7e546a40218996f8eee7072718ad9f0",
+      "bytes": 434344,
+      "mtime_ns": 1789145799255768200
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_18_r_segmented.csv": {
+      "sha256": "2e9faf73a7c96e2841e719008c42f1f802fd02611ec50d8f094387a31a773e86",
+      "bytes": 429472,
+      "mtime_ns": 1789145799520733200
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_19_l_segmented.csv": {
+      "sha256": "a68f5ddf6dad644736fb61f5b52362f07e48acdb15f3e8fa11bbcc03c1350998",
+      "bytes": 463283,
+      "mtime_ns": 1789145799993937000
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_19_r_segmented.csv": {
+      "sha256": "5daf936c8da001c72e475c6070a5bc2869e29365cbd6d187f7cec85fd1b21579",
+      "bytes": 450785,
+      "mtime_ns": 1789145800275253300
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_20_l_segmented.csv": {
+      "sha256": "d8f11b7bd121fbbe9bceccbccfc7ab191132801b4c7674b6a14cba168588e154",
+      "bytes": 475646,
+      "mtime_ns": 1789145800690875500
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_20_r_segmented.csv": {
+      "sha256": "0cad927a0053185fb37086df1f11ebafe7770f90267dd3fa9afec18a61ecead3",
+      "bytes": 457855,
+      "mtime_ns": 1789145800995234300
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_21_l_segmented.csv": {
+      "sha256": "f7f93109dbd0834af184b058c0d70d397e7111abd33ab7da73ef7d900b5eaf30",
+      "bytes": 467055,
+      "mtime_ns": 1789145801600910500
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_1\\trial_21_r_segmented.csv": {
+      "sha256": "871aa06f18b4ec35592c94eb832439d50348f72db935e030a24be17eab9de307",
+      "bytes": 451156,
+      "mtime_ns": 1789145801913114700
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_01_l_segmented.csv": {
+      "sha256": "f8c8899a8e6b4a2d7658f80faabc574562357968876a6bb4a08f9e05bd2ceacc",
+      "bytes": 515332,
+      "mtime_ns": 1789145803371440300
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_01_r_segmented.csv": {
+      "sha256": "c02196044d3d3139869297867e0a3dfd67602075cb2d70c139fc8fcfd4de9590",
+      "bytes": 487802,
+      "mtime_ns": 1789145803653101000
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_02_l_segmented.csv": {
+      "sha256": "33e8fc508c96caa05faec8fe5d20976790d9719b0f949e81294e787df9c007df",
+      "bytes": 418567,
+      "mtime_ns": 1789145803981738100
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_02_r_segmented.csv": {
+      "sha256": "c66c66a35f96d9fa217f0a6f389a99249648df5cf8152658bba51cf3ae0f10a5",
+      "bytes": 409648,
+      "mtime_ns": 1789145804300131900
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_03_l_segmented.csv": {
+      "sha256": "edbd37c56f4655bd518145e38ce835588f2bd45d8ebed7eb98f8eb48f9c8776c",
+      "bytes": 522412,
+      "mtime_ns": 1789145804854327500
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_03_r_segmented.csv": {
+      "sha256": "5733d83ba4b7144f8b42c08b48b1e35482d72ac66f27aab52366c7c1ea2bd805",
+      "bytes": 521272,
+      "mtime_ns": 1789145805229284400
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_04_l_segmented.csv": {
+      "sha256": "a921bb9a36c6e2a188a10bb4155705d81d543e80d976c09d9c6dc685a2e59061",
+      "bytes": 457841,
+      "mtime_ns": 1789145805614510900
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_04_r_segmented.csv": {
+      "sha256": "7780833ba45f790ce26584ee6f196e69bdb3b1caf275d5ecb0cf9c17d76a6bff",
+      "bytes": 449944,
+      "mtime_ns": 1789145805952328300
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_05_l_segmented.csv": {
+      "sha256": "99d8c5655c60de2f5a4e3a604ecf8e8a4c120155a93a684af8c82edd3ac049ee",
+      "bytes": 404567,
+      "mtime_ns": 1789145806466030100
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_05_r_segmented.csv": {
+      "sha256": "c6bd4c51c87b122d2a15b5853ba983dcee58878bf459211d95dd15705e6f4276",
+      "bytes": 399515,
+      "mtime_ns": 1789145806751798800
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_06_l_segmented.csv": {
+      "sha256": "dfbe9f5ac09c1b53266ec9f6c928e03aa528207d948445c13dfa4fd3b2379d7c",
+      "bytes": 426379,
+      "mtime_ns": 1789145807121869100
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_06_r_segmented.csv": {
+      "sha256": "3c5c6e6d5623506e7b80314dd242f9f15c553825e53ae84dc2f0506900eaddfe",
+      "bytes": 420043,
+      "mtime_ns": 1789145807315765600
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_07_l_segmented.csv": {
+      "sha256": "d5a25589529294e7d958251ff2a2536ed074ca218a90d2b1d0a08ab8bad40bd0",
+      "bytes": 408291,
+      "mtime_ns": 1789145807720520000
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_07_r_segmented.csv": {
+      "sha256": "4eb4d5213dce8cb06f8dce98209558394580387dc59ab205c27a98f2ea70c17e",
+      "bytes": 405745,
+      "mtime_ns": 1789145807964357500
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_08_l_segmented.csv": {
+      "sha256": "1795f340b1c47d00a673c343b9ca16c7c7d4190e6558ce6fa735383dbd750caa",
+      "bytes": 424713,
+      "mtime_ns": 1789145808296235500
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_08_r_segmented.csv": {
+      "sha256": "30cd37eaed578686830ed418016619bcca6a6d8fb46a8a704fa12ca96d754849",
+      "bytes": 424109,
+      "mtime_ns": 1789145808585205600
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_09_l_segmented.csv": {
+      "sha256": "7686479806bd6223eaebf0a521e666c227ff7b9ec902e9e5379dff693df2f2f8",
+      "bytes": 417429,
+      "mtime_ns": 1789145809051322600
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_09_r_segmented.csv": {
+      "sha256": "24cf48b178c635286192527a4ff0cf2cb1b628795973b571b9ceed26e127ef12",
+      "bytes": 410990,
+      "mtime_ns": 1789145809277029900
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_10_l_segmented.csv": {
+      "sha256": "9e18c095a3d514a78c3e20e7ac6cde1ddd2aba57fb0d66681e81b4a0cc1d2def",
+      "bytes": 436908,
+      "mtime_ns": 1789145809583596400
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_10_r_segmented.csv": {
+      "sha256": "696aa6132af7a456f019d4dc0a978f43ea735c25e4f35e3e45d874d3a2304a4b",
+      "bytes": 431125,
+      "mtime_ns": 1789145809803990400
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_11_l_segmented.csv": {
+      "sha256": "b5fa092c3cc195de5ebe248d5d0ac46860e46b493e0ea03fe931fa2bee52a421",
+      "bytes": 400801,
+      "mtime_ns": 1789145810232867900
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_11_r_segmented.csv": {
+      "sha256": "dc060b04ba80b6bf27e0acfd752c0c6cb31ae9730cd26b4e9679a432e6b0f1c8",
+      "bytes": 398820,
+      "mtime_ns": 1789145810463823100
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_12_l_segmented.csv": {
+      "sha256": "ece2f6d2a29a8fd6c2631a681174358b4f85a72f848d28b47c39ee23eee82d10",
+      "bytes": 429471,
+      "mtime_ns": 1789145810803477200
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_12_r_segmented.csv": {
+      "sha256": "36b69c62ff3b3ab39bd612f706e2e516fb042aac8ab9c76129bc10dc76353a22",
+      "bytes": 422649,
+      "mtime_ns": 1789145810998633900
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_13_l_segmented.csv": {
+      "sha256": "d71d4fcef404ad1d96a88b93493eaec8c080b6d0850f8fb54cf711723bcac3d1",
+      "bytes": 401042,
+      "mtime_ns": 1789145811458387900
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_13_r_segmented.csv": {
+      "sha256": "6a09d1184dc77ff607f26f6b5431dbeab95bb100eae28ebf11b711a0d8a4a272",
+      "bytes": 398342,
+      "mtime_ns": 1789145811687991300
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_14_l_segmented.csv": {
+      "sha256": "78289e7539e726f5bf9e498a476cbbcc9034d1230bb682c5e1f0319f05e14828",
+      "bytes": 417013,
+      "mtime_ns": 1789145812245689200
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_14_r_segmented.csv": {
+      "sha256": "edae36951566e7fc9cd2fef2ab61846efc994cd620a0be006a5cf0d858297e40",
+      "bytes": 404958,
+      "mtime_ns": 1789145812582417300
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_15_l_segmented.csv": {
+      "sha256": "93e153b1af85feddbad0903e1ed9433bd0fb273520eadf7ed2398199ec75f963",
+      "bytes": 386994,
+      "mtime_ns": 1789145812923366300
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_15_r_segmented.csv": {
+      "sha256": "bc956c28a39c168d11400d64660ae5d18de9ff4b02f501eab28bcdceab53ded1",
+      "bytes": 387582,
+      "mtime_ns": 1789145813208524000
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_16_l_segmented.csv": {
+      "sha256": "0b9b656f3d019daa5440a1563046097254c96747a9f891b94c9521475bb34607",
+      "bytes": 411177,
+      "mtime_ns": 1789145813631407700
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_16_r_segmented.csv": {
+      "sha256": "d15da5fb2b3ad2f173488b79d635702be4d9c22d3b3fd8af70281da988b346be",
+      "bytes": 403894,
+      "mtime_ns": 1789145813909960500
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_17_l_segmented.csv": {
+      "sha256": "9ba97cb04a2f03213e469882715b3c3999a6315cfcc8123a8b74b1fc58700f48",
+      "bytes": 390846,
+      "mtime_ns": 1789145814277775300
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_17_r_segmented.csv": {
+      "sha256": "d4ab6746c27e587336c3e08c5fb2f6b37e471b51b014b9b9866568e72486074f",
+      "bytes": 391632,
+      "mtime_ns": 1789145814462986400
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_18_l_segmented.csv": {
+      "sha256": "d26d19e927ceea6a08655b425f17e37912c0e1301df35266b38ac5747f04ec2d",
+      "bytes": 362534,
+      "mtime_ns": 1789145814888746000
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_18_r_segmented.csv": {
+      "sha256": "8cfdb5bfffeb394f8a89a6ffd08b2f19f8c98450caf8de2271fef9a024eb771b",
+      "bytes": 362702,
+      "mtime_ns": 1789145815106957400
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_19_l_segmented.csv": {
+      "sha256": "d11e080ec54d91fb57d38890d7b7318e5179ef945ef2b769b1286b50a0b4105e",
+      "bytes": 383991,
+      "mtime_ns": 1789145815502949800
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_19_r_segmented.csv": {
+      "sha256": "4ce5706f921fd19c62a052d4c4f114f9cd26e26612aa9a9b5c77ae4cdf288ae1",
+      "bytes": 377348,
+      "mtime_ns": 1789145815790081600
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_20_l_segmented.csv": {
+      "sha256": "cc8187849a5f069fc5161aa59da784a2ac0bbe5b00fedc6dbf1ac66f2fe583e3",
+      "bytes": 389307,
+      "mtime_ns": 1789145816196040500
+    },
+    "tempgraphs\\segmented_data\\Sub08_H\\sir_21\\trial_20_r_segmented.csv": {
+      "sha256": "71b579133d742da347d63e9753922a067eb71a45e10e9348b87e7a00c8528931",
+      "bytes": 390372,
+      "mtime_ns": 1789145816526360100
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_01_l_complete.png": {
+      "sha256": "635438defd96bf2f63d592e380fd092b53c4e0d549111cccdb57a99777b7e38e",
+      "bytes": 123658,
+      "mtime_ns": 1789145788708561700
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_01_r_complete.png": {
+      "sha256": "22e2386f2fac2d73e64b155e76c9650bc22830ff4cad599498bbadac9f72405f",
+      "bytes": 127145,
+      "mtime_ns": 1789145788841661700
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_02_l_complete.png": {
+      "sha256": "5688ffca4919c83879763ad4f0d0e0f0be0f6a8b0ed7c351bdb6c79acd1f4ece",
+      "bytes": 107911,
+      "mtime_ns": 1789145788963122400
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_02_r_complete.png": {
+      "sha256": "1007a239a2a5cdc724243a6ac2d6b23e36abc7add6cf690745648b54f0c502a1",
+      "bytes": 114438,
+      "mtime_ns": 1789145789079477300
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_03_l_complete.png": {
+      "sha256": "a65f3d27a8a246fdc545bc2ce5ab9dde614e1b96bf9982c0b28924191b48fcaa",
+      "bytes": 125273,
+      "mtime_ns": 1789145789272257600
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_03_r_complete.png": {
+      "sha256": "29e69c7ce3c550f9d328b043d6185eec199ea02113b5b84b161804803c2ce163",
+      "bytes": 128223,
+      "mtime_ns": 1789145789434017000
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_04_l_complete.png": {
+      "sha256": "b0286b0bb9fdf5e6ccabbbed56d4d22946a59338357f7e90ee483f8e505ebaae",
+      "bytes": 123328,
+      "mtime_ns": 1789145789624013100
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_04_r_complete.png": {
+      "sha256": "15511e9d55dbc39737bf8070ad99e2801658b468e73ae0a759d4c215a242d428",
+      "bytes": 125967,
+      "mtime_ns": 1789145789754419900
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_05_l_complete.png": {
+      "sha256": "deb5c4f8576e1766747a84a145c21d7a0856fc0e466b9c15ac5032ee66b3c5eb",
+      "bytes": 121822,
+      "mtime_ns": 1789145789975220100
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_05_r_complete.png": {
+      "sha256": "d2cf23cbf754a6ed3ac59b79bb4531efd66890b6b37de3c6eac69361ab854594",
+      "bytes": 125659,
+      "mtime_ns": 1789145790171325200
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_06_l_complete.png": {
+      "sha256": "e8570dfe9975ddf8d9ab3f53a60c87d39e1e5fdfc200fe4459533cafd7133f0f",
+      "bytes": 122063,
+      "mtime_ns": 1789145790387303300
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_06_r_complete.png": {
+      "sha256": "eacf3b758da84720bd7b60233c9546be409eaac8d20c9b11c7fd12abd1248ce0",
+      "bytes": 126051,
+      "mtime_ns": 1789145790520518000
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_07_l_complete.png": {
+      "sha256": "23726c6d96fc96ee288e6e210cc80e6639eea6f63c3fd95268b6cfdf277b0e66",
+      "bytes": 124233,
+      "mtime_ns": 1789145790960209600
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_07_r_complete.png": {
+      "sha256": "f1494fe4ac7510c42f29e6fd59c7cc3cca7313042c1aeb9189559cc0405fcf49",
+      "bytes": 128896,
+      "mtime_ns": 1789145791323700100
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_08_l_complete.png": {
+      "sha256": "14834294aa2a00ebb0485dbde1ff816dff7ce335e4fbbdd83fe09cedd912191c",
+      "bytes": 122064,
+      "mtime_ns": 1789145791757210000
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_08_r_complete.png": {
+      "sha256": "66028697775f05a4a84a874817e724d83785c8609489498e65b23d0c048b221d",
+      "bytes": 127275,
+      "mtime_ns": 1789145792097040600
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_09_l_complete.png": {
+      "sha256": "6099bd228c7006ad7fbfc1880321ad31a8e9180c823a373589f1a6966aab837a",
+      "bytes": 124184,
+      "mtime_ns": 1789145792543381100
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_09_r_complete.png": {
+      "sha256": "2a642b7518a73934c4f363a14cdd3e9a03d8f831f3837878cb535ba8a5969615",
+      "bytes": 124732,
+      "mtime_ns": 1789145792820423700
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_10_l_complete.png": {
+      "sha256": "953d5a31576628e12b922c9af5333aab8fef896d6df5606fd512dc5da8e8632e",
+      "bytes": 124978,
+      "mtime_ns": 1789145793190882700
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_10_r_complete.png": {
+      "sha256": "9d15f49c77a1111c0f3f3ee56211b132df63f96b29deeeef9c9dbfe8bcf7d183",
+      "bytes": 128782,
+      "mtime_ns": 1789145793399620900
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_11_l_complete.png": {
+      "sha256": "d89e8a5a696b73d85bf4bd024a02912de19613bd9fc0a95f46e994673b15f785",
+      "bytes": 123645,
+      "mtime_ns": 1789145794002788600
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_11_r_complete.png": {
+      "sha256": "62f92e2c3a19fb790ca74ca067232c91a44550375e7e6d52acbdeb10d8eb5e82",
+      "bytes": 125553,
+      "mtime_ns": 1789145794386872700
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_12_l_complete.png": {
+      "sha256": "7feff8f1b9439fb480dc189bf200ffb83190b3b619a0c64d034daeb55e9ce2bf",
+      "bytes": 122115,
+      "mtime_ns": 1789145794828068400
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_12_r_complete.png": {
+      "sha256": "6652ce638fcd91161bdb04b72c4bd2190dad50ae39822448d681d69568fb29d0",
+      "bytes": 125798,
+      "mtime_ns": 1789145795168644100
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_13_l_complete.png": {
+      "sha256": "79dcf547626e866be1557e22bd65cb56553ebd1d24b05b19b486d126c703d1db",
+      "bytes": 123932,
+      "mtime_ns": 1789145795462653200
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_13_r_complete.png": {
+      "sha256": "52da34f8a30d97024bd08653db6abea0c5203287e200ae56d7b49d340fbc80ca",
+      "bytes": 127812,
+      "mtime_ns": 1789145795711102300
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_14_l_complete.png": {
+      "sha256": "7105dcd845b698568d8a72ab59a57a9c8811b7a6dcb1b42104d5ae2190a533ae",
+      "bytes": 120593,
+      "mtime_ns": 1789145796048572500
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_14_r_complete.png": {
+      "sha256": "748207826a478c9a6d449738cd24886fccce10339100c5b6e9c7be366e0d3bc7",
+      "bytes": 124488,
+      "mtime_ns": 1789145796374074800
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_15_l_complete.png": {
+      "sha256": "6e642861685add9c0aa926d3e567661bc5579d66d39cabd7a0cf23d1fc952603",
+      "bytes": 121711,
+      "mtime_ns": 1789145796798877200
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_15_r_complete.png": {
+      "sha256": "378e06d120ea5d1ad5ae26749e1721ce6b67c1a1814e0035a0145428f4a41d83",
+      "bytes": 128164,
+      "mtime_ns": 1789145797083701400
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_16_l_complete.png": {
+      "sha256": "95a7c6f174acf84ce0406bd480ef6bc721788b8b1b9fc2045dc9f2035ccac7c0",
+      "bytes": 122352,
+      "mtime_ns": 1789145797578509100
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_16_r_complete.png": {
+      "sha256": "62248bc9bceb3b88bbadea6369f24c59769de0aa5e1f244cd217acd9c73e3f77",
+      "bytes": 125548,
+      "mtime_ns": 1789145797896079600
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_17_l_complete.png": {
+      "sha256": "afc8deb58c452c654d9aa6119b49c7a7d75fbd8772b10ebdd0d59f47bb91a586",
+      "bytes": 122744,
+      "mtime_ns": 1789145798274462200
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_17_r_complete.png": {
+      "sha256": "c3eeae868694f7c9b031704d63214a683bf2ce4610957501a994817975c3113d",
+      "bytes": 126842,
+      "mtime_ns": 1789145798599631100
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_18_l_complete.png": {
+      "sha256": "d729057649059a11d90fbf5e60dece789dc5399c98a07dade0af0c8fc1da9a32",
+      "bytes": 122466,
+      "mtime_ns": 1789145799171709800
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_18_r_complete.png": {
+      "sha256": "d8ea318aee8638686d7bdcff7d554e83e6da977e696ded9499e8c82939a9d6cf",
+      "bytes": 126245,
+      "mtime_ns": 1789145799441385700
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_19_l_complete.png": {
+      "sha256": "af385d5159494d2be58194499fba35f94cba19e84babc905d4e1f28c801d755f",
+      "bytes": 122435,
+      "mtime_ns": 1789145799912129000
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_19_r_complete.png": {
+      "sha256": "e6f31d9906c123d1f29db118bba1542773df1857155557dbf45bd882d2e1272d",
+      "bytes": 126675,
+      "mtime_ns": 1789145800212222400
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_20_l_complete.png": {
+      "sha256": "e5828216fb88ba9fb2f53394a2c728e7e01d72296eff732cabe7b8b09db4f901",
+      "bytes": 121110,
+      "mtime_ns": 1789145800615019100
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_20_r_complete.png": {
+      "sha256": "4fa724c4be94213db652f6bf2b54a66dddb3d3bcc020637af855258b9f6f31c7",
+      "bytes": 123613,
+      "mtime_ns": 1789145800904853300
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_21_l_complete.png": {
+      "sha256": "801d5859a349d713a9e40687bd8345c844c3638dd0182885a4fcc3dff3d35760",
+      "bytes": 121609,
+      "mtime_ns": 1789145801486039500
+    },
+    "tempgraphs\\Sub08_H\\sir_1\\trial_21_r_complete.png": {
+      "sha256": "39aaf6e95f23cbe9489bb2d37ad1ea46bc3d38c46fccf88b18e25b7d55ef19ec",
+      "bytes": 125196,
+      "mtime_ns": 1789145801852814900
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_01_l_complete.png": {
+      "sha256": "1e4677176a4122c2385855bea92f15a4c682b3c9f9435f1e27cc386b4aac4bcd",
+      "bytes": 121469,
+      "mtime_ns": 1789145803303071600
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_01_r_complete.png": {
+      "sha256": "e39c05c74438629a2a08a9ae588ce96f27c4709dfc5ab7759b863dcf31cf2405",
+      "bytes": 122893,
+      "mtime_ns": 1789145803588744400
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_02_l_complete.png": {
+      "sha256": "3c1d515e6dd183163f00f0f63d8ad3ef2c4f67a13fccc356bbf157af4782ffb5",
+      "bytes": 124960,
+      "mtime_ns": 1789145803916481100
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_02_r_complete.png": {
+      "sha256": "d8ea887dedb41817cfa5ec52c79a46d17bc9458ba026a9a27e73ed758682cda8",
+      "bytes": 129777,
+      "mtime_ns": 1789145804220966100
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_03_l_complete.png": {
+      "sha256": "bb6410ff22c0d1d427f89616cb6d51fd9eee785830ab91fd222fcf603fb6a81b",
+      "bytes": 121670,
+      "mtime_ns": 1789145804762540700
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_03_r_complete.png": {
+      "sha256": "cbc3145794f7baa0b0a7afdc3d4ec15b2dcbca6409c71e13e07dbb1a97b92e6c",
+      "bytes": 129000,
+      "mtime_ns": 1789145805137030100
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_04_l_complete.png": {
+      "sha256": "e230dbf6dbfb2afe1a76f55779f191906e29ca7c4a68b43b52a329a40d45f3a7",
+      "bytes": 122465,
+      "mtime_ns": 1789145805528641400
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_04_r_complete.png": {
+      "sha256": "8eb16c836a40450e0ef6c72689481b44a594295bc3aa58f26301adeac3396428",
+      "bytes": 125149,
+      "mtime_ns": 1789145805857754500
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_05_l_complete.png": {
+      "sha256": "cd105a00bbc719c2b590d5ea0e1b3f7e708adce0ff50c4dd5b7ea22824036761",
+      "bytes": 123105,
+      "mtime_ns": 1789145806362023800
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_05_r_complete.png": {
+      "sha256": "a84a73761abe39c7da8fb2d8f1d5df40c0aa333e79cefe195d9a87ac4ba8cbde",
+      "bytes": 129055,
+      "mtime_ns": 1789145806672863000
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_06_l_complete.png": {
+      "sha256": "7d5da982987afc39d29035fd61cf2d0c591a32da18461d4950576c8f60397fe9",
+      "bytes": 124314,
+      "mtime_ns": 1789145807033085300
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_06_r_complete.png": {
+      "sha256": "0774ce6abdf923a4d882048d516dc52df258615a313de7f8a2cf6def517539d7",
+      "bytes": 128201,
+      "mtime_ns": 1789145807267608400
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_07_l_complete.png": {
+      "sha256": "6bb30bdac5abeaeed5fe7088da9e4a0d0a05a69c068f0dd9a989e3638cbdb75d",
+      "bytes": 122568,
+      "mtime_ns": 1789145807617348200
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_07_r_complete.png": {
+      "sha256": "598cf62e0e99fd5ee6dd0a38b7ed74ebe3ce1af6a500d0144a4a7c368058c079",
+      "bytes": 127963,
+      "mtime_ns": 1789145807898902900
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_08_l_complete.png": {
+      "sha256": "ef76c85038a483400cee300258a8182c2519171af37f49d982051251aecd008d",
+      "bytes": 122981,
+      "mtime_ns": 1789145808234325800
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_08_r_complete.png": {
+      "sha256": "0f52a7a61c7fa35828e8d1e98b9528ef6d1f320713620fdd1e0381bb026b73aa",
+      "bytes": 128418,
+      "mtime_ns": 1789145808486986100
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_09_l_complete.png": {
+      "sha256": "d1cc7ddb0353bd8cfe5147b88b079a2c312c94e20043b12ffafc6ad3cbcb7361",
+      "bytes": 126181,
+      "mtime_ns": 1789145808943317400
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_09_r_complete.png": {
+      "sha256": "680c0c41a87442e6db3f7db11b1e8c65ca7bb8cdcb0f71b087b5d00b2734b521",
+      "bytes": 129701,
+      "mtime_ns": 1789145809224775400
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_10_l_complete.png": {
+      "sha256": "2c15496bfa0015c2d9fa559581c4504b3e12d06f0faaf61fcfbe9d2d1498d32b",
+      "bytes": 121881,
+      "mtime_ns": 1789145809537990600
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_10_r_complete.png": {
+      "sha256": "721892d929903b65e615df9fcc4409ea0c034cfb2cb7c9dcbce02d115fbe1fc5",
+      "bytes": 126905,
+      "mtime_ns": 1789145809711615800
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_11_l_complete.png": {
+      "sha256": "9c79bb074b7ee26ef355547eb61d33a06669f3e1c1f94aa2c6de5828dbced503",
+      "bytes": 122952,
+      "mtime_ns": 1789145810145462500
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_11_r_complete.png": {
+      "sha256": "996930481641cf7f1fcb1a6c76b5ea1eccdb34e3e0963d0e872496751db036fa",
+      "bytes": 126912,
+      "mtime_ns": 1789145810406875700
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_12_l_complete.png": {
+      "sha256": "4f2bf030a882c543a642476ba0ec6defe2b735f7f989b5bd474213a356e79d5e",
+      "bytes": 123771,
+      "mtime_ns": 1789145810745342900
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_12_r_complete.png": {
+      "sha256": "4d4063e6593fcfc6dd294aee67ffedf681b6e449b8da160717d563fc39d92b9b",
+      "bytes": 129217,
+      "mtime_ns": 1789145810944059900
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_13_l_complete.png": {
+      "sha256": "12afdeb563a8c9037333b81d8cc2f347ebc8207f45f35aac2843521c802d4354",
+      "bytes": 126033,
+      "mtime_ns": 1789145811346614700
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_13_r_complete.png": {
+      "sha256": "0f541ff65fe4d404da5ff0d011426785ead90f97678939f1e198460443fedf24",
+      "bytes": 129000,
+      "mtime_ns": 1789145811621437000
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_14_l_complete.png": {
+      "sha256": "ac7ccb3a41c62a0fdea2979a00435a25f04166c8b5f360ef8e3562145911dda1",
+      "bytes": 123629,
+      "mtime_ns": 1789145812144324900
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_14_r_complete.png": {
+      "sha256": "b8fe4a1ad8f511cc3eb2aa4ea7cf3439d231f357cbd638387d98c070eacdf1fb",
+      "bytes": 127572,
+      "mtime_ns": 1789145812496039600
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_15_l_complete.png": {
+      "sha256": "441e645778feeaa9e1e6f5b6e925369f828f6c1bb68c0646bb6a17424a8c3f27",
+      "bytes": 121579,
+      "mtime_ns": 1789145812873515700
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_15_r_complete.png": {
+      "sha256": "f380bde9ef869fa687418aef34e3f62f0569de673b552c15ab60fe4c9fb35244",
+      "bytes": 125909,
+      "mtime_ns": 1789145813128167700
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_16_l_complete.png": {
+      "sha256": "9da6f01b856908b2f3000f08709e798223232588c32fd63c1e70decc478e7387",
+      "bytes": 125763,
+      "mtime_ns": 1789145813527361300
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_16_r_complete.png": {
+      "sha256": "5cdd239c252cff6f995c0ba0e4c43df1920625730182c880538960f99d37a541",
+      "bytes": 129840,
+      "mtime_ns": 1789145813839230800
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_17_l_complete.png": {
+      "sha256": "a20c56e3ae0773cc4faec0e3e2e1cc4356f7c5bdbd235173766b63246c784f8d",
+      "bytes": 123180,
+      "mtime_ns": 1789145814224091800
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_17_r_complete.png": {
+      "sha256": "39549d2e0628d2185a5b58c1d65bc8cbd2d2d0199eac8e8668fb6bd3eb884431",
+      "bytes": 127537,
+      "mtime_ns": 1789145814426265000
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_18_l_complete.png": {
+      "sha256": "06f12820758becfd88c95a1b34223d5e85a0d2e82bcba860c6065320a5482fec",
+      "bytes": 123681,
+      "mtime_ns": 1789145814781914800
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_18_r_complete.png": {
+      "sha256": "79cf927bb33fa69277370f2f1ec96f5125c043b5456acaad4fa329f3b2c418c0",
+      "bytes": 128247,
+      "mtime_ns": 1789145815057131800
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_19_l_complete.png": {
+      "sha256": "81db71d9206d65c9914889dd7e1c8ba28b538333a89621aea65ce0451ceb9557",
+      "bytes": 125483,
+      "mtime_ns": 1789145815413942500
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_19_r_complete.png": {
+      "sha256": "2489f03d17ad38e466cbaf33186cc4443fee30e95fe7a384a10132b00b56e92b",
+      "bytes": 129880,
+      "mtime_ns": 1789145815727546000
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_20_l_complete.png": {
+      "sha256": "17f53343a77f725d34e8ab3238ec93818bf6af2f6b433db54a0c8063853e6542",
+      "bytes": 123972,
+      "mtime_ns": 1789145816111016800
+    },
+    "tempgraphs\\Sub08_H\\sir_21\\trial_20_r_complete.png": {
+      "sha256": "7ebf5f4fcaf256f6ba3ece1de7333168da88454aa3d02c26bb472a36c2cdebbc",
+      "bytes": 127991,
+      "mtime_ns": 1789145816453256200
+    },
+    "tempgraphs\\SUB08_REVIEW.md": {
+      "sha256": "7aaaa73fc292e5c9dc144c5619ef874f57c5b7ba4a52ad17738b3cc17493af9b",
+      "bytes": 3739,
+      "mtime_ns": 1789145873985217700
+    },
+    "tempgraphs\\synchronization_report.csv": {
+      "sha256": "aa5a7e0ac1d5f885d8eed7510780ebd7bacd970c92a7340e0594008ace2de068",
+      "bytes": 3178,
+      "mtime_ns": 1789144636132508500
+    }
+  },
+  "generation_script_sha256": "de1709c452b8fe0b5dd51ae7d77692ae522d35e18d6ce8beacbef5ce178a485e",
+  "method": "Unmodified Subject 08 provisional segmentation and renderer; Subject 05 timestamp-based trigger matching",
+  "warning": "Short-to-long sequence is assumed, not verified ground truth"
+}

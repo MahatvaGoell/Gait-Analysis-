@@ -200,6 +200,163 @@ def detect_movement_onset(channels: np.ndarray, sample_dt: float) -> int:
     return int(round(3.0 * sample_rate))
 
 
+def resample_to_length(values: np.ndarray, length: int) -> np.ndarray:
+    """Map the matched insole recording to the FMG trial timeline without shifting it."""
+    values = np.asarray(values, dtype=float)
+    if len(values) == length:
+        return values
+    source = np.linspace(0.0, 1.0, len(values))
+    target = np.linspace(0.0, 1.0, length)
+    if values.ndim == 1:
+        return np.interp(target, source, values)
+    return np.column_stack([np.interp(target, source, values[:, column]) for column in range(values.shape[1])])
+
+
+def normalised_motion_score(values: np.ndarray, sample_dt: float, percentile: float) -> np.ndarray:
+    """Return a baseline-normalised activity score for one or more recorded signals."""
+    values = np.asarray(values, dtype=float)
+    if values.ndim == 1:
+        values = values[:, None]
+    sample_rate = max(1.0, 1.0 / sample_dt)
+    baseline_samples = min(len(values) // 2, max(100, int(round(3.0 * sample_rate))))
+    smoothing = max(5, int(round(0.10 * sample_rate)))
+    smoothed = np.column_stack([moving_mean(values[:, column], smoothing) for column in range(values.shape[1])])
+    baseline = smoothed[:baseline_samples]
+    center = np.median(baseline, axis=0)
+    mad = np.median(np.abs(baseline - center), axis=0)
+    scale = np.maximum(1.0, 1.4826 * mad)
+    score = np.percentile(np.abs((smoothed - center) / scale), percentile, axis=1)
+    baseline_score = score[:baseline_samples]
+    threshold = max(4.0, float(np.percentile(baseline_score, 99)) * 1.8)
+    return moving_mean(score / threshold, max(5, int(round(0.15 * sample_rate))))
+
+
+def local_peaks(values: np.ndarray, start: int, min_distance: int) -> list[int]:
+    """Find separated, above-baseline activity peaks in one trial."""
+    if start >= len(values) - 2:
+        return []
+    threshold = max(1.05, float(np.percentile(values[start:], 60)))
+    candidates = np.flatnonzero(
+        (values[1:-1] >= values[:-2]) & (values[1:-1] > values[2:]) & (values[1:-1] >= threshold)
+    ) + 1
+    candidates = [int(index) for index in candidates if index >= start]
+    peaks: list[int] = []
+    for candidate in candidates:
+        if not peaks or candidate - peaks[-1] >= min_distance:
+            peaks.append(candidate)
+        elif values[candidate] > values[peaks[-1]]:
+            peaks[-1] = candidate
+    return peaks
+
+
+def data_driven_phase_markers(
+    channels: np.ndarray,
+    cop: np.ndarray,
+    vgrf: np.ndarray,
+    sample_dt: float,
+) -> tuple[list[tuple[int, str]], dict[str, object]]:
+    """Estimate all trial phase starts from the individual FMG and insole pattern.
+
+    The raw sample timeline is preserved.  Gait peaks and their recorded
+    timing determine every boundary; no fixed phase duration is imposed.
+    """
+    insole = resample_to_length(np.column_stack((cop, vgrf)), len(channels))
+    fmg_score = normalised_motion_score(channels, sample_dt, 75)
+    insole_score = normalised_motion_score(insole, sample_dt, 100)
+    joint_score = np.maximum(fmg_score, insole_score)
+    sample_rate = max(1.0, 1.0 / sample_dt)
+    onset = detect_movement_onset(channels, sample_dt)
+    # Confirm a movement departure in the paired insole stream where possible.
+    sustained = max(15, int(round(0.20 * sample_rate)))
+    run = 0
+    for index in range(max(50, onset - int(round(0.75 * sample_rate))), len(joint_score)):
+        active = joint_score[index] >= 1.0 and (fmg_score[index] >= 0.70 or insole_score[index] >= 0.70)
+        run = run + 1 if active else 0
+        if run >= sustained:
+            onset = index - sustained + 1
+            break
+
+    peaks = local_peaks(joint_score, onset, max(20, int(round(0.35 * sample_rate))))
+    if len(peaks) < 6:
+        markers = [(0, "QS"), (onset, "GI")]
+        return markers, {
+            "gi_start": onset,
+            "sssw_start": "",
+            "slt_start": "",
+            "sslw_start": "",
+            "gt_start": "",
+            "phase_detection": "GI detected; insufficient gait peaks for later phase boundaries",
+        }
+
+    # GI ends when repeated, sustained gait peaks are present, rather than at a
+    # universal one-second mark.
+    sssw_start = peaks[min(2, len(peaks) - 1)]
+    amplitudes = np.asarray([joint_score[index] for index in peaks])
+    intervals = np.diff(peaks).astype(float)
+    median_interval = max(1.0, float(np.median(intervals)))
+    change_candidates: list[tuple[float, int]] = []
+    for index in range(3, len(peaks) - 3):
+        previous_period = float(np.median(intervals[index - 3:index]))
+        following_period = float(np.median(intervals[index:index + 3]))
+        previous_amplitude = float(np.median(amplitudes[index - 3:index]))
+        following_amplitude = float(np.median(amplitudes[index:index + 3]))
+        period_change = abs(following_period - previous_period) / median_interval
+        amplitude_change = abs(following_amplitude - previous_amplitude) / max(0.25, previous_amplitude)
+        change_candidates.append((period_change + amplitude_change, peaks[index]))
+
+    # Select ordered, well-separated changes from the actual gait pattern.
+    minimum_gap = max(50, int(round(0.75 * sample_rate)))
+    selected: list[int] = []
+    for _, position in sorted(change_candidates, reverse=True):
+        if position <= sssw_start + minimum_gap or position >= peaks[-2] - minimum_gap:
+            continue
+        if all(abs(position - chosen) >= minimum_gap for chosen in selected):
+            selected.append(position)
+        if len(selected) == 2:
+            break
+    selected.sort()
+
+    if len(selected) == 2:
+        slt_start, sslw_start = selected
+    elif len(selected) == 1:
+        slt_start = selected[0]
+        later = [peak for peak in peaks if peak > slt_start + minimum_gap]
+        sslw_start = later[0] if later else peaks[-2]
+    else:
+        # No claim is made about an unobserved transition; the labels stop at
+        # SSSW instead of fabricating phase durations.
+        markers = [(0, "QS"), (onset, "GI"), (sssw_start, "Steady state short step (SSSW)")]
+        return markers, {
+            "gi_start": onset,
+            "sssw_start": sssw_start,
+            "slt_start": "",
+            "sslw_start": "",
+            "gt_start": "",
+            "phase_detection": "GI and SSSW detected; later transitions not separable in recorded gait pattern",
+        }
+
+    # Termination starts at the last substantial gait-pattern change after the
+    # long-step section; otherwise retain the last three observed gait peaks.
+    later_changes = [position for _, position in change_candidates if position > sslw_start + minimum_gap]
+    gt_start = min(later_changes) if later_changes else peaks[max(0, len(peaks) - 3)]
+    gt_start = max(gt_start, sslw_start + 1)
+    return [
+        (0, "QS"),
+        (onset, "GI"),
+        (sssw_start, "Steady state short step (SSSW)"),
+        (slt_start, "SLT"),
+        (sslw_start, "Steady state long step (SSLW)"),
+        (gt_start, "GT"),
+    ], {
+        "gi_start": onset,
+        "sssw_start": sssw_start,
+        "slt_start": slt_start,
+        "sslw_start": sslw_start,
+        "gt_start": gt_start,
+        "phase_detection": "all phase boundaries estimated from paired FMG and insole gait-pattern changes",
+    }
+
+
 def write_csv(path: Path, rows: list[dict[str, object]]) -> None:
     if not rows:
         return
@@ -215,7 +372,6 @@ def generate(
     trial_filter: int | None = None,
     overwrite: bool = False,
     side_filter: str | None = None,
-    reference_aligned: bool = False,
 ) -> dict[str, int]:
     subject_dir = DATASET_ROOT / SUBJECT
     if not subject_dir.is_dir():
@@ -251,8 +407,7 @@ def generate(
             for fmg_start, fmg_end, local_trial in trials:
                 if trial_filter is not None and local_trial != trial_filter:
                     continue
-                suffix = "reference_aligned" if reference_aligned else "complete"
-                file_name = f"trial_{local_trial:02d}_{side.lower()}_{suffix}.png"
+                file_name = f"trial_{local_trial:02d}_{side.lower()}_complete.png"
                 destination = OUTPUT / SUBJECT / output_folder_name(record) / file_name
                 edge = 2 * (local_trial - 1)
                 if fmg_end is None or edge + 1 >= len(insole.rising_edges):
@@ -263,33 +418,27 @@ def generate(
                 if fmg_end <= fmg_start + 5 or insole_end <= insole_start + 5:
                     manifest.append({"subject": SUBJECT, "record": record, "side": side, "trial": local_trial, "status": "skipped: empty trigger interval", "png": ""})
                     continue
-                full_trial_channels = channels[fmg_start:fmg_end]
-                movement_onset = detect_movement_onset(full_trial_channels, fmg.median_dt)
-                if reference_aligned:
-                    reference_gi_start = int(round(3.0 / fmg.median_dt))
-                    shift_samples = max(0, movement_onset - reference_gi_start)
-                    display_fmg_start = fmg_start + shift_samples
-                    display_fmg_end = min(fmg_end, display_fmg_start + REFERENCE_SAMPLES)
-                    shift_seconds = shift_samples * fmg.median_dt
-                    display_insole_start = insole_start + int(round(shift_seconds / insole.median_dt))
-                    display_insole_end = min(insole_end, display_insole_start + int(round(REFERENCE_SAMPLES * fmg.median_dt / insole.median_dt)))
-                    starts = phase_markers(fmg.median_dt, REFERENCE_SAMPLES + 1)
-                else:
-                    shift_samples = 0
-                    display_fmg_start = fmg_start
-                    display_fmg_end = min(fmg_end, fmg_start + int(round(DISPLAY_SECONDS / fmg.median_dt)))
-                    display_insole_start = insole_start
-                    starts = phase_markers(fmg.median_dt, REFERENCE_SAMPLES + 1, movement_onset)
-                    display_insole_end = min(insole_end, insole_start + int(round((display_fmg_end - display_fmg_start) * fmg.median_dt / insole.median_dt)))
+                display_fmg_start = fmg_start
+                display_fmg_end = min(fmg_end, fmg_start + int(round(DISPLAY_SECONDS / fmg.median_dt)))
+                display_insole_start = insole_start
+                display_insole_end = min(insole_end, insole_start + int(round((display_fmg_end - display_fmg_start) * fmg.median_dt / insole.median_dt)))
                 display_seconds = (display_fmg_end - display_fmg_start) * fmg.median_dt
                 displayed_channels = channels[display_fmg_start:display_fmg_end]
+                displayed_cop = insole.values[display_insole_start:display_insole_end, 2]
+                displayed_vgrf = insole.values[display_insole_start:display_insole_end, 3]
+                starts, phase_info = data_driven_phase_markers(
+                    displayed_channels,
+                    displayed_cop,
+                    displayed_vgrf,
+                    fmg.median_dt,
+                )
                 if overwrite or not destination.is_file() or destination.stat().st_size == 0:
                     render_reference_style(
                         destination=destination,
                         fmg=displayed_channels,
                         fmg_dt=fmg.median_dt,
-                        cop=insole.values[display_insole_start:display_insole_end, 2],
-                        vgrf=insole.values[display_insole_start:display_insole_end, 3],
+                        cop=displayed_cop,
+                        vgrf=displayed_vgrf,
                         insole_dt=insole.median_dt,
                         phase_starts=starts,
                     )
@@ -307,9 +456,13 @@ def generate(
                     "fmg_seconds": round(display_seconds, 3),
                     "insole_samples": display_insole_end - display_insole_start,
                     "insole_seconds": round((display_insole_end - display_insole_start) * insole.median_dt, 3),
-                    "detected_gi_start_sample": movement_onset,
-                    "detected_gi_start_seconds": round(movement_onset * fmg.median_dt, 3),
-                    "reference_alignment_shift_samples": shift_samples,
+                    "detected_gi_start_sample": phase_info["gi_start"],
+                    "detected_gi_start_seconds": round(float(phase_info["gi_start"]) * fmg.median_dt, 3),
+                    "detected_sssw_start_sample": phase_info["sssw_start"],
+                    "detected_slt_start_sample": phase_info["slt_start"],
+                    "detected_sslw_start_sample": phase_info["sslw_start"],
+                    "detected_gt_start_sample": phase_info["gt_start"],
+                    "phase_detection": phase_info["phase_detection"],
                     "png": destination.relative_to(OUTPUT).as_posix(),
                 })
 
@@ -324,11 +477,6 @@ def generate(
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--record", help="Process only sir_1 or sir_21.")
-    parser.add_argument("--trial", type=int, help="Process only a one-based trial number within the record.")
-    parser.add_argument("--side", choices=("L", "R"), help="Process only one limb.")
-    parser.add_argument("--reference-aligned", action="store_true", help="Shift the display window so the measured GI onset is at reference sample 300.")
-    parser.add_argument("--overwrite", action="store_true", help="Regenerate existing complete-trial PNGs.")
-    args = parser.parse_args()
-    print(generate(args.record, args.trial, args.overwrite, args.side, args.reference_aligned))
+    # Latest supported pipeline: full timestamps and explicit provisional labels.
+    from subject08_segmentation import main
+    main()
