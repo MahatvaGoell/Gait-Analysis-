@@ -1,76 +1,98 @@
-# Gait Analysis
+# Gait Analysis — Study 1
 
-This repository contains the dataset, processing scripts, and generated results for a gait-analysis project using force myography (FMG) and insole measurements.
+This project analyses force myography (FMG) and insole data collected during walking. The current work prepares the recordings for automatic gait-phase segmentation.
 
-## Current scope
+## Completed work
 
-The current work covers the quiet-standing (QS) and gait-initiation (GI) sections of Study 1. FMG and insole recordings are aligned using their trigger signals, and malformed rows are excluded during processing.
+- Kept the original recordings unchanged in `dataset/` for all 10 dataset folders.
+- Read and aligned the FMG and insole streams with their trigger signals.
+- Identified malformed rows, trigger inconsistencies, timestamp resets, missing streams, and missing samples.
+- Generated complete per-recording graphs in `tempgraphs/`. Each graph contains 8 FMG channels, CoP, and vGRF for one limb.
+- Segmented recordings into the requested sequence: QS → GI → SSSW → SLT → SSLW → GT.
+  - QS: quiet standing
+  - GI: gait initiation
+  - SSSW: steady-state short-step walking
+  - SLT: short-to-long-step transition
+  - SSLW: steady-state long-step walking
+  - GT: gait termination
+- Used each recording’s own signal behaviour to estimate timing; no common fixed gait timing was imposed on every subject.
+- Produced 100 Hz segmented numeric exports alongside the figures, with per-signal flags for estimated samples.
+- Preserved original finite source-grid values. Where data were missing, the completed plots use documented temporal or within-recording cross-sensor estimates. Estimated portions are shown with pale lines and are flagged in the exported CSV files.
 
-Each QS graph contains:
+The phase labels currently saved with the figures are signal-derived, provisional labels. They provide training candidates and a structured review set; they are not yet independently verified clinical or ground-truth annotations.
 
-- Eight FMG channels
-- Centre of pressure (CoP)
-- Vertical ground-reaction force (vGRF)
+## Current results
 
-The displayed signals use a 0.25-second moving average to reduce sensor quantisation noise. Fixed vertical offsets place CoP and vGRF above the FMG channels without changing the raw source files.
-
-GI is the fixed 3.0–4.0 second interval after the matched trial-start trigger. Each GI figure includes the preceding 0.5 seconds of QS as a standing reference, followed by the one-second GI interval; a dashed boundary marks the start of GI. This preserves the real FMG, CoP, and vGRF change from standing into movement while excluding later steady-walking samples.
-
-## Repository structure
+The completed graph folders are under `tempgraphs/`:
 
 ```text
-Gait Analysis/
-├── dataset/                         # Original recordings for all 10 subjects
-├── output/
-│   ├── qsoutput/
-│       ├── per trial/               # Individual QS trial graphs by subject and recording
-│       └── avg/
-│           ├── per trialavg/        # Mean QS graph for each recording and limb
-│           └── per subject/         # One whole-subject mean QS graph per subject
-│   └── gioutput/                    # Matching GI-only graphs and averages
-│       ├── per trial/
-│       └── avg/
-│           ├── per trialavg/
-│           └── per subject/
-├── generate_qs_plots.py             # Generates individual QS trial graphs
-├── generate_qs_averages.py          # Generates recording-level averages
-├── generate_subject_averages.py     # Generates whole-subject averages
-└── generate_gi_outputs.py           # Generates GI trial and average graphs
+tempgraphs/
+├── sub01_a/ and sub01_h/
+├── sub02_a/ and sub02_h/
+├── sub03_h/
+├── sub04_h/
+├── sub05_h/
+├── sub06_h/
+├── sub07_h/
+└── Sub08_H/
 ```
 
-## Generated results
+Within each completed subject folder, the main files are:
 
-- 729 individual QS trial graphs
-- 127 recording-and-limb average graphs
-- 10 whole-subject average graphs
-- 687 individual GI graphs, each with a 0.5-second QS reference plus the fixed 3.0–4.0 second GI protocol window
-- 127 GI recording-and-limb average graphs
-- 10 GI whole-subject average graphs
+```text
+<subject-folder>/
+├── <recording>/trial_##_l_complete.png   # Left-limb figure
+├── <recording>/trial_##_r_complete.png   # Right-limb figure
+├── segmented_data/                       # 100 Hz signals, labels, and imputation flags
+├── phase_boundaries_provisional.csv       # Estimated QS, GI, SSSW, SLT, SSLW, GT boundaries
+├── phase_intervals_provisional.csv        # Phase intervals
+├── load_landmarks_provisional.csv         # Pressure-cycle candidates
+├── missing_value_report.csv               # How missing samples were completed
+├── synchronization_report.csv             # Trigger-clock alignment details
+├── recording_windows.csv                  # Recording interval boundaries
+└── review_sheets/                         # Contact sheets for visual review
+```
 
-Average curves are calculated from the numerical phase data, not from PNG images. Trials are resampled to a common 0–100% phase before point-by-point averaging. Forty-two trial/limb pairs are not shown in GI because their raw recording does not contain the full fixed 3.0–4.0 second interval; they are listed in the GI plot manifest.
+Subjects 01–04 contain a `summary.json` and `verification.json`. The verification confirms that the numeric exports reproduce the saved graphs, original available samples remain unchanged, estimates are flagged, and the raw data were not modified.
 
-## Running the scripts
+## Processing approach
 
-Run the scripts from the repository root using Python:
+Each trial keeps its original elapsed recording time. FMG and insole streams are aligned using their trigger events. The segmentation uses the sustained change from standing, repeating pressure-cycle landmarks, FMG activity, and a change in cycle features to estimate the short-to-long-step transition.
+
+Some recordings have incomplete triggers or long missing sections. Those cases are retained and documented instead of being treated as fully observed data. A retained unpaired context is labelled `UNKNOWN` when the true trial boundary cannot be supported by the recording.
+
+## Next step: train a segmentation model
+
+The next stage is to train a model that learns the signal pattern and predicts the six gait phases for unseen recordings.
+
+1. Review and correct the provisional phase boundaries where necessary, creating the final training labels.
+2. Build trial-level features from the 8 FMG channels, CoP, vGRF, and useful timing or pressure-cycle features.
+3. Split data by participant or recording before training, so data from the same person do not appear in both training and test sets.
+4. Train a sequence-segmentation model to predict QS, GI, SSSW, SLT, SSLW, and GT at each sample or short time window.
+5. Evaluate predicted boundaries and phase labels against the held-out reviewed labels, then inspect errors using the saved graphs.
+
+The missing-value flags must be included in the training workflow. Any imputation used for machine learning should be fitted inside each training split so information from test recordings does not influence training.
+
+## Main scripts
+
+```text
+generate_subjects01_to04.py     # Graphs, exports, synchronization, and verification for Subjects 01–04
+generate_additional_subjects.py # Processing for the additional subject folders
+complete_reconstruction.py      # Missing-value completion and phase helpers
+subject08_segmentation.py       # Segmentation utilities and Subject 08 workflow
+generate_qs_plots.py            # Earlier QS plotting workflow
+generate_gi_outputs.py          # Earlier GI plotting workflow
+```
+
+Run a Subject 01–04 workflow from the project root, for example:
 
 ```powershell
-python generate_qs_plots.py --output output/qsoutput --overwrite
-python generate_qs_averages.py
-python generate_subject_averages.py
-python generate_gi_outputs.py
+python -B generate_subjects01_to04.py --subject Sub01_A
+python -B generate_subjects01_to04.py --subject Sub01_A --verify
 ```
 
-Required Python packages:
-
-```text
-numpy
-Pillow
-```
-
-## Data and synchronization notes
-
-The raw dataset is retained unchanged. Some recordings contain missing, additional, or inconsistent trigger events. Review the `synchronization_report.csv` file in the relevant QS or GI `per trial` output folder before using FMG/insole combinations for statistical modelling.
+Required packages: `numpy` and `Pillow`.
 
 ## Data-use notice
 
-The MIT License in this repository applies only to the source code. It does **not** grant permission to redistribute, publish, or reuse the participant recordings or derived research data. Access to the dataset must follow the applicable consent, institutional, privacy, and research-governance requirements.
+The MIT License applies to the code only. The participant recordings and derived research data must be used according to the relevant consent, privacy, institutional, and research-governance requirements.
