@@ -1,0 +1,19 @@
+{
+  "subject": "Sub03_H",
+  "graphs": 100,
+  "recording_intervals": 50,
+  "complete_six_phase_intervals": 49,
+  "partial_phase_intervals": [
+    {
+      "record": "Amit_1",
+      "trial": 1
+    }
+  ],
+  "estimated_values": 138706,
+  "remaining_missing_values": 0,
+  "reconstruction_methods": {
+    "temporal_interpolation_with_endpoint_hold": 104,
+    "cross_sensor_ridge_within_recording": 582
+  },
+  "warning": "Model-completed curves; estimated values are not recovered measurements. Labels are not ground truth."
+}

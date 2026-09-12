@@ -1,0 +1,13 @@
+{
+  "subject": "Sub06_H",
+  "verified_pngs": 80,
+  "verified_numeric_exports": 80,
+  "remaining_missing_values": 0,
+  "source_grid_values_preserved": 2337920,
+  "estimated_values": 270980,
+  "complete_model_assisted_six_phase_intervals": 40,
+  "partial_phase_intervals": [],
+  "raw_data_and_other_subjects_unchanged": true,
+  "all_estimates_flagged": true,
+  "scope": "Numerical reproducibility/coverage only. No validation of actual missing measurements or physiological phase labels."
+}

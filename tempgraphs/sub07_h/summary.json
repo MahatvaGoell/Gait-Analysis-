@@ -1,0 +1,24 @@
+{
+  "subject": "Sub07_H",
+  "recording_intervals": 43,
+  "graphs": 86,
+  "imputed_signal_values": 117618,
+  "remaining_missing_signal_values": 0,
+  "interpolated_channel_gaps": 0,
+  "gap_handling": "MODEL-COMPLETED: cross-sensor ridge versus temporal interpolation; endpoint holds; absent streams use same-subject donor models. NOT recovered measurements.",
+  "view_mode": "model_completed",
+  "complete_six_phase_intervals": 42,
+  "partial_phase_intervals": [
+    {
+      "record": "rohan_3",
+      "trial": 1
+    }
+  ],
+  "provisional_intervals": 43,
+  "support_counts": {
+    "weak/ambiguous pattern evidence": 30,
+    "model-assisted; unverified": 2,
+    "moderate pattern evidence": 11
+  },
+  "unresolved_intervals": []
+}

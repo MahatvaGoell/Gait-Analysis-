@@ -1,6 +1,0 @@
-{
-  "average_graphs_created": 127,
-  "left_limb_averages": 62,
-  "right_limb_averages": 65,
-  "method": "Each image is the mean of real QS trials from one subject/source-data-file/limb. Trials are resampled to a common 0\u2013100% QS phase before averaging."
-}

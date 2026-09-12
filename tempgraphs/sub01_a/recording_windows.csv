@@ -1,0 +1,21 @@
+boundary_method,duration_seconds,end_master_seconds,master,master_trigger_recovered_from_both_insoles,record,start_master_seconds,trial
+paired trigger interval,25.55,203.87,F,False,jitu_1,178.32,1
+paired trigger interval,25.23,238.83,F,False,jitu_1,213.6,2
+paired trigger interval,24.91,272.33,F,False,jitu_1,247.42,3
+paired trigger interval,24.990000000000002,304.21,F,False,jitu_1,279.22,4
+paired trigger interval,23.12,334.36,F,False,jitu_1,311.24,5
+paired trigger interval,25.52,368.49,F,False,jitu_1,342.97,6
+paired trigger interval,23.84,399.92,F,False,jitu_1,376.08,7
+paired trigger interval,22.71,429.73,F,False,jitu_1,407.02,8
+paired trigger interval,24.71,460.82,F,False,jitu_1,436.11,9
+paired trigger interval,24.6,493.11,F,False,jitu_1,468.51,10
+paired trigger interval,24.63,1046.47,F,False,jitu_21,1021.84,1
+paired trigger interval,23.73,1077.54,F,False,jitu_21,1053.81,2
+paired trigger interval,25.52,1109.57,F,False,jitu_21,1084.05,3
+paired trigger interval,23.21,1140.12,F,False,jitu_21,1116.91,4
+paired trigger interval,24.560000000000002,1171.81,F,False,jitu_21,1147.25,5
+paired trigger interval,24.86,1206.85,F,False,jitu_21,1181.99,6
+paired trigger interval,23.52,1237.79,F,False,jitu_21,1214.27,7
+paired trigger interval,24.61,1267.76,F,False,jitu_21,1243.15,8
+paired trigger interval,23.18,1297.4,F,False,jitu_21,1274.22,9
+paired trigger interval,22.13,1326.03,F,False,jitu_21,1303.9,10

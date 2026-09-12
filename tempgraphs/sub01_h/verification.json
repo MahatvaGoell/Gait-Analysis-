@@ -1,0 +1,11 @@
+{
+  "verified_pngs": 80,
+  "verified_numeric_exports": 80,
+  "remaining_missing_values": 0,
+  "original_source_grid_values_preserved": 1650666,
+  "estimated_values": 49054,
+  "complete_six_phase_intervals": 40,
+  "raw_and_previous_subject_files_unchanged": true,
+  "all_estimates_flagged": true,
+  "scope": "Numeric/file consistency and reproducibility, NOT physiological or ground-truth validation"
+}

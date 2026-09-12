@@ -1,0 +1,19 @@
+{
+  "subject": "Sub06_H",
+  "recording_intervals": 40,
+  "graphs": 80,
+  "imputed_signal_values": 270980,
+  "remaining_missing_signal_values": 0,
+  "interpolated_channel_gaps": 0,
+  "gap_handling": "MODEL-COMPLETED: cross-sensor ridge versus temporal interpolation; endpoint holds; absent streams use same-subject donor models. NOT recovered measurements.",
+  "view_mode": "model_completed",
+  "complete_six_phase_intervals": 40,
+  "partial_phase_intervals": [],
+  "provisional_intervals": 40,
+  "support_counts": {
+    "moderate pattern evidence": 8,
+    "weak/ambiguous pattern evidence": 29,
+    "model-assisted; unverified": 3
+  },
+  "unresolved_intervals": []
+}

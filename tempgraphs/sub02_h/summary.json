@@ -1,0 +1,13 @@
+{
+  "subject": "Sub02_H",
+  "graphs": 84,
+  "recording_intervals": 42,
+  "complete_six_phase_intervals": 42,
+  "partial_phase_intervals": [],
+  "estimated_values": 2780,
+  "remaining_missing_values": 0,
+  "reconstruction_methods": {
+    "cross_sensor_ridge_within_recording": 580
+  },
+  "warning": "Model-completed curves; estimated values are not recovered measurements. Labels are not ground truth."
+}

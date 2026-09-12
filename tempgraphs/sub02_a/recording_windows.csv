@@ -1,0 +1,23 @@
+boundary_method,duration_seconds,end_master_seconds,master,master_trigger_recovered_from_both_insoles,record,start_master_seconds,trial
+paired trigger interval,27.57,275.02,F,False,vipin_1,247.45,1
+paired trigger interval,25.79,316.14,F,False,vipin_1,290.35,2
+paired trigger interval,25.47,351.56,F,False,vipin_1,326.09,3
+paired trigger interval,25.63,382.89,F,False,vipin_1,357.26,4
+paired trigger interval,25.05,413.72,F,False,vipin_1,388.67,5
+paired trigger interval,25.63,445.08,F,False,vipin_1,419.45,6
+paired trigger interval,26.67,478.11,F,False,vipin_1,451.44,7
+paired trigger interval,24.78,508.47,F,False,vipin_1,483.69,8
+paired trigger interval,25.38,540.26,F,False,vipin_1,514.88,9
+paired trigger interval,25.38,571.5,F,False,vipin_1,546.12,10
+paired trigger interval,23.63,620.35,F,False,vipin_1,596.72,11
+paired trigger interval,24.85,650.88,F,False,vipin_1,626.03,12
+paired trigger interval,27.490000000000002,1233.5,F,False,vipin_21,1206.01,1
+paired trigger interval,24.46,1264.99,F,False,vipin_21,1240.53,2
+paired trigger interval,24.060000000000002,1302.76,F,False,vipin_21,1278.7,3
+paired trigger interval,24.57,1332.57,F,False,vipin_21,1308.0,4
+paired trigger interval,24.36,1362.03,F,False,vipin_21,1337.67,5
+paired trigger interval,23.16,1390.03,F,False,vipin_21,1366.87,6
+paired trigger interval,23.03,1418.73,F,False,vipin_21,1395.7,7
+paired trigger interval,25.42,1449.99,F,False,vipin_21,1424.57,8
+paired trigger interval,23.990000000000002,1480.71,F,False,vipin_21,1456.72,9
+paired trigger interval,24.71,1510.89,F,False,vipin_21,1486.18,10
