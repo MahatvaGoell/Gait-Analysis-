@@ -1,0 +1,57 @@
+{
+  "subject": "Sub01_A",
+  "phase": "SLT",
+  "source": "tempgraphs/sub01_a/segmented_data/jitu_*/trial_*_[lr]_segmented.csv, rows where provisional_phase == SLT",
+  "source_trace_count_found": 40,
+  "trace_count_used": 40,
+  "trace_count_rejected": 0,
+  "rejected_traces": [],
+  "normalized_samples_per_trace": 300,
+  "normalization": "Linear interpolation over each trace\u2019s existing SLT-labelled samples onto 0\u2013100% normalized SLT phase.",
+  "aggregation": "Point-by-point arithmetic mean across the 40 normalized limb-specific SLT traces, independently for each FMG channel.",
+  "source_slt_sample_count_min": 133,
+  "source_slt_sample_count_max": 188,
+  "artificial_repetition_or_cycle_grouping_created": false,
+  "outputs": [
+    {
+      "channel": 1,
+      "numerical_csv": "average_data/channel_01_slt_average.csv",
+      "average_graph": "average_graphs/channel_01_slt_average.png"
+    },
+    {
+      "channel": 2,
+      "numerical_csv": "average_data/channel_02_slt_average.csv",
+      "average_graph": "average_graphs/channel_02_slt_average.png"
+    },
+    {
+      "channel": 3,
+      "numerical_csv": "average_data/channel_03_slt_average.csv",
+      "average_graph": "average_graphs/channel_03_slt_average.png"
+    },
+    {
+      "channel": 4,
+      "numerical_csv": "average_data/channel_04_slt_average.csv",
+      "average_graph": "average_graphs/channel_04_slt_average.png"
+    },
+    {
+      "channel": 5,
+      "numerical_csv": "average_data/channel_05_slt_average.csv",
+      "average_graph": "average_graphs/channel_05_slt_average.png"
+    },
+    {
+      "channel": 6,
+      "numerical_csv": "average_data/channel_06_slt_average.csv",
+      "average_graph": "average_graphs/channel_06_slt_average.png"
+    },
+    {
+      "channel": 7,
+      "numerical_csv": "average_data/channel_07_slt_average.csv",
+      "average_graph": "average_graphs/channel_07_slt_average.png"
+    },
+    {
+      "channel": 8,
+      "numerical_csv": "average_data/channel_08_slt_average.csv",
+      "average_graph": "average_graphs/channel_08_slt_average.png"
+    }
+  ]
+}

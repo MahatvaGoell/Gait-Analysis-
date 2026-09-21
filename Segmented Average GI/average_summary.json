@@ -1,0 +1,56 @@
+{
+  "subject": "Sub01_A",
+  "phase": "GI",
+  "source": "tempgraphs/sub01_a/segmented_data/jitu_*/trial_*_[lr]_segmented.csv, rows where provisional_phase == GI",
+  "trace_count_found": 40,
+  "trace_count_used": 40,
+  "trace_count_rejected": 0,
+  "rejected_traces": [],
+  "normalized_samples_per_trace": 300,
+  "normalization": "linear interpolation over each trace\u2019s existing GI-labelled samples onto 0\u2013100% normalized GI phase",
+  "aggregation": "point-by-point arithmetic mean across the 40 normalized limb-specific GI traces, calculated independently for each FMG channel",
+  "source_gi_sample_count_min": 44,
+  "source_gi_sample_count_max": 180,
+  "outputs": [
+    {
+      "channel": 1,
+      "csv": "average_data/channel_01_gi_average.csv",
+      "graph": "average_graphs/channel_01_gi_average.png"
+    },
+    {
+      "channel": 2,
+      "csv": "average_data/channel_02_gi_average.csv",
+      "graph": "average_graphs/channel_02_gi_average.png"
+    },
+    {
+      "channel": 3,
+      "csv": "average_data/channel_03_gi_average.csv",
+      "graph": "average_graphs/channel_03_gi_average.png"
+    },
+    {
+      "channel": 4,
+      "csv": "average_data/channel_04_gi_average.csv",
+      "graph": "average_graphs/channel_04_gi_average.png"
+    },
+    {
+      "channel": 5,
+      "csv": "average_data/channel_05_gi_average.csv",
+      "graph": "average_graphs/channel_05_gi_average.png"
+    },
+    {
+      "channel": 6,
+      "csv": "average_data/channel_06_gi_average.csv",
+      "graph": "average_graphs/channel_06_gi_average.png"
+    },
+    {
+      "channel": 7,
+      "csv": "average_data/channel_07_gi_average.csv",
+      "graph": "average_graphs/channel_07_gi_average.png"
+    },
+    {
+      "channel": 8,
+      "csv": "average_data/channel_08_gi_average.csv",
+      "graph": "average_graphs/channel_08_gi_average.png"
+    }
+  ]
+}

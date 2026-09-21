@@ -1,0 +1,11 @@
+png,source_complete_graph,source_segmented_csv,status,phase_labels_present
+Sub08_H/sir_1/trial_02_l.png,tempgraphs/Sub08_H/sir_1/trial_02_l_complete.png,tempgraphs/segmented_data/Sub08_H/sir_1/trial_02_l_segmented.csv,not created: no resolved SSLW interval in existing segmented export,UNRESOLVED
+Sub08_H/sir_1/trial_02_r.png,tempgraphs/Sub08_H/sir_1/trial_02_r_complete.png,tempgraphs/segmented_data/Sub08_H/sir_1/trial_02_r_segmented.csv,not created: no resolved SSLW interval in existing segmented export,UNRESOLVED
+Sub08_H/sir_21/trial_18_l.png,tempgraphs/Sub08_H/sir_21/trial_18_l_complete.png,tempgraphs/segmented_data/Sub08_H/sir_21/trial_18_l_segmented.csv,not created: no resolved SSLW interval in existing segmented export,UNRESOLVED
+Sub08_H/sir_21/trial_18_r.png,tempgraphs/Sub08_H/sir_21/trial_18_r_complete.png,tempgraphs/segmented_data/Sub08_H/sir_21/trial_18_r_segmented.csv,not created: no resolved SSLW interval in existing segmented export,UNRESOLVED
+Sub03_H/Amit_1/trial_01_l.png,tempgraphs/sub03_h/Amit_1/trial_01_l_complete.png,tempgraphs/sub03_h/segmented_data/Amit_1/trial_01_l_segmented.csv,not created: no resolved SSLW interval in existing segmented export,UNKNOWN
+Sub03_H/Amit_1/trial_01_r.png,tempgraphs/sub03_h/Amit_1/trial_01_r_complete.png,tempgraphs/sub03_h/segmented_data/Amit_1/trial_01_r_segmented.csv,not created: no resolved SSLW interval in existing segmented export,UNKNOWN
+Sub05_H/sub_21/trial_13_l.png,tempgraphs/sub05_h/sub_21/trial_13_l_complete.png,tempgraphs/sub05_h/segmented_data/sub_21/trial_13_l_segmented.csv,not created: no resolved SSLW interval in existing segmented export,UNRESOLVED
+Sub05_H/sub_21/trial_13_r.png,tempgraphs/sub05_h/sub_21/trial_13_r_complete.png,tempgraphs/sub05_h/segmented_data/sub_21/trial_13_r_segmented.csv,not created: no resolved SSLW interval in existing segmented export,UNRESOLVED
+Sub07_H/rohan_3/trial_01_l.png,tempgraphs/sub07_h/rohan_3/trial_01_l_complete.png,tempgraphs/sub07_h/segmented_data/rohan_3/trial_01_l_segmented.csv,not created: no resolved SSLW interval in existing segmented export,GI;QS;WALK
+Sub07_H/rohan_3/trial_01_r.png,tempgraphs/sub07_h/rohan_3/trial_01_r_complete.png,tempgraphs/sub07_h/segmented_data/rohan_3/trial_01_r_segmented.csv,not created: no resolved SSLW interval in existing segmented export,GI;QS;WALK

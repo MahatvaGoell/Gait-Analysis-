@@ -1,0 +1,57 @@
+{
+  "subject": "Sub01_A",
+  "phase": "SSSW",
+  "source": "tempgraphs/sub01_a/segmented_data/jitu_*/trial_*_[lr]_segmented.csv, rows where provisional_phase == SSSW",
+  "source_trace_count_found": 40,
+  "trace_count_used": 40,
+  "trace_count_rejected": 0,
+  "rejected_traces": [],
+  "normalized_samples_per_trace": 300,
+  "normalization": "Linear interpolation over each trace\u2019s existing SSSW-labelled samples onto 0\u2013100% normalized SSSW phase.",
+  "aggregation": "Point-by-point arithmetic mean across the 40 normalized limb-specific SSSW traces, independently for each FMG channel.",
+  "source_sssw_sample_count_min": 185,
+  "source_sssw_sample_count_max": 1401,
+  "artificial_repetition_or_cycle_grouping_created": false,
+  "outputs": [
+    {
+      "channel": 1,
+      "numerical_csv": "average_data/channel_01_sssw_average.csv",
+      "average_graph": "average_graphs/channel_01_sssw_average.png"
+    },
+    {
+      "channel": 2,
+      "numerical_csv": "average_data/channel_02_sssw_average.csv",
+      "average_graph": "average_graphs/channel_02_sssw_average.png"
+    },
+    {
+      "channel": 3,
+      "numerical_csv": "average_data/channel_03_sssw_average.csv",
+      "average_graph": "average_graphs/channel_03_sssw_average.png"
+    },
+    {
+      "channel": 4,
+      "numerical_csv": "average_data/channel_04_sssw_average.csv",
+      "average_graph": "average_graphs/channel_04_sssw_average.png"
+    },
+    {
+      "channel": 5,
+      "numerical_csv": "average_data/channel_05_sssw_average.csv",
+      "average_graph": "average_graphs/channel_05_sssw_average.png"
+    },
+    {
+      "channel": 6,
+      "numerical_csv": "average_data/channel_06_sssw_average.csv",
+      "average_graph": "average_graphs/channel_06_sssw_average.png"
+    },
+    {
+      "channel": 7,
+      "numerical_csv": "average_data/channel_07_sssw_average.csv",
+      "average_graph": "average_graphs/channel_07_sssw_average.png"
+    },
+    {
+      "channel": 8,
+      "numerical_csv": "average_data/channel_08_sssw_average.csv",
+      "average_graph": "average_graphs/channel_08_sssw_average.png"
+    }
+  ]
+}

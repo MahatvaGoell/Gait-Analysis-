@@ -3,6 +3,7 @@ import unittest
 import csv
 import hashlib
 import json
+from pathlib import PureWindowsPath
 import numpy as np
 from PIL import Image
 from subject08_segmentation import OUT, DATASET_ROOT, grid_values, load_peaks, segment_trial, iter_trials
@@ -69,7 +70,8 @@ class SegmentationTests(unittest.TestCase):
     def test_raw_hashes_are_unchanged(self):
         provenance=json.loads((OUT/'segmentation_provenance.json').read_text())
         for relative,expected in provenance['raw_sha256'].items():
-            self.assertEqual(hashlib.sha256((DATASET_ROOT/relative).read_bytes()).hexdigest(),expected)
+            source = DATASET_ROOT.joinpath(*PureWindowsPath(relative).parts)
+            self.assertEqual(hashlib.sha256(source.read_bytes()).hexdigest(),expected)
 
 
 if __name__=='__main__': unittest.main()

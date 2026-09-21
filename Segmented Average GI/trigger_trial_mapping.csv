@@ -1,0 +1,21 @@
+raw_batch,documented_batch_label,existing_project_local_trial,proposed_global_physical_window,start_trigger_event,end_trigger_event,start_time_seconds,end_time_seconds,paired_gait_bout_seconds,gap_to_next_start_seconds,left_and_right_outputs,current_GI_trace_count_from_window
+jitu_1,X_1 (documented as trials 1-20),1,1,1,2,178.32,203.87,25.55,9.73,2,2
+jitu_1,X_1 (documented as trials 1-20),2,2,3,4,213.6,238.83,25.23,8.59,2,2
+jitu_1,X_1 (documented as trials 1-20),3,3,5,6,247.42,272.33,24.91,6.89,2,2
+jitu_1,X_1 (documented as trials 1-20),4,4,7,8,279.22,304.21,24.99,7.03,2,2
+jitu_1,X_1 (documented as trials 1-20),5,5,9,10,311.24,334.36,23.12,8.61,2,2
+jitu_1,X_1 (documented as trials 1-20),6,6,11,12,342.97,368.49,25.52,7.59,2,2
+jitu_1,X_1 (documented as trials 1-20),7,7,13,14,376.08,399.92,23.84,7.1,2,2
+jitu_1,X_1 (documented as trials 1-20),8,8,15,16,407.02,429.73,22.71,6.38,2,2
+jitu_1,X_1 (documented as trials 1-20),9,9,17,18,436.11,460.82,24.71,7.69,2,2
+jitu_1,X_1 (documented as trials 1-20),10,10,19,20,468.51,493.11,24.6,,2,2
+jitu_21,X_21 (documented as trials 21-40),1,11,1,2,1021.84,1046.47,24.63,7.34,2,2
+jitu_21,X_21 (documented as trials 21-40),2,12,3,4,1053.81,1077.54,23.73,6.51,2,2
+jitu_21,X_21 (documented as trials 21-40),3,13,5,6,1084.05,1109.57,25.52,7.34,2,2
+jitu_21,X_21 (documented as trials 21-40),4,14,7,8,1116.91,1140.12,23.21,7.13,2,2
+jitu_21,X_21 (documented as trials 21-40),5,15,9,10,1147.25,1171.81,24.56,10.18,2,2
+jitu_21,X_21 (documented as trials 21-40),6,16,11,12,1181.99,1206.85,24.86,7.42,2,2
+jitu_21,X_21 (documented as trials 21-40),7,17,13,14,1214.27,1237.79,23.52,5.36,2,2
+jitu_21,X_21 (documented as trials 21-40),8,18,15,16,1243.15,1267.76,24.61,6.46,2,2
+jitu_21,X_21 (documented as trials 21-40),9,19,17,18,1274.22,1297.4,23.18,6.5,2,2
+jitu_21,X_21 (documented as trials 21-40),10,20,19,20,1303.9,1326.03,22.13,,2,2

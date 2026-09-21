@@ -1,0 +1,26 @@
+{
+  "subject": "Sub01_A",
+  "raw_files": [
+    "jitu_1",
+    "jitu_1L",
+    "jitu_1R",
+    "jitu_21",
+    "jitu_21L",
+    "jitu_21R"
+  ],
+  "raw_batches": 2,
+  "rising_events_per_stream_per_batch": 20,
+  "inferred_paired_gait_windows_per_batch": 10,
+  "inferred_physical_gait_windows_total": 20,
+  "limb_specific_GI_exports_per_window": 2,
+  "existing_GI_trace_count": 40,
+  "paired_bout_seconds_range": [
+    22.13,
+    25.55
+  ],
+  "inter_trial_gap_seconds_range": [
+    5.36,
+    10.18
+  ],
+  "conclusion": "The raw trigger timeline supports 20 paired gait-bout windows, not 40 independently delimited raw windows. The protocol file labels X_1/X_21 as trial ranges 1-20/21-40, which conflicts with the 20 start/end pulse pairs in the raw data and requires external protocol clarification before renumbering raw trials."
+}

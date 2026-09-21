@@ -1,0 +1,57 @@
+{
+  "subject": "Sub01_A",
+  "phase": "SSLW",
+  "physical_trigger_paired_windows": 20,
+  "limb_specific_sslw_traces": 40,
+  "records": {
+    "jitu_1": 10,
+    "jitu_21": 10
+  },
+  "sslw_definition": {
+    "phase_order": "QS -> GI -> SSSW -> SLT -> SSLW -> GT",
+    "start": "the selected load-peak boundary immediately after the single SLT interval",
+    "end": "the final accepted recurring load-peak boundary before GT",
+    "mechanism": "the segmentation code assigns SSLW from peaks[k+1] to the final selected peak after choosing one SLT transition interval with a trial-wide two-regime cycle-feature fit",
+    "status": "model-assisted provisional; pressure peaks are candidate landmarks, not verified heel-strike or ground-truth cycle labels"
+  },
+  "source_sslw_sample_count_min": 352,
+  "source_sslw_sample_count_max": 1390,
+  "source_sslw_duration_seconds_min": 3.5199999999999996,
+  "source_sslw_duration_seconds_max": 13.899999999999999,
+  "candidate_interpeak_interval_counts": {
+    "left_limb_distribution_across_20_physical_windows": {
+      "0": 3,
+      "2": 2,
+      "3": 4,
+      "4": 2,
+      "5": 5,
+      "7": 4
+    },
+    "right_limb_distribution_across_20_physical_windows": {
+      "1": 1,
+      "3": 1,
+      "4": 3,
+      "5": 4,
+      "7": 6,
+      "8": 5
+    },
+    "reference_limb_distribution_across_17_windows_with_a_recorded_reference_limb": {
+      "2": 1,
+      "3": 1,
+      "4": 2,
+      "5": 3,
+      "7": 5,
+      "8": 3
+    },
+    "windows_without_recorded_reference_limb": 5,
+    "meaning": "Candidate interpeak intervals are a structural audit only; they are not validated gait-cycle labels."
+  },
+  "cycle_grouping": {
+    "five_repetition_field_present": false,
+    "per_cycle_labels_present": false,
+    "stored_structure": "one continuous SSLW region per physical window, copied to left and right limb-specific traces",
+    "true_40_times_5_equals_200_grouping_exists": false,
+    "reason": "The SSLW sections have variable candidate interpeak counts and no stored repetition identities. Selecting or splitting five intervals per trace would create an artificial grouping."
+  },
+  "averages_calculated": false
+}

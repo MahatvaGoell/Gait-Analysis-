@@ -1,0 +1,37 @@
+{
+  "subject": "Sub01_A",
+  "phase": "SSSW",
+  "physical_trigger_paired_windows": 20,
+  "limb_specific_sssw_traces": 40,
+  "records": {
+    "jitu_1": 10,
+    "jitu_21": 10
+  },
+  "sssw_definition": {
+    "phase_order": "QS -> GI -> SSSW -> SLT -> SSLW -> GT",
+    "start": "the first recurring load-peak candidate used as the operational GI-end boundary",
+    "end": "the selected load-peak boundary immediately before the single SLT region; boundaries are fitted from the full trial using two-regime cycle features",
+    "status": "model-assisted provisional; load peaks are not verified heel-strike annotations"
+  },
+  "source_sssw_sample_count_min": 185,
+  "source_sssw_sample_count_max": 1401,
+  "source_sssw_duration_seconds_min": 1.8500000000000005,
+  "source_sssw_duration_seconds_max": 14.01,
+  "cycle_grouping": {
+    "five_repetition_field_present": false,
+    "per_cycle_labels_present": false,
+    "candidate_landmark_definition": "successive recurring load-peak candidates inside the SSSW boundary, not validated gait-cycle labels",
+    "reference_limb_candidate_interpeak_interval_distribution_for_17_trials_with_reference_limb": {
+      "2": 8,
+      "3": 3,
+      "4": 1,
+      "5": 2,
+      "8": 1
+    },
+    "trials_with_no_reference_limb_recorded": 5,
+    "physical_windows_with_five_or_more_candidate_interpeak_intervals_on_at_least_one_limb": 4,
+    "can_recover_40_times_5_equals_200_existing_segments": false,
+    "reason": "The dataset stores one continuous SSSW region per limb-specific trace. Candidate interpeak intervals vary by trial and limb, and they are not assigned five repetition identifiers."
+  },
+  "averages_calculated": false
+}

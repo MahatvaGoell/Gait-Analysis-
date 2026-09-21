@@ -1,0 +1,33 @@
+{
+  "subject": "Sub01_A",
+  "phase": "SLT",
+  "physical_trigger_paired_windows": 20,
+  "limb_specific_slt_traces": 40,
+  "records": {
+    "jitu_1": 10,
+    "jitu_21": 10
+  },
+  "slt_definition": {
+    "phase_order": "QS -> GI -> SSSW -> SLT -> SSLW -> GT",
+    "start": "the selected load-peak boundary after SSSW",
+    "end": "the next selected load-peak boundary before SSLW",
+    "mechanism": "the segmentation code assigns SLT to peaks[k] through peaks[k+1], one transition interval selected by a trial-wide two-regime cycle-feature fit",
+    "status": "model-assisted provisional; load peaks are candidate landmarks, not verified heel-strike or ground-truth cycle labels"
+  },
+  "source_slt_sample_count_min": 133,
+  "source_slt_sample_count_max": 188,
+  "source_slt_duration_seconds_min": 1.3300000000000018,
+  "source_slt_duration_seconds_max": 1.8800000000000008,
+  "landmark_support": {
+    "physical_windows_with_at_least_one_limb_matching_both_stored_slt_boundaries": 20,
+    "physical_windows_total": 20
+  },
+  "cycle_grouping": {
+    "five_repetition_field_present": false,
+    "per_cycle_labels_present": false,
+    "stored_structure": "one selected SLT transition interval per physical window, copied to its left and right limb-specific trace",
+    "true_40_times_5_equals_200_grouping_exists": false,
+    "reason": "SLT itself is the single selected transition interval. It does not contain a stored five-cycle/repetition structure, and splitting it further would create artificial repetitions."
+  },
+  "averages_calculated": false
+}

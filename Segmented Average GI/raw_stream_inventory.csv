@@ -1,0 +1,7 @@
+batch,stream,raw_file,valid_rows,rising_trigger_events,inferred_paired_windows,invalid_rows_skipped
+jitu_1,FMG,jitu_1,34451,20,10,3
+jitu_1,L_insole,jitu_1L,29972,20,10,4
+jitu_1,R_insole,jitu_1R,31360,20,10,2
+jitu_21,FMG,jitu_21,31545,20,10,3
+jitu_21,L_insole,jitu_21L,28153,20,10,4
+jitu_21,R_insole,jitu_21R,29348,20,10,2
