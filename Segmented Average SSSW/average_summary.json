@@ -53,5 +53,24 @@
       "numerical_csv": "average_data/channel_08_sssw_average.csv",
       "average_graph": "average_graphs/channel_08_sssw_average.png"
     }
-  ]
+  ],
+  "combined_display_average": {
+    "source_trace_count": 40,
+    "signals": [
+      "channel_1",
+      "channel_2",
+      "channel_3",
+      "channel_4",
+      "channel_5",
+      "channel_6",
+      "channel_7",
+      "channel_8",
+      "CoP",
+      "vGRF"
+    ],
+    "normalization": "Each trial's existing SSSW section was normalized to 300 phase-percent samples before calculating the point-by-point mean.",
+    "display_transform": "Each source trace uses the full-trial baseline, gain and vertical lane offset used by the corrected SSSW per-trial figures.",
+    "numerical_csv": "average_data/sssw_display_average_all_signals.csv",
+    "average_graph": "average_graphs/sssw_average_all_signals.png"
+  }
 }
