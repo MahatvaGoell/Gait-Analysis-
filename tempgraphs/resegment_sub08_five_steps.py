@@ -12,6 +12,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import time
 from pathlib import Path
 import sys
 
@@ -75,6 +76,8 @@ def read_trial(path: Path) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     )
     row_missing = np.array([row.get("signal_missing", "0") not in ("", "0", "False", "false") for row in rows])
     imputed = np.repeat(row_missing[:, None], len(SIGNALS), axis=1) | ~np.isfinite(values)
+    for j, name in enumerate(SIGNALS):
+        imputed[:, j] |= np.array([row.get(f"{name}_imputed", "0") not in ("", "0", "False", "false") for row in rows])
     return times, values, imputed
 
 
@@ -369,6 +372,14 @@ def process(apply: bool) -> list[dict[str, object]]:
                 )
                 segmentation_method = "own-vGRF sequence; activity fragmented by missing data"
             valley_times = [float(value) for value in details["valleys"]]
+            candidates, _ = candidate_valleys(times, values[:, 9], 0.06)
+            extra = [float(times[index]) for index in candidates
+                     if phases[2]['start_seconds'] < times[index] < phases[5]['end_seconds']
+                     and all(abs(float(times[index]) - chosen) > 0.30 for chosen in valley_times)]
+            result['review_issue'] = (
+                'Additional vGRF valley candidates at ' + ', '.join(f'{v:.2f}s' for v in extra)
+                + '; 5-1-5 selection is provisional.' if extra else ''
+            )
             if not all(phases[2]["start_seconds"] < value < phases[2]["end_seconds"] for value in valley_times[:5]):
                 raise ValueError("SSSW does not contain its five selected valleys")
             if not (phases[3]["start_seconds"] < valley_times[5] < phases[3]["end_seconds"]):
@@ -393,7 +404,9 @@ def process(apply: bool) -> list[dict[str, object]]:
             if apply:
                 info = {"onset_seconds": phases[1]["start_seconds"], "view_mode": "model_completed"}
                 quality = f"{segmentation_method}: five SSSW valleys, one SLT valley, five SSLW valleys."
-                note = "Per-trial events: GI foot-rise upslope | SSSW first landing + 5 valleys | GT 3.0 s after fifth SSLW recovery."
+                note = "GI: rise to first descent | SSSW: valleys 1-5 | SLT: valley 6 | SSLW: valleys 7-11 | GT: after valley 11 recovery."
+                if result['review_issue']:
+                    note = 'REVIEW REQUIRED: ' + str(result['review_issue'])
                 plot_end = int(details["gt_end_index"])
                 render(
                     destination(source), graph_title(source), times[: plot_end + 1], values[: plot_end + 1], [],
@@ -410,7 +423,7 @@ def write_manifest(rows: list[dict[str, object]]) -> None:
         "source_csv", "png", "status", "segmentation_method", "movement_onset_seconds",
         "gi_start_seconds", "sssw_start_seconds", "sssw_end_seconds", "slt_end_seconds",
         "gt_start_seconds", "gt_end_seconds", "gt_requested_duration_seconds", "gt_available_seconds",
-        "vgrf_valleys_seconds", "candidate_count",
+        "vgrf_valleys_seconds", "candidate_count", "review_issue",
     ]
     with MANIFEST.open("w", newline="", encoding="utf-8") as stream:
         writer = csv.DictWriter(stream, fieldnames=fields)
@@ -449,7 +462,17 @@ def write_review_sheets(rows: list[dict[str, object]]) -> None:
             with Image.open(path) as source:
                 source.thumbnail((800, 320))
                 sheet.paste(source, ((position % 2) * 800, (position // 2) * 320))
-        sheet.save(review / f"page_{page:02d}.png")
+        target = review / f"page_{page:02d}.png"
+        pending = target.with_suffix('.pending.png')
+        sheet.save(pending)
+        for attempt in range(5):
+            try:
+                pending.replace(target)
+                break
+            except OSError:
+                if attempt == 4:
+                    raise
+                time.sleep(0.2)
 
 
 def main() -> None:
