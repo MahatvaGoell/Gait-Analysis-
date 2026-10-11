@@ -35,13 +35,15 @@ def font(size: int, bold: bool = False):
     candidates = [
         "/System/Library/Fonts/Supplemental/Arial Bold.ttf" if bold else "/System/Library/Fonts/Supplemental/Arial.ttf",
         "/System/Library/Fonts/Helvetica.ttc",
+        "C:/Windows/Fonts/arialbd.ttf" if bold else "C:/Windows/Fonts/arial.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" if bold else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
     ]
     for candidate in candidates:
         try:
             return ImageFont.truetype(candidate, size)
         except OSError:
             pass
-    return ImageFont.load_default()
+    return ImageFont.load_default(size=size)
 
 
 def finite_fill(values: np.ndarray) -> np.ndarray:

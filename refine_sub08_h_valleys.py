@@ -549,8 +549,9 @@ def process(subject: str):
                 for source_row, label in zip(source_rows, labels):
                     source_row["provisional_phase"] = label
                     source_row["label_status"] = "cop_valley_cut_not_ground_truth"
+                source_line_ending = line_ending(source)
                 with source.open("w", newline="", encoding="utf-8") as f:
-                    writer = csv.DictWriter(f, fieldnames=fields, lineterminator=line_ending(source))
+                    writer = csv.DictWriter(f, fieldnames=fields, lineterminator=source_line_ending)
                     writer.writeheader()
                     writer.writerows(source_rows)
             else:
