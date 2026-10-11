@@ -1,0 +1,15 @@
+{
+  "subject": "Sub01_H",
+  "graphs": 80,
+  "provisional_5_1_5_layouts": 76,
+  "unresolved_graphs": 4,
+  "layouts_additionally_flagged_for_review": 3,
+  "graphs_with_extra_steps": 0,
+  "saved_stance_candidates": 836,
+  "source_csvs_byte_identical": 80,
+  "visual_review_passes_completed": 2,
+  "visual_review_scope": "All 80 native CoP event traces and all 80 complete multi-sensor graph previews; corrected abh_1 trial 13 L/R pair additionally inspected after production.",
+  "review_date": "2026-10-11",
+  "protected_existing_files_byte_identical": 12032,
+  "limitation": "Signal-derived event candidates, not independently validated foot contacts or step-length labels."
+}

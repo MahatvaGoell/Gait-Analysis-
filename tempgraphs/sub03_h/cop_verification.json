@@ -1,0 +1,15 @@
+{
+  "subject": "Sub03_H",
+  "graphs": 100,
+  "provisional_5_1_5_layouts": 93,
+  "unresolved_graphs": 7,
+  "layouts_additionally_flagged_for_review": 4,
+  "graphs_with_extra_steps": 14,
+  "saved_stance_candidates": 1037,
+  "source_csvs_byte_identical": 100,
+  "visual_review_passes_completed": 2,
+  "visual_review_scope": ["Native CoP candidate contact sheets reviewed during detection refinement", "All 100 final complete graphs reviewed visually"],
+  "automated_checks": "PASS: PNG integrity, source/output hashes, continuous phase intervals, original-valued stance slices, candidate 5-1-5 counts and extra-step ordering",
+  "review_date": "2026-10-11",
+  "limitation": "Signal-derived event candidates, not independently validated foot contacts or step-length labels."
+}

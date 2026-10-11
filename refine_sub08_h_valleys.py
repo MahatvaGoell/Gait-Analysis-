@@ -1,4 +1,4 @@
-"""CoP valley-to-peak (stance) segmentation for Sub08_H, Sub07_H and Sub06_H.
+"""CoP valley-to-peak (stance) segmentation for Sub03_H through Sub08_H.
 
 Everything is read from each limb's own CoP:
   valley = CoP minimum at foot contact (for the very first step, the low point
@@ -27,7 +27,7 @@ valley-to-peak stance segment in stance_segments/, and summary tables. In the
 subject's segmented_data only the phase label columns are updated; waveform
 values are written back exactly as read.
 
-Run:  python refine_sub08_h_valleys.py [Sub08_H] [Sub07_H] [Sub06_H]   (default: Sub08_H)
+Run: python refine_sub08_h_valleys.py [Sub03_H ... Sub08_H] (default: Sub08_H)
 """
 from __future__ import annotations
 
@@ -35,6 +35,7 @@ import csv
 import math
 import shutil
 import sys
+import tempfile
 from pathlib import Path
 
 import numpy as np
@@ -49,7 +50,11 @@ SUBJECTS = {
     "Sub08_H": (SOURCE_ROOT / "segmented_data" / "Sub08_H", SOURCE_ROOT / "Sub08_H"),
     "Sub07_H": (SOURCE_ROOT / "sub07_h" / "segmented_data", SOURCE_ROOT / "sub07_h"),
     "Sub06_H": (SOURCE_ROOT / "sub06_h" / "segmented_data", SOURCE_ROOT / "sub06_h"),
+    "Sub05_H": (SOURCE_ROOT / "sub05_h" / "segmented_data", SOURCE_ROOT / "sub05_h"),
+    "Sub04_H": (SOURCE_ROOT / "sub04_h" / "segmented_data", SOURCE_ROOT / "sub04_h"),
+    "Sub03_H": (SOURCE_ROOT / "sub03_h" / "segmented_data", SOURCE_ROOT / "sub03_h"),
 }
+REVIEW_SUBJECTS = {"Sub03_H", "Sub04_H", "Sub05_H"}
 SOURCE = SUBJECTS["Sub08_H"][0]
 PHASES = ("QS", "GI", "SSSW", "SLT", "SSLW", "GT")
 STEP_PLAN = [("SSSW", n) for n in range(1, 6)] + [("SLT", 1)] + [("SSLW", n) for n in range(1, 6)]
@@ -316,7 +321,10 @@ def segment_trial(left: np.ndarray, right: np.ndarray, estimated_left: np.ndarra
         elif len(stances) == len(STEP_PLAN):
             end_cut = landing_contact(cop[side], filled[side][:, 9], stances, found[other][0], span, flags[side][:, 9])
         lay = layout(stances, end_cut, rise, len(lf))
-        reason = "" if lay else "fewer than 11 CoP valley-to-peak stances"
+        reason = "" if lay else (
+            "fewer than 11 CoP valley-to-peak stances detected" if len(stances) < len(STEP_PLAN)
+            else "candidate CoP stances do not form an ordered 5-1-5 layout"
+        )
         estimated_cuts = []
         if lay:
             cop_flag = flags[side][:, 8]
@@ -345,6 +353,77 @@ def check(lay) -> list[str]:
 
 def step_name(phase: str, number: int) -> str:
     return "T" if phase == "SLT" else f"{'S' if phase == 'SSSW' else 'L'}{number}"
+
+
+def review_flags(result: dict, left: np.ndarray, right: np.ndarray) -> None:
+    """Conservative QA warnings, not new event detection or replacement cuts.
+
+    Keep Ojaswi's detector unchanged. Initial CoP climbs and noisy insoles
+    can pass the count checks yet be ambiguous. Surface those cases in
+    the graph and tables rather than treating a 5-1-5 count as validation.
+    Thresholds below are review heuristics, not biomechanical acceptance limits.
+    """
+    for side, values in (("L", left), ("R", right)):
+        seg = result[side]
+        seg["review_notes"] = []
+        if not seg["layout"]:
+            continue
+        if seg["estimated_cuts"]:
+            seg["review_notes"].append("CoP valley cuts intersect estimated samples: " + ", ".join(seg["estimated_cuts"]))
+        _, steps, _ = seg["layout"]
+        cop = finite_fill(values)[:, 8]
+        climbs = np.array([cop[p] - cop[v] for _, _, v, p, _, _ in steps])
+        durations = np.array([nxt - v for _, _, v, _, _, nxt in steps])
+        typical_climb = float(np.median(climbs))
+        typical_duration = float(np.median(durations))
+        if result.get("source_subject") in {"Sub03_H", "Sub04_H"}:
+            bounds = seg["layout"][0]
+            if bounds[2] - bounds[1] > 1.5 * typical_duration:
+                seg["review_notes"].append("GI candidate spans more than 1.5 median CoP strides; movement onset needs review")
+        for k, (phase, number, *_rest) in enumerate(steps):
+            name = step_name(phase, number)
+            if climbs[k] < 0.35 * typical_climb:
+                seg["review_notes"].append(f"{name} CoP climb is weak relative to this trial")
+            if durations[k] > 1.5 * typical_duration:
+                seg["review_notes"].append(f"{name} interval is unusually long relative to this trial")
+    if all(result[side]["layout"] for side in ("L", "R")):
+        layouts = [result[side]["layout"] for side in ("L", "R")]
+        stride = float(np.median([nxt - v for _, steps, _ in layouts for _, _, v, _, _, nxt in steps]))
+        offset = abs(layouts[0][0][3] - layouts[1][0][3])
+        if not 0.30 * stride <= offset <= 0.70 * stride:
+            for side in ("L", "R"):
+                result[side]["review_notes"].append(
+                    f"L/R SLT offset {offset} samples is not near half this trial's CoP stride ({stride:.0f})"
+                )
+
+
+# Preserve the callable name introduced for Sub05.
+sub05_review_flags = review_flags
+
+
+def segment_recording(subject: str, record: str, trial: int, left: np.ndarray, right: np.ndarray,
+                      flags_left: np.ndarray, flags_right: np.ndarray) -> dict:
+    """Apply the existing detector only to a supported recording window.
+
+    Retained unpaired contexts are not verified protocol trials. Never select
+    an arbitrary walking block inside them and call it a complete 5-1-5 trial.
+    """
+    window_method = ""
+    if subject in {"Sub03_H", "Sub04_H"}:
+        windows = SUBJECTS[subject][1] / "recording_windows.csv"
+        with windows.open(encoding="utf-8", newline="") as f:
+            window = next((r for r in csv.DictReader(f) if r["record"] == record and int(r["trial"]) == trial), None)
+        if window is None:
+            raise ValueError(f"No source-window metadata for {subject}/{record}/{trial}")
+        window_method = window["boundary_method"]
+        if "unpaired" in window_method.lower():
+            reason = "unpaired trigger context; protocol trial boundaries are unverified"
+            return {"rise": 0, "rest": len(left) - 1, "source_window_method": window_method,
+                    **{side: {"stances": [], "layout": None, "reason": reason, "estimated_cuts": []} for side in ("L", "R")}}
+    result = segment_trial(left, right, flags_left, flags_right)
+    result["source_window_method"] = window_method
+    result["source_subject"] = subject
+    return result
 
 
 # ---------------------------------------------------------------- rendering
@@ -376,7 +455,12 @@ def draw(path: Path, title: str, times: np.ndarray, values: np.ndarray, seg: dic
         d.line((left - 7, yp(y), left, yp(y)), fill="#555555", width=2)
         tb = d.textbbox((0, 0), str(y), font=font(17))
         d.text((left - 16 - tb[2], yp(y) - 10), str(y), font=font(17), fill="#444444")
-    for sample in range(0, xmax + 1, 200):
+    tick_step = 200
+    if xmax > 3000:  # keep full long contexts without overlapping tick labels
+        target = xmax / 12
+        magnitude = 10 ** math.floor(math.log10(target))
+        tick_step = int(next(mult * magnitude for mult in (1, 2, 5, 10) if mult * magnitude >= target))
+    for sample in range(0, xmax + 1, tick_step):
         d.line((xp(sample), bottom, xp(sample), bottom + 7), fill="#555555", width=2)
         tb = d.textbbox((0, 0), str(sample), font=font(17))
         d.text((xp(sample) - tb[2] / 2, bottom + 14), str(sample), font=font(17), fill="#444444")
@@ -442,12 +526,28 @@ def draw(path: Path, title: str, times: np.ndarray, values: np.ndarray, seg: dic
         if seg.get("estimated_cuts"):
             note = "CUTS ON ESTIMATED (pale) CoP: " + ", ".join(seg["estimated_cuts"]) + " - not measured"
         d.text((left, 724), f"QS: quiet standing | GI: gait initiation | SSSW: 5 short steps | SLT: transition step | SSLW: 5 long steps | GT: gait termination | {note}", font=font(15), fill="#555555")
+        if seg.get("review_notes"):
+            d.text((left, 666), "REVIEW REQUIRED: candidate cuts retained; check first/last stance and L/R rhythm. See phase_cuts.csv review_notes.",
+                   font=font(17, True), fill="#9a4c00")
     else:
         reason = seg.get("reason") or "fewer than 11 CoP valley-to-peak stances"
         d.text((left, 110), f"UNRESOLVED - {reason}, so 5 SSSW + SLT + 5 SSLW cannot be cut", font=font(21, True), fill="#9a4c00")
-        d.text((left, 696), "* No phase cuts are drawn for this limb: its CoP does not show eleven measured stances.", font=font(16, True), fill="#744600")
+        d.text((left, 696), "* No phase cuts are drawn: the detector did not establish eleven ordered stance intervals for this limb.", font=font(16, True), fill="#744600")
     path.parent.mkdir(parents=True, exist_ok=True)
-    image.save(path)
+    # Save completely before replacing an existing graph. This also avoids a
+    # truncate-open conflict with Windows preview/file-indexing readers.
+    with tempfile.NamedTemporaryFile(dir=path.parent, suffix=".png", delete=False) as handle:
+        pending = Path(handle.name)
+        try:
+            image.save(handle, format="PNG")
+        except BaseException:
+            handle.close()
+            pending.unlink(missing_ok=True)
+            raise
+    try:
+        pending.replace(path)
+    finally:
+        pending.unlink(missing_ok=True)
 
 
 # ---------------------------------------------------------------- output
@@ -486,7 +586,9 @@ def process(subject: str):
         times, left, flags_left = parse_csv(left_path)
         times_r, right, flags_right = parse_csv(right_path)
         assert np.allclose(times, times_r, atol=1e-9)
-        result = segment_trial(left, right, flags_left, flags_right)
+        result = segment_recording(subject, record, trial, left, right, flags_left, flags_right)
+        if subject in REVIEW_SUBJECTS:
+            review_flags(result, left, right)
         rest = result["rest"]
         for side, values, flags, source in (("L", left, flags_left, left_path), ("R", right, flags_right, right_path)):
             seg = result[side]
@@ -497,6 +599,11 @@ def process(subject: str):
             flagged = "CoP_imputed" in fields   # this export marks model-estimated samples
             row = {"record": record, "trial": trial, "side": side, "status": "cop_valley_cut" if lay else "unresolved",
                    "cop_stances_found": len(seg["stances"])}
+            if subject in REVIEW_SUBJECTS:
+                row["review_required"] = int(not lay or bool(seg["review_notes"]))
+                row["review_notes"] = "; ".join(seg["review_notes"]) if lay else seg["reason"]
+            if subject in {"Sub03_H", "Sub04_H"}:
+                row["source_window_method"] = result["source_window_method"]
             if lay:
                 problems = check(lay)
                 assert not problems, (subject, record, trial, side, problems)
@@ -592,7 +699,72 @@ def process(subject: str):
         "- `stance_segments.csv`: valley, peak and next-valley time and sample of every saved stance.\n"
         "- `phase_cuts.csv`, `phase_intervals.csv`: phase cuts per limb graph, in seconds and samples.\n\n"
         "Phase labels in the segmented_data exports (`provisional_phase`) cover the whole phase span, swing included. "
-        "Graphs without eleven measured stances are marked UNRESOLVED rather than forced.\n"
+        "Graphs without a valid ordered stance layout are marked UNRESOLVED rather than forced.\n"
+        + (
+            f"\n## Sub05_H run and source limitations\n\n"
+            f"This run produced {graphs} full-trial limb graphs: {resolved} receive the CoP-derived layout and "
+            f"{graphs - resolved} are UNRESOLVED. For each resolved graph, eleven saved stances follow the 5 SSSW / "
+            "1 SLT / 5 SSLW count. See `phase_cuts.csv` for the status and reason of each limb.\n\n"
+            f"Of the {resolved} count-valid layouts, {sum(bool(r.get('review_notes')) for r in cuts if r['status'] == 'cop_valley_cut')} "
+            "also require review under the checks below. Neither an unflagged graph nor a matching count is "
+            "independent confirmation of a true gait event. Do not use these provisional labels as validated training ground truth.\n\n"
+            "A count-valid layout is not automatically an accurate gait annotation. Additional Sub05 QA flags "
+            "weak stance climbs (<35% of that trial's median), unusually long intervals (>1.5 times its median), "
+            "and paired SLT offsets outside 30-70% of that trial's median CoP stride. These are conservative "
+            "review heuristics, not new segmentation rules or validated gait thresholds. Flagged graphs show "
+            "REVIEW REQUIRED; `review_required` and `review_notes` in `phase_cuts.csv` explain each case. "
+            "Candidate cuts are retained for inspection, not silently corrected or presented as ground truth.\n\n"
+            "The detector and thresholds are Ojaswi's existing approach, applied separately to each trial and limb; "
+            "no fixed timing or Sub08 phase boundaries are copied. The 5-1-5 phase names are protocol assumptions, "
+            "not independently measured short/long step lengths. CoP extrema are signal-derived event candidates, "
+            "not independently verified heel strikes or push-off times.\n\n"
+            "Original sensor values, timestamps, missing-data flags and NaNs are preserved. Short gaps are "
+            "interpolated in memory for detection and shown pale for display, not saved as recovered measurements. "
+            "The graphs use display-only gains and offsets, not shared physical units.\n\n"
+            "The source synchronization report records a missing left-insole end trigger for `sub_21`, trial 16. "
+            "Its trial endpoint was inferred during the original export using matched clock offsets; this rerun "
+            "does not recover that trigger or realign the raw data.\n\n"
+            "The original `README.md`, provisional tables, manifests, verification reports and review sheets are "
+            "retained as historical outputs; they describe the previous segmentation, not these CoP cuts. "
+            "Unresolved source CSVs retain their previous phase columns for preservation; use the current "
+            "`phase_cuts.csv` status as authoritative for this run, not those old labels.\n\n"
+            "Reproduce only this subject with `python -B refine_sub08_h_valleys.py Sub05_H` from the repository root. "
+            "Legacy `generate_subject05.py` and resegmentation scripts can overwrite the new graphs and labels.\n"
+            if subject == "Sub05_H" else ""
+        )
+        + (
+            f"\n## {subject} run and source limitations\n\n"
+            f"{graphs} full-interval limb graphs: {resolved} provisional 5-1-5 layouts and {graphs - resolved} UNRESOLVED. "
+            f"{sum(bool(r.get('review_notes')) for r in cuts if r['status'] == 'cop_valley_cut')} count-valid layouts "
+            "also show REVIEW REQUIRED. Status and reasons for each limb are in `phase_cuts.csv`.\n\n"
+            "Ojaswi's CoP detector and its thresholds are unchanged. Each trial and limb has independently derived "
+            "timing. Saved stances are CoP valley-to-peak; full phase spans include swing. The short/long labels and "
+            "sixth-step SLT are protocol assumptions, not measured step lengths or independently verified heel strikes.\n\n"
+            "Additional QA flags weak CoP climbs (<35% of the trial median), unusually long step intervals "
+            "(>1.5 times the trial median), paired SLT offsets outside 30-70% of the trial's median CoP stride, "
+            "cuts on estimated CoP, and GI spans longer than 1.5 median CoP strides. These are review heuristics, not validated physiological thresholds. "
+            "A matching count or an unflagged graph does not establish event accuracy.\n\n"
+            "Source signals already include model-estimated samples. Every waveform value, time and *_imputed flag "
+            "is preserved; no new reconstruction or raw-data realignment is performed. Estimates are pale in graphs "
+            "and flagged in stance exports. Graph amplitude gains/offsets are display-only.\n\n"
+            "The original `recording_windows.csv` and synchronization reports remain authoritative for window provenance. "
+            "Unpaired-trigger contexts retain the full recording and are UNRESOLVED, not forced into protocol phases. "
+            "Other inferred endpoints and trigger alignment are not proof of independently measured trial boundaries.\n\n"
+            + (
+                "Sub03 specific: `Amit_1` interval 01 is a 256.03-second unmatched-start context, not a verified protocol "
+                "trial. Ordinary paired intervals start at local interval 02. `Amit_21` also has a missing left-insole "
+                "end pulse; original alignment caveats still apply.\n\n" if subject == "Sub03_H" else
+                "Sub04 specific: noisy left triggers were not used to define windows; right-insole clock sections were "
+                "aligned separately in the source export. `ashu_1` interval 11 is a 77.54-second context without a measured "
+                "end, so both limb graphs remain UNRESOLVED.\n\n"
+            )
+            + "Old README, provisional reports, manifests and review sheets are historical and describe previous cuts. "
+            "Unresolved source CSV phase columns remain unchanged; use the new `phase_cuts.csv` status for this run. "
+            "Do not use these provisional labels as validated model-training ground truth.\n\n"
+            f"Reproduce this subject only: `python -B refine_sub08_h_valleys.py {subject}`. "
+            "Legacy generation/resegmentation scripts can overwrite these outputs.\n"
+            if subject in {"Sub03_H", "Sub04_H"} else ""
+        )
     )
     print(f"{subject}: {graphs} limb graphs, {resolved} segmented, {graphs - resolved} unresolved, {len(segment_rows)} stance segments saved")
 
