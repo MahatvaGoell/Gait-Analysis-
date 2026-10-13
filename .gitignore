@@ -21,3 +21,6 @@ desktop.ini
 ~$*.docx
 ~$*.xlsx
 ~$*.pptx
+
+# Output of an earlier vGRF-based resegmentation experiment; superseded by the CoP cuts in tempgraphs/
+tempgraphs_resegmented/

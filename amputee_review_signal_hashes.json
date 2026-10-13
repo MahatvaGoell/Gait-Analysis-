@@ -1,0 +1,85 @@
+{
+ "note": "SHA256 of every column except provisional_phase and label_status (LF-joined rows) of the files whose edges were individually reviewed. The reviews in amputee_edge_reviews.json stay valid while these signal hashes match, whatever the label columns or line endings.",
+ "files": {
+  "tempgraphs/sub01_a/segmented_data/jitu_1/trial_01_l_segmented.csv": {
+   "signal_sha256": "31cd1655b7a725635ad0ca88447b76e5aa143e5888cf253cb81fee3cd9910be5",
+   "reviewed_file_sha256": "5537d52b71d6af55ec2ed180f39f14c518eaef68a57e4fcda10ee3a7150404cd"
+  },
+  "tempgraphs/sub01_a/segmented_data/jitu_1/trial_01_r_segmented.csv": {
+   "signal_sha256": "a8cdde34f92e40db51a9a1403ee8aca971889b6588dbbc453af1bb62572c11cb",
+   "reviewed_file_sha256": "64f324e7520759abb61f591dedc1f709d71cdfd4ffd21b0f404f8582eb2f34dc"
+  },
+  "tempgraphs/sub01_a/segmented_data/jitu_1/trial_03_l_segmented.csv": {
+   "signal_sha256": "8e2506e04a5c3503af19fc53a3ac5cf60c68b5ba8aaf308636ffff3c2413c774",
+   "reviewed_file_sha256": "cbe1d22980681924534f8fa4a5761884a6b09227fa4bfff8518f5738bc412be3"
+  },
+  "tempgraphs/sub01_a/segmented_data/jitu_1/trial_03_r_segmented.csv": {
+   "signal_sha256": "efc73778282eb5013bb87962bfce2becda4a5d3df573520797d835edace0a8f5",
+   "reviewed_file_sha256": "4b4855392416f45cce2c0a1f6b91aa5f54de43fb96c38e91d220929924f7aaeb"
+  },
+  "tempgraphs/sub01_a/segmented_data/jitu_1/trial_08_l_segmented.csv": {
+   "signal_sha256": "38ba2314a804633f97b75dd4f3f99b511639ebb25019b12778c1c89807f18413",
+   "reviewed_file_sha256": "0f696fcb539479bb6af801f7bf3360de3b558ceb5282d191f4b0a2dd8e031f51"
+  },
+  "tempgraphs/sub01_a/segmented_data/jitu_21/trial_02_l_segmented.csv": {
+   "signal_sha256": "aa434c8bf5bacc5129d4fd69902c7c821092e24c91936a13d38b743ccb6713ed",
+   "reviewed_file_sha256": "c0d56f8ae79ba44b5aaa0d7ebb8ec2b8787d07b696c952b835f69ef788ea36e7"
+  },
+  "tempgraphs/sub01_a/segmented_data/jitu_21/trial_06_l_segmented.csv": {
+   "signal_sha256": "889a23dd99c30209b68b0d288052888645919856202eab4fce03425c2b41532e",
+   "reviewed_file_sha256": "5061f601fe8231539700fac0bc93dc28697a4d736de4dd7380f9dafb5383ca4d"
+  },
+  "tempgraphs/sub01_a/segmented_data/jitu_21/trial_10_l_segmented.csv": {
+   "signal_sha256": "f1e86431858729817a94d051d96a2a1b20d8e90faf56074d58b4307817aec518",
+   "reviewed_file_sha256": "06e28ad6f83f472b042913cef2ca8bee98f7a02bbf06822bb07b43d8489c25de"
+  },
+  "tempgraphs/sub01_a/segmented_data/jitu_21/trial_10_r_segmented.csv": {
+   "signal_sha256": "7c41c0d1be9ca4e6a29e7e3344a103fe7f34c8e9053b87b8dc4588cd28b231f1",
+   "reviewed_file_sha256": "c472c099865df1503868115d2cde83fe1e74c9886d62d45a254b27e3c0162ee0"
+  },
+  "tempgraphs/sub02_a/segmented_data/vipin_1/trial_01_r_segmented.csv": {
+   "signal_sha256": "d26de7924d2fde64cabe115502bb108dc7b858cca73dc8b18b94843663b2d08f",
+   "reviewed_file_sha256": "512f6914561468dc4e0d001725182861e23fb3dab5cf940289b7995a0ebf1e4c"
+  },
+  "tempgraphs/sub02_a/segmented_data/vipin_1/trial_04_l_segmented.csv": {
+   "signal_sha256": "494d96fb06613903bdb1d863fcfc82cc8d27b847aeb9a95204cc3ae2b3af3b95",
+   "reviewed_file_sha256": "cda4e377b77f9526917578611ffea0d39de5a20e8a7b6e488a5244a6f615d217"
+  },
+  "tempgraphs/sub02_a/segmented_data/vipin_1/trial_05_r_segmented.csv": {
+   "signal_sha256": "087930585fc15b78ac5fe0537b3db92bbb24d892d1b3991f1cacec4f178f6b51",
+   "reviewed_file_sha256": "b14a51d421036863efae7a20e774dd591b732b86fe5ad9fe16abbdc1fa4a15e9"
+  },
+  "tempgraphs/sub02_a/segmented_data/vipin_1/trial_11_r_segmented.csv": {
+   "signal_sha256": "3e6283b67c8ea28de7961a1b7ea1b7b615c3d66e3887dc54838ad06103dd517c",
+   "reviewed_file_sha256": "53f2ec1cfba982374acca56aa7d9cf96c74efa8e13bd2197971f5314f561d334"
+  },
+  "tempgraphs/sub02_a/segmented_data/vipin_21/trial_02_r_segmented.csv": {
+   "signal_sha256": "4c51725ee0949b69aaad19f2eb4112f7e261f8a016f16a924830d783a75fa196",
+   "reviewed_file_sha256": "d0c4f06d157243e94b7e4e5766a449f292ed23c9a7865f1433fb7da398ba6e44"
+  },
+  "tempgraphs/sub02_a/segmented_data/vipin_21/trial_03_r_segmented.csv": {
+   "signal_sha256": "9824d07599b2cf7c14d09e64a5914023069d75cfe10736755a8ba148d3e66052",
+   "reviewed_file_sha256": "8e9b69ab4c9205ca1745220d367595510166a294ab66e983fcb15ef73783e19a"
+  },
+  "tempgraphs/sub02_a/segmented_data/vipin_21/trial_04_r_segmented.csv": {
+   "signal_sha256": "08b1d6356cbe29e782eab62ad97ce90fc7b897e6474fa535ff925e0d2f76a445",
+   "reviewed_file_sha256": "f9ddf7e90bdee91028a992866bfc6931e4df39f541dc89f44697b8fc24bfc4e7"
+  },
+  "tempgraphs/sub02_a/segmented_data/vipin_21/trial_05_r_segmented.csv": {
+   "signal_sha256": "0f825c354285604c45d3164bc88a6a67f6220dded61442307721dce03db6e057",
+   "reviewed_file_sha256": "e490e3caf9299134d335b1070660b79ba2cfadeba82a930316cbd5a9bc0f9b35"
+  },
+  "tempgraphs/sub02_a/segmented_data/vipin_21/trial_06_r_segmented.csv": {
+   "signal_sha256": "ad517e2b3f7b74e3199bc7aa7b7ab8e64a24dd13593f6cf64e0b3efebdf720d2",
+   "reviewed_file_sha256": "03c90a7147bd2920851d9fa06c565e7ef2b529feee9d97f19780a03fb4c1feb9"
+  },
+  "tempgraphs/sub02_a/segmented_data/vipin_21/trial_07_l_segmented.csv": {
+   "signal_sha256": "4ab608ae3fd4381c2e0e8b0e826aef06cf2acdfbf307f6f17030a0a3ba182e0b",
+   "reviewed_file_sha256": "c9904e5adf3f6d44ca8ff7ab81377ba563891c3624045eec5ab6c5f80c1a83f0"
+  },
+  "tempgraphs/sub02_a/segmented_data/vipin_21/trial_07_r_segmented.csv": {
+   "signal_sha256": "c75300aae127aa23b49e983812fc229eb411e801adae1e37d3662f9f4063ffa2",
+   "reviewed_file_sha256": "176c9eafe95b757fbd2b5c86e3e8eeb82f10da5ecfe51c702d6fda4e5a9c47e0"
+  }
+ }
+}

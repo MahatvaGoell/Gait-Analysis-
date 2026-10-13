@@ -1,0 +1,15 @@
+{
+  "subject": "Sub05_H",
+  "graphs": 80,
+  "cut": 68,
+  "unresolved": 12,
+  "cut_graphs_with_review_note": 24,
+  "saved_stances": 748,
+  "detector_cross_check": {
+    "detectors_agree": 46,
+    "only_this_detector_found_11_stances": 17,
+    "detectors_count_from_different_steps": 6,
+    "neither_detector_found_11_stances": 11
+  },
+  "validation": "Only Sub08_H sir_21 interval 04 left has reviewer marks; all other cuts are signal-derived candidates."
+}

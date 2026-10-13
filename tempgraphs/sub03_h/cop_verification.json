@@ -1,15 +1,16 @@
 {
   "subject": "Sub03_H",
   "graphs": 100,
-  "provisional_5_1_5_layouts": 93,
-  "unresolved_graphs": 7,
-  "layouts_additionally_flagged_for_review": 4,
-  "graphs_with_extra_steps": 14,
-  "saved_stance_candidates": 1037,
-  "source_csvs_byte_identical": 100,
-  "visual_review_passes_completed": 2,
-  "visual_review_scope": ["Native CoP candidate contact sheets reviewed during detection refinement", "All 100 final complete graphs reviewed visually"],
-  "automated_checks": "PASS: PNG integrity, source/output hashes, continuous phase intervals, original-valued stance slices, candidate 5-1-5 counts and extra-step ordering",
-  "review_date": "2026-10-11",
-  "limitation": "Signal-derived event candidates, not independently validated foot contacts or step-length labels."
+  "cut": 93,
+  "unresolved": 7,
+  "cut_graphs_with_review_note": 12,
+  "saved_stances": 1023,
+  "detector_cross_check": {
+    "not_run": 2,
+    "detectors_agree": 82,
+    "neither_detector_found_11_stances": 4,
+    "detectors_count_from_different_steps": 3,
+    "only_this_detector_found_11_stances": 9
+  },
+  "validation": "Only Sub08_H sir_21 interval 04 left has reviewer marks; all other cuts are signal-derived candidates."
 }

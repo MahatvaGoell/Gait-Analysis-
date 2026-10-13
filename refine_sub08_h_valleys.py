@@ -1,9 +1,9 @@
-"""CoP valley-to-peak (stance) segmentation for Sub03_H through Sub08_H.
+"""CoP valley-to-peak (stance) segmentation for all subjects.
 
 Everything is read from each limb's own CoP:
   valley = CoP minimum at foot contact (for the very first step, the low point
            the CoP climbs out of when the person leaves quiet standing);
-  peak   = where the CoP climb ends at push-off.
+  peak   = the highest CoP point of the stance, at push-off.
 A step runs from one valley to the next; its stance phase is valley -> peak and
 is what gets saved. The swing between a peak and the next valley is not saved.
 
@@ -13,25 +13,41 @@ Phase cuts, all on CoP valleys counted from the first one (v0):
   SSSW v0 -> v5   (5 steps: S1-S5).
   SLT  v5 -> v6   (1 transition step: T).
   SSLW v6 -> v11  (5 steps: L1-L5).
-  GT   v11 -> end (the person comes to rest inside GT).
+  GT   v11 -> end (the person comes to rest inside GT; further closing steps
+                   belong to GT).
+This layout reproduces the reviewer's marks on Sub08_H, sir_21, interval 04,
+left (cuts at samples 1005 / 1119 / 1722).
 
-When the foot of the eleventh step lands straight into standing, the CoP has no
-valley there; that one cut then uses the foot-contact time and is flagged.
+A first CoP climb only counts as S1 when the limb then actually lifts off (its
+load drops as in a normal swing). A weight shift made while still standing
+stays in GI.
 
-Sub06_H and Sub07_H contain model-estimated samples (flagged *_imputed in their
-exports). Events on estimated CoP are flagged, never presented as measured, and
-a limb whose walking CoP is mostly estimated is left unresolved.
+When the foot of L5 lands straight into standing the CoP has no valley there;
+that one cut then uses the foot-contact time and is flagged.
+
+Two detectors are used. The primary one is in this file. The second one
+(`refine_subject03_04.py`, exported by `export_second_engine_trains.py`) finds
+candidates independently; its candidates are re-placed onto the same valley and
+peak convention, used as a cross-check everywhere, and used as the result where
+the primary detector does not find eleven stances. For the amputee sets, whose
+edges were reviewed one by one, the second detector is primary. A disagreement
+between the two is reported on the graph and in `phase_cuts.csv`, never hidden.
+
+Model-estimated samples (flagged *_imputed in the exports) are never presented
+as measured: cuts on estimated CoP are flagged, and a limb whose walking CoP is
+mostly estimated is left unresolved.
 
 Outputs go into each subject's own tempgraphs folder: the graphs, one CSV per
 valley-to-peak stance segment in stance_segments/, and summary tables. In the
 subject's segmented_data only the phase label columns are updated; waveform
 values are written back exactly as read.
 
-Run: python refine_sub08_h_valleys.py [Sub03_H ... Sub08_H] (default: Sub08_H)
+Run:  python refine_sub08_h_valleys.py [subject ...]     (default: Sub08_H; "all" runs every subject)
 """
 from __future__ import annotations
 
 import csv
+import json
 import math
 import shutil
 import sys
@@ -53,8 +69,14 @@ SUBJECTS = {
     "Sub05_H": (SOURCE_ROOT / "sub05_h" / "segmented_data", SOURCE_ROOT / "sub05_h"),
     "Sub04_H": (SOURCE_ROOT / "sub04_h" / "segmented_data", SOURCE_ROOT / "sub04_h"),
     "Sub03_H": (SOURCE_ROOT / "sub03_h" / "segmented_data", SOURCE_ROOT / "sub03_h"),
+    "Sub02_H": (SOURCE_ROOT / "sub02_h" / "segmented_data", SOURCE_ROOT / "sub02_h"),
+    "Sub01_H": (SOURCE_ROOT / "sub01_h" / "segmented_data", SOURCE_ROOT / "sub01_h"),
+    "Sub02_A": (SOURCE_ROOT / "sub02_a" / "segmented_data", SOURCE_ROOT / "sub02_a"),
+    "Sub01_A": (SOURCE_ROOT / "sub01_a" / "segmented_data", SOURCE_ROOT / "sub01_a"),
 }
-REVIEW_SUBJECTS = {"Sub03_H", "Sub04_H", "Sub05_H"}
+# Amputee edges were reviewed one by one in the second detector: it is primary there.
+SECOND_ENGINE_PRIMARY = {"Sub01_A", "Sub02_A"}
+SECOND_ENGINE_TRAINS = Path(__file__).resolve().parent / "second_engine_trains.json"
 SOURCE = SUBJECTS["Sub08_H"][0]
 PHASES = ("QS", "GI", "SSSW", "SLT", "SSLW", "GT")
 STEP_PLAN = [("SSSW", n) for n in range(1, 6)] + [("SLT", 1)] + [("SSLW", n) for n in range(1, 6)]
@@ -304,27 +326,195 @@ def near(mask: np.ndarray, index: int, reach: int = 3) -> bool:
     return bool(mask[max(0, index - reach):index + reach + 1].any())
 
 
-def segment_trial(left: np.ndarray, right: np.ndarray, estimated_left: np.ndarray | None = None, estimated_right: np.ndarray | None = None):
+LIFT_OFF_ABSENT = 0.35   # below this the foot did not leave the ground after the "stance"
+LIFT_OFF_WEAK = 0.60     # below this the first step is kept but marked for review
+
+
+def unload_ratio(load: np.ndarray, stances: list, onset: int) -> float:
+    """How far the limb unloads after its first stance, relative to its next three swings (1 = a normal swing).
+
+    Only neighbouring swings are compared: an insole can change its behaviour later in a recording.
+    """
+    if len(stances) < 5:
+        return 1.0
+    smoothed = smooth(load, 7)
+    standing = float(np.median(load[max(0, onset - 100):max(onset, 20)]))
+    drops = [standing - float(np.min(smoothed[p:max(p + 2, stances[k + 1][0])])) for k, (_, p, _) in enumerate(stances[:4])]
+    typical = float(np.median(drops[1:4]))
+    return drops[0] / typical if typical > 0 else 1.0
+
+
+def drop_standing_shift(stances: list, load: np.ndarray, onset: int) -> tuple[list, int, float]:
+    """Remove a first "stance" after which the foot never lifts: a weight shift while still standing.
+
+    Returns the stances, how many were removed, and the lift-off ratio of the first stance that is kept.
+    """
+    dropped = 0
+    while dropped < 2 and len(stances) > 4 and unload_ratio(load, stances, onset) < LIFT_OFF_ABSENT:
+        stances = stances[1:]
+        dropped += 1
+    return stances, dropped, unload_ratio(load, stances, onset)
+
+
+def place_valley(s: np.ndarray, fine: np.ndarray, load_slope: np.ndarray, candidate: int, previous_peak: int, climb: float) -> int:
+    """Put a candidate from the second detector on this file's valley convention.
+
+    The minimum of the detection-smoothed CoP inside the dip the candidate belongs to, refined to the
+    lowest drawn sample within 0.08 s. Two cases where the stance starts at the end of the low instead:
+    an exactly flat floor (CoP held constant while the foot is unloaded), and a long low that the CoP
+    keeps through swing, recognised by the foot contact (steepest load rise) lying at its end.
+    """
+    lo = candidate
+    floor = max(previous_peak + 1, candidate - 80)
+    while lo > floor and fine[lo - 1] <= fine[candidate] + 0.35 * climb:
+        lo -= 1
+    centre = lo + int(np.argmin(s[lo:candidate + 4]))
+    a = max(lo, centre - 8)
+    valley = a + int(np.argmin(fine[a:centre + 9]))
+    lowest = fine[valley]
+    while valley + 1 <= candidate + 3 and fine[valley + 1] <= lowest + 1e-9:
+        valley += 1
+    if candidate - valley > 12:
+        a, b = max(0, valley - 10), min(len(fine), candidate + 11)
+        contact = a + int(np.argmax(load_slope[a:b]))
+        if abs(candidate - contact) < abs(valley - contact):
+            a = max(valley + 1, candidate - 8)
+            valley = a + int(np.argmin(fine[a:candidate + 4]))
+    return valley
+
+
+def adopt_second_engine(train: list, cop: np.ndarray, load: np.ndarray) -> list[tuple[int, int, str]]:
+    """Second-detector candidates, re-placed on this file's valley and peak convention."""
+    s = smooth(medfilt(cop, 11), 5)
+    fine = smooth(medfilt(cop, 5), 3)
+    load_slope = np.gradient(smooth(load, 5))
+    n = len(cop)
+    placed = []
+    for k, (valley, peak, kind) in enumerate(train):
+        following = train[k + 1][0] if k + 1 < len(train) else min(n - 1, valley + 160)
+        if kind != "filtered_cop_valley":   # first climb out of standing, or an individually reviewed edge
+            placed.append((int(valley), int(peak), "second_engine_" + kind))
+            continue
+        previous_peak = placed[-1][1] if placed else max(0, valley - 80)
+        valley = place_valley(s, fine, load_slope, valley, previous_peak, max(float(fine[peak] - fine[valley]), 1e-9))
+        peak = climb_end(s, valley, min(following - 3, valley + 110), following - valley)
+        start = max(valley + 5, peak - 6)
+        placed.append((valley, start + int(np.argmax(fine[start:peak + 7])), "cop_valley"))
+    placed = [x for k, x in enumerate(placed) if x[1] > x[0] and (k == 0 or x[0] > placed[k - 1][0])]
+    # A "step" much shorter than a stride is a glitch dip inside a plateau: drop the weaker of the two valleys.
+    changed = True
+    while changed and len(placed) > 3:
+        changed = False
+        gaps = np.diff([v for v, _, _ in placed])
+        stride = float(np.median(gaps))
+        for k, gap in enumerate(gaps):
+            if gap < 0.70 * stride:
+                climbs = [fine[placed[j][1]] - fine[placed[j][0]] for j in (k, k + 1)]
+                fixed = [placed[j][2].endswith("individually_reviewed_cop_edge") for j in (k, k + 1)]
+                drop = k + 1 if fixed[0] and not fixed[1] else k if fixed[1] and not fixed[0] else (k if climbs[0] < climbs[1] else k + 1)
+                del placed[drop]
+                changed = True
+                break
+    return placed
+
+
+def segment_trial(left: np.ndarray, right: np.ndarray, estimated_left: np.ndarray | None = None, estimated_right: np.ndarray | None = None,
+                  second: dict | None = None, second_primary: bool = False):
+    """Phase layout of both limbs. `second` holds the second detector's candidates for this recording."""
     lf, rf = finite_fill(left), finite_fill(right)
     filled = {"L": lf, "R": rf}
     flags = {"L": estimated_left if estimated_left is not None else np.zeros(lf.shape, bool),
              "R": estimated_right if estimated_right is not None else np.zeros(rf.shape, bool)}
     rise, rest = rise_and_rest(lf, rf)
+    usable = second is not None and "error" not in second
+    second_rise = second.get("rise") if usable else None
+    onset = rise if rise > 0 else (second_rise or 0)   # the global detector can fail on a noisy quiet-standing stretch
     cop = {side: bridge_short_gaps(filled[side][:, 8], flags[side][:, 8]) for side in filled}
-    found = {side: cop_stances(cop[side], rise, rest) for side in filled}
-    result = {"rise": rise, "rest": rest}
-    for side, other in (("L", "R"), ("R", "L")):
-        stances, span = found[side]
-        end_cut = None
+    result = {"rise": onset, "rest": rest}
+
+    # Candidate stance trains of each detector, each with the lift-off test applied to its first stance.
+    trains = {"own": {}, "second": {}}
+    spans, dropped, lift_off = {}, {"own": {}, "second": {}}, {"own": {}, "second": {}}
+    for side in ("L", "R"):
+        load = filled[side][:, 9]
+        stances, spans[side] = cop_stances(cop[side], rise, rest)
+        trains["own"][side], dropped["own"][side], lift_off["own"][side] = drop_standing_shift(stances, load, onset)
+        candidates = second[side]["stances"] if usable else []
+        placed = adopt_second_engine(candidates, cop[side], load) if candidates else []
+        trains["second"][side], dropped["second"][side], lift_off["second"][side] = drop_standing_shift(placed, load, onset)
+
+    def movement_onset(name: str, side: str) -> tuple[int, str]:
+        """Start of GI for this limb's layout."""
+        valleys = [v for v, _, _ in trains[name][side]]
+        stride = float(np.median(np.diff(valleys))) if len(valleys) > 2 else 120.0
+        if name == "second" and usable and second[side].get("reviewed_onset") is not None:
+            return second[side]["reviewed_onset"], "individually_reviewed_onset"
+        if 0 < rise < valleys[0] and valleys[0] - rise <= 3 * stride:
+            return rise, "rise_out_of_quiet_standing"
+        if second_rise and 0 < second_rise < valleys[0] and valleys[0] - second_rise <= 3 * stride:
+            return second_rise, "local_departure_before_first_step"
+        return max(1, int(valleys[0] - 0.35 * stride)), "not_found_placed_before_first_step"
+
+    def irregular(lay) -> int:
+        """Steps whose length is far from this layout's median (a missed or an extra valley)."""
+        lengths = np.array([following - valley for _, _, valley, _, _, following in lay[1]], float)
+        typical = float(np.median(lengths))
+        return int(np.sum(lengths[1:] > 1.5 * typical) + np.sum(lengths < 0.7 * typical))
+
+    def end_cut(name: str, side: str, other: str):
+        stances = trains[name][side]
         if len(stances) > len(STEP_PLAN):
-            end_cut = (stances[len(STEP_PLAN)][0], "cop_valley")
-        elif len(stances) == len(STEP_PLAN):
-            end_cut = landing_contact(cop[side], filled[side][:, 9], stances, found[other][0], span, flags[side][:, 9])
-        lay = layout(stances, end_cut, rise, len(lf))
-        reason = "" if lay else (
-            "fewer than 11 CoP valley-to-peak stances detected" if len(stances) < len(STEP_PLAN)
-            else "candidate CoP stances do not form an ordered 5-1-5 layout"
-        )
+            return stances[len(STEP_PLAN)][0], "cop_valley"
+        if len(stances) < len(STEP_PLAN):
+            return None
+        info = second[side] if name == "second" and usable else None
+        if info and info["resolved"] and info["end_cut"] is not None and len(info["stances"]) == len(stances) and not dropped[name][side]:
+            return info["end_cut"], "second_engine_" + info["end_kind"]    # its own terminal contact
+        partner = trains[name][other] if len(trains[name][other]) >= len(STEP_PLAN) else trains["own"][other]
+        return landing_contact(cop[side], filled[side][:, 9], stances, partner, spans[side] or 1.0, flags[side][:, 9])
+
+    order = ("second", "own") if second_primary else ("own", "second")
+    layouts, onsets = {"L": {}, "R": {}}, {"L": {}, "R": {}}
+    for side, other in (("L", "R"), ("R", "L")):
+        for name in order:
+            layouts[side][name], onsets[side][name] = None, ""
+            if trains[name][side]:
+                start, onsets[side][name] = movement_onset(name, side)
+                layouts[side][name] = layout(trains[name][side], end_cut(name, side, other), start, len(lf))
+
+    # Which detector's layout to use on each limb. Preference: the two feet alternate (their SLT cuts
+    # are about half a stride apart), then regular step lengths, then the detector that is primary.
+    options = {side: [name for name in order if layouts[side][name]] for side in ("L", "R")}
+    picked = {side: (options[side][0] if options[side] else None) for side in ("L", "R")}
+    if all(options.values()):
+        def cost(left_name: str, right_name: str):
+            pair = (layouts["L"][left_name], layouts["R"][right_name])
+            stride = float(np.median([following - valley for lay in pair for _, _, valley, _, _, following in lay[1]]))
+            apart = abs(pair[0][0][3] - pair[1][0][3])
+            return (not 0.30 * stride <= apart <= 0.70 * stride, irregular(pair[0]) + irregular(pair[1]),
+                    order.index(left_name) + order.index(right_name))
+        picked["L"], picked["R"] = min(((a, b) for a in options["L"] for b in options["R"]), key=lambda names: cost(*names))
+    else:
+        for side in ("L", "R"):
+            if len(options[side]) == 2 and irregular(layouts[side][options[side][0]]) > irregular(layouts[side][options[side][1]]):
+                picked[side] = options[side][1]
+
+    for side in ("L", "R"):
+        chosen = picked[side]
+        lay = layouts[side][chosen] if chosen else None
+        layouts_here, onsets_here = layouts[side], onsets[side]
+        found = max(len(trains[name][side]) for name in order)
+        reason = "" if lay else ("fewer than 11 CoP valley-to-peak stances detected" if found < len(STEP_PLAN)
+                                 else "candidate CoP stances do not form an ordered 5-1-5 layout")
+        if second is None:
+            cross_check = "not_run"
+        elif all(layouts_here.values()):
+            apart = abs(layouts_here["own"][0][3] - layouts_here["second"][0][3])
+            cross_check = "detectors_agree" if apart <= 30 else "detectors_count_from_different_steps"
+        elif lay:
+            cross_check = "only_this_detector_found_11_stances"
+        else:
+            cross_check = "neither_detector_found_11_stances"
         estimated_cuts = []
         if lay:
             cop_flag = flags[side][:, 8]
@@ -332,7 +522,25 @@ def segment_trial(left: np.ndarray, right: np.ndarray, estimated_left: np.ndarra
             estimated_cuts = [f"v{k}" for k, v in enumerate(valleys) if near(cop_flag, v)]
             if len(estimated_cuts) >= 6:   # the CoP of this limb was not recorded while walking
                 lay, reason = None, "CoP of this limb is estimated, not recorded, during walking"
-        result[side] = {"stances": stances, "layout": lay, "reason": reason, "estimated_cuts": estimated_cuts}
+        result[side] = {"stances": trains[chosen][side] if chosen else trains[order[0]][side], "layout": lay, "reason": reason,
+                        "estimated_cuts": estimated_cuts, "cut_source": {"own": "primary_detector", "second": "second_detector_replaced"}.get(chosen, ""),
+                        "cross_check": cross_check, "standing_shift_dropped": dropped[chosen][side] if chosen else 0,
+                        "lift_off_ratio": round(float(lift_off[chosen][side]), 2) if chosen else None,
+                        "onset_kind": onsets_here[chosen] if chosen else "",
+                        "individual_review": second[side].get("individual_review", "") if chosen == "second" and second else ""}
+
+    # The two feet alternate. If one limb's cuts are confirmed by both detectors and the other limb's
+    # layout does not sit about half a stride away from them, that other layout counts the wrong steps
+    # (typically a weak or noisy insole): leave it unresolved instead of showing misplaced cuts.
+    if result["L"]["layout"] and result["R"]["layout"]:
+        pair = (result["L"]["layout"], result["R"]["layout"])
+        stride = float(np.median([following - valley for lay in pair for _, _, valley, _, _, following in lay[1]]))
+        apart = abs(pair[0][0][3] - pair[1][0][3])
+        confirmed = {side: result[side]["cross_check"] == "detectors_agree" for side in ("L", "R")}
+        if not 0.30 * stride <= apart <= 0.70 * stride and confirmed["L"] != confirmed["R"]:
+            weak = "R" if confirmed["L"] else "L"
+            result[weak].update(layout=None, estimated_cuts=[], reason="its layout does not alternate with the other limb, whose cuts both "
+                                "detectors confirm (weak or noisy insole signal)")
     return result
 
 
@@ -356,30 +564,36 @@ def step_name(phase: str, number: int) -> str:
 
 
 def review_flags(result: dict, left: np.ndarray, right: np.ndarray) -> None:
-    """Conservative QA warnings, not new event detection or replacement cuts.
+    """Review warnings; they never move a cut.
 
-    Keep Ojaswi's detector unchanged. Initial CoP climbs and noisy insoles
-    can pass the count checks yet be ambiguous. Surface those cases in
-    the graph and tables rather than treating a 5-1-5 count as validation.
-    Thresholds below are review heuristics, not biomechanical acceptance limits.
+    A 5-1-5 count is not a validation. These checks surface layouts that deserve a
+    look: the thresholds are review heuristics, not biomechanical acceptance limits.
     """
     for side, values in (("L", left), ("R", right)):
         seg = result[side]
         seg["review_notes"] = []
         if not seg["layout"]:
             continue
+        if seg["cross_check"] == "detectors_count_from_different_steps":
+            seg["review_notes"].append("the two detectors count from different first steps; S1 needs review")
+        elif seg["cross_check"] == "only_this_detector_found_11_stances":
+            seg["review_notes"].append("only one detector found eleven stances")
         if seg["estimated_cuts"]:
             seg["review_notes"].append("CoP valley cuts intersect estimated samples: " + ", ".join(seg["estimated_cuts"]))
-        _, steps, _ = seg["layout"]
+        if seg["individual_review"]:
+            seg["review_notes"].append("contains individually reviewed (hand-entered) edges")
+        if seg["lift_off_ratio"] is not None and seg["lift_off_ratio"] < LIFT_OFF_WEAK:
+            seg["review_notes"].append(f"limb barely unloads after S1 ({seg['lift_off_ratio']:.2f} of its next swings); S1 may be a weight shift")
+        if seg["onset_kind"] == "not_found_placed_before_first_step":
+            seg["review_notes"].append("movement onset not found; GI start is a placeholder")
+        bounds, steps, _ = seg["layout"]
         cop = finite_fill(values)[:, 8]
         climbs = np.array([cop[p] - cop[v] for _, _, v, p, _, _ in steps])
         durations = np.array([nxt - v for _, _, v, _, _, nxt in steps])
         typical_climb = float(np.median(climbs))
         typical_duration = float(np.median(durations))
-        if result.get("source_subject") in {"Sub03_H", "Sub04_H"}:
-            bounds = seg["layout"][0]
-            if bounds[2] - bounds[1] > 1.5 * typical_duration:
-                seg["review_notes"].append("GI candidate spans more than 1.5 median CoP strides; movement onset needs review")
+        if bounds[2] - bounds[1] > 1.5 * typical_duration:
+            seg["review_notes"].append("GI spans more than 1.5 median CoP strides; movement onset needs review")
         for k, (phase, number, *_rest) in enumerate(steps):
             name = step_name(phase, number)
             if climbs[k] < 0.35 * typical_climb:
@@ -401,26 +615,32 @@ def review_flags(result: dict, left: np.ndarray, right: np.ndarray) -> None:
 sub05_review_flags = review_flags
 
 
+def load_second_engine_trains() -> dict:
+    if not SECOND_ENGINE_TRAINS.exists():
+        return {}
+    return json.loads(SECOND_ENGINE_TRAINS.read_text(encoding="utf-8"))
+
+
 def segment_recording(subject: str, record: str, trial: int, left: np.ndarray, right: np.ndarray,
-                      flags_left: np.ndarray, flags_right: np.ndarray) -> dict:
-    """Apply the existing detector only to a supported recording window.
+                      flags_left: np.ndarray, flags_right: np.ndarray, second_trains: dict | None = None) -> dict:
+    """Segment one recording window, unless its trigger context does not support a protocol trial.
 
     Retained unpaired contexts are not verified protocol trials. Never select
     an arbitrary walking block inside them and call it a complete 5-1-5 trial.
     """
     window_method = ""
-    if subject in {"Sub03_H", "Sub04_H"}:
-        windows = SUBJECTS[subject][1] / "recording_windows.csv"
+    windows = SUBJECTS[subject][1] / "recording_windows.csv"
+    if windows.exists():
         with windows.open(encoding="utf-8", newline="") as f:
             window = next((r for r in csv.DictReader(f) if r["record"] == record and int(r["trial"]) == trial), None)
-        if window is None:
-            raise ValueError(f"No source-window metadata for {subject}/{record}/{trial}")
-        window_method = window["boundary_method"]
+        window_method = window["boundary_method"] if window else ""
         if "unpaired" in window_method.lower():
             reason = "unpaired trigger context; protocol trial boundaries are unverified"
-            return {"rise": 0, "rest": len(left) - 1, "source_window_method": window_method,
-                    **{side: {"stances": [], "layout": None, "reason": reason, "estimated_cuts": []} for side in ("L", "R")}}
-    result = segment_trial(left, right, flags_left, flags_right)
+            return {"rise": 0, "rest": len(left) - 1, "source_window_method": window_method, "source_subject": subject,
+                    **{side: {"stances": [], "layout": None, "reason": reason, "estimated_cuts": [], "cut_source": "", "cross_check": "not_run",
+                              "standing_shift_dropped": 0, "individual_review": "", "lift_off_ratio": None, "onset_kind": ""} for side in ("L", "R")}}
+    second = (second_trains or {}).get(f"{subject}|{record}|{trial}")
+    result = segment_trial(left, right, flags_left, flags_right, second, subject in SECOND_ENGINE_PRIMARY)
     result["source_window_method"] = window_method
     result["source_subject"] = subject
     return result
@@ -439,7 +659,7 @@ def draw(path: Path, title: str, times: np.ndarray, values: np.ndarray, seg: dic
     z = np.asarray(values, float)
     filled = finite_fill(values)
     n = len(times)
-    w, h = 2200, 760
+    w, h = 2200, 760 + (28 if lay and seg.get("review_notes") else 0)
     image = Image.new("RGB", (w, h), "white")
     d = ImageDraw.Draw(image)
     left, right, top, bottom = 138, 2022, 178, 600
@@ -527,8 +747,7 @@ def draw(path: Path, title: str, times: np.ndarray, values: np.ndarray, seg: dic
             note = "CUTS ON ESTIMATED (pale) CoP: " + ", ".join(seg["estimated_cuts"]) + " - not measured"
         d.text((left, 724), f"QS: quiet standing | GI: gait initiation | SSSW: 5 short steps | SLT: transition step | SSLW: 5 long steps | GT: gait termination | {note}", font=font(15), fill="#555555")
         if seg.get("review_notes"):
-            d.text((left, 666), "REVIEW REQUIRED: candidate cuts retained; check first/last stance and L/R rhythm. See phase_cuts.csv review_notes.",
-                   font=font(17, True), fill="#9a4c00")
+            d.text((left, 752), ("REVIEW: " + "; ".join(seg["review_notes"]))[:215], font=font(15, True), fill="#9a4c00")
     else:
         reason = seg.get("reason") or "fewer than 11 CoP valley-to-peak stances"
         d.text((left, 110), f"UNRESOLVED - {reason}, so 5 SSSW + SLT + 5 SSLW cannot be cut", font=font(21, True), fill="#9a4c00")
@@ -577,6 +796,7 @@ def process(subject: str):
         (graphs_root / stale).unlink(missing_ok=True)
     cuts, intervals, segment_rows = [], [], []
     graphs = resolved = 0
+    second_trains = load_second_engine_trains()
     for left_path in sorted(source_root.rglob("trial_*_l_segmented.csv")):
         right_path = left_path.with_name(left_path.name.replace("_l_segmented.csv", "_r_segmented.csv"))
         if not right_path.exists():
@@ -586,9 +806,8 @@ def process(subject: str):
         times, left, flags_left = parse_csv(left_path)
         times_r, right, flags_right = parse_csv(right_path)
         assert np.allclose(times, times_r, atol=1e-9)
-        result = segment_recording(subject, record, trial, left, right, flags_left, flags_right)
-        if subject in REVIEW_SUBJECTS:
-            review_flags(result, left, right)
+        result = segment_recording(subject, record, trial, left, right, flags_left, flags_right, second_trains)
+        review_flags(result, left, right)
         rest = result["rest"]
         for side, values, flags, source in (("L", left, flags_left, left_path), ("R", right, flags_right, right_path)):
             seg = result[side]
@@ -599,10 +818,14 @@ def process(subject: str):
             flagged = "CoP_imputed" in fields   # this export marks model-estimated samples
             row = {"record": record, "trial": trial, "side": side, "status": "cop_valley_cut" if lay else "unresolved",
                    "cop_stances_found": len(seg["stances"])}
-            if subject in REVIEW_SUBJECTS:
-                row["review_required"] = int(not lay or bool(seg["review_notes"]))
-                row["review_notes"] = "; ".join(seg["review_notes"]) if lay else seg["reason"]
-            if subject in {"Sub03_H", "Sub04_H"}:
+            row["review_required"] = int(not lay or bool(seg["review_notes"]))
+            row["review_notes"] = "; ".join(seg["review_notes"]) if lay else seg["reason"]
+            row["cut_source"] = seg["cut_source"] if lay else ""
+            row["detector_cross_check"] = seg["cross_check"]
+            row["standing_shift_before_S1_left_in_GI"] = seg["standing_shift_dropped"]
+            row["S1_lift_off_ratio"] = seg["lift_off_ratio"] if lay else ""
+            row["GI_start_kind"] = seg["onset_kind"] if lay else ""
+            if result.get("source_window_method"):
                 row["source_window_method"] = result["source_window_method"]
             if lay:
                 problems = check(lay)
@@ -652,17 +875,20 @@ def process(subject: str):
                                       "fully_measured": int(not stance.any())})
                     entry["file"] = f"stance_segments/{record}/{name}"
                     segment_rows.append(entry)
-                # Only the phase label columns change; every waveform value is written back as read.
+            else:
+                row["unresolved_reason"] = seg["reason"]
+                labels = ["UNRESOLVED"] * len(times)   # no stale phase labels from an earlier segmentation
+            # Only the phase label columns change; every waveform value is written back as read.
+            status = "cop_valley_cut_not_ground_truth" if lay else "unresolved"
+            if any(r["provisional_phase"] != label or r["label_status"] != status for r, label in zip(source_rows, labels)):
                 for source_row, label in zip(source_rows, labels):
                     source_row["provisional_phase"] = label
-                    source_row["label_status"] = "cop_valley_cut_not_ground_truth"
+                    source_row["label_status"] = status
                 source_line_ending = line_ending(source)
                 with source.open("w", newline="", encoding="utf-8") as f:
                     writer = csv.DictWriter(f, fieldnames=fields, lineterminator=source_line_ending)
                     writer.writeheader()
                     writer.writerows(source_rows)
-            else:
-                row["unresolved_reason"] = seg["reason"]
             cuts.append(row)
             png = graphs_root / record / f"trial_{trial:02d}_{side.lower()}_complete.png"
             draw(png, f"{subject} | {record} | Recording interval {trial:02d} | {side}", times, values, seg, flags if flagged else None)
@@ -671,10 +897,28 @@ def process(subject: str):
     write_dicts(graphs_root / "phase_cuts.csv", cuts)
     write_dicts(graphs_root / "phase_intervals.csv", intervals)
     write_dicts(graphs_root / "stance_segments.csv", segment_rows)
+    flagged = sum(bool(r["review_notes"]) for r in cuts if r["status"] == "cop_valley_cut")
+    checks = {}
+    for r in cuts:
+        checks[r["detector_cross_check"]] = checks.get(r["detector_cross_check"], 0) + 1
+    source_notes = {
+        "Sub03_H": "`Amit_1` interval 01 is a 256.03-second unmatched-start context, not a verified protocol trial, and stays UNRESOLVED. "
+                   "Ordinary paired intervals start at local interval 02. `Amit_21` has a missing left-insole end pulse; the original alignment caveats still apply.",
+        "Sub04_H": "Noisy left triggers were not used to define windows; right-insole clock sections were aligned separately in the source export. "
+                   "`ashu_1` interval 11 is a 77.54-second context without a measured end, so both limb graphs stay UNRESOLVED.",
+        "Sub05_H": "The source synchronization report records a missing left-insole end trigger for `sub_21`, trial 16; its endpoint was inferred during the "
+                   "original export and is not recovered here.",
+        "Sub01_A": "Amputee recordings: no healthy-subject timing or bilateral symmetry is imposed. Edges that were reviewed one by one are listed in "
+                   "`amputee_edge_reviews.json` (hand-entered sample indices) and are marked in `phase_cuts.csv`.",
+        "Sub02_A": "Amputee recordings: no healthy-subject timing or bilateral symmetry is imposed. Edges that were reviewed one by one are listed in "
+                   "`amputee_edge_reviews.json` (hand-entered sample indices) and are marked in `phase_cuts.csv`.",
+    }
     (graphs_root / ("README.md" if subject == "Sub08_H" else "README_cop_segmentation.md")).write_text(
         f"# {subject} CoP valley-to-peak segmentation\n\n"
         "Generated by `refine_sub08_h_valleys.py`. Valleys and peaks are found in each limb's own CoP, not in vGRF.\n\n"
-        "- **Valley**: CoP minimum at foot contact. For the limb that steps first, the first valley is the low point its CoP climbs out of when leaving quiet standing.\n"
+        f"{graphs} limb graphs: {resolved} cut, {graphs - resolved} UNRESOLVED, {flagged} of the cut graphs carry a review note.\n\n"
+        "- **Valley**: CoP minimum at foot contact. For the limb that steps first, the first valley is the low point its CoP climbs out of when leaving quiet standing. "
+        "Where the CoP is held exactly constant while the foot is unloaded, the valley is the last sample of that flat floor.\n"
         "- **Peak**: the highest CoP point of the stance, at push-off.\n"
         "- **Step**: one valley to the next. **Stance** = valley to peak (saved). The swing after the peak is not saved.\n\n"
         "Phase cuts are all on valleys, counted from the first one (v0):\n\n"
@@ -684,93 +928,60 @@ def process(subject: str):
         "| SSSW | v0 to v5 | S1-S5 |\n"
         "| SLT | v5 to v6 | T |\n"
         "| SSLW | v6 to v11 | L1-L5 |\n"
-        "| GT | v11 to the end; the person comes to rest inside it | |\n\n"
+        "| GT | v11 to the end; the person comes to rest inside it, and any further closing step belongs to GT | |\n\n"
+        "This is the layout that reproduces the reviewer's marks on Sub08_H, sir_21, interval 04, left (cuts at samples 1005 / 1119 / 1722). "
+        "No other recording has reviewer marks, so every other cut is a signal-derived candidate.\n\n"
+        "A first CoP climb counts as S1 only if the limb then lifts off. `S1_lift_off_ratio` is how far the limb's load drops after S1 "
+        "relative to its next three swings: below 0.35 the climb is a weight shift made while still standing and stays in GI "
+        "(`standing_shift_before_S1_left_in_GI`); between 0.35 and 0.60 S1 is kept and marked for review.\n\n"
         "When the foot of L5 lands straight into standing the CoP has no valley there. That one cut then uses the foot-contact time "
         "(`GT_start_kind` in `phase_cuts.csv`).\n\n"
+        "## Cross-check between two detectors\n\n"
+        "The primary detector is in `refine_sub08_h_valleys.py`. A second, independently written detector (`refine_subject03_04.py`, exported by "
+        "`export_second_engine_trains.py`) proposes its own candidates; they are re-placed on the valley and peak convention above. "
+        + ("For this subject the second detector is primary, because its edges were reviewed one by one. " if subject in SECOND_ENGINE_PRIMARY else "")
+        + "`cut_source` says which detector supplied a graph's cuts and `detector_cross_check` how the two compare:\n\n"
+        + "".join(f"- `{name}`: {count} graphs\n" for name, count in sorted(checks.items()))
+        + "\n`not_run` means the second detector was not run for this subject. Where the two count from different first steps the graph is cut by the primary "
+        "detector and marked for review; the disagreement is not resolved automatically.\n\n"
+        "## Review notes\n\n"
+        "`review_required` and `review_notes` in `phase_cuts.csv` (and a REVIEW line under the graph) mark layouts that deserve a look: detector disagreement, "
+        "cuts on estimated CoP, hand-entered edges, a weak CoP climb (<35% of the trial median), an unusually long step (>1.5 times the trial median), "
+        "GI longer than 1.5 median strides, or left/right SLT cuts that are not about half a stride apart. They are review heuristics and never move a cut. "
+        "A matching 5-1-5 count or an unflagged graph is not a validation.\n\n"
         "Estimated samples (the `*_imputed` flags of the export, pale in the graphs) are never treated as measurements: "
-        "`cuts_on_estimated_cop` in `phase_cuts.csv` names every cut that sits on estimated CoP, `stance_segments.csv` counts the estimated "
+        "`cuts_on_estimated_cop` names every cut that sits on estimated CoP, `stance_segments.csv` counts the estimated "
         "CoP / FMG / vGRF samples of each stance (`fully_measured` = 1 when there are none), and a limb whose walking CoP is mostly estimated "
         "is left UNRESOLVED.\n\n"
         "The graphs follow the reference figure: sample axis, phase names on lines, arrowed dashed cuts and S1-S5 / T / L1-L5 labels. "
+        "They draw the exported values without smoothing; only a display offset and gain differ per signal. "
         "Valley and peak positions are not drawn; they are in `stance_segments.csv`.\n\n"
-        "Files:\n\n"
+        + (f"## Source notes\n\n{source_notes[subject]}\n\n" if subject in source_notes else "")
+        + "## Files\n\n"
         "- `<record>/trial_##_<l|r>_complete.png`: the graphs.\n"
-        "- `stance_segments/<record>/trial_##_<l|r>_<PHASE>_<S1..L5>.csv`: the samples of one stance, valley to peak.\n"
+        "- `stance_segments/<record>/trial_##_<l|r>_<PHASE>_<S1..L5>.csv`: the samples of one stance, valley to peak, values as exported.\n"
         "- `stance_segments.csv`: valley, peak and next-valley time and sample of every saved stance.\n"
         "- `phase_cuts.csv`, `phase_intervals.csv`: phase cuts per limb graph, in seconds and samples.\n\n"
-        "Phase labels in the segmented_data exports (`provisional_phase`) cover the whole phase span, swing included. "
-        "Graphs without a valid ordered stance layout are marked UNRESOLVED rather than forced.\n"
-        + (
-            f"\n## Sub05_H run and source limitations\n\n"
-            f"This run produced {graphs} full-trial limb graphs: {resolved} receive the CoP-derived layout and "
-            f"{graphs - resolved} are UNRESOLVED. For each resolved graph, eleven saved stances follow the 5 SSSW / "
-            "1 SLT / 5 SSLW count. See `phase_cuts.csv` for the status and reason of each limb.\n\n"
-            f"Of the {resolved} count-valid layouts, {sum(bool(r.get('review_notes')) for r in cuts if r['status'] == 'cop_valley_cut')} "
-            "also require review under the checks below. Neither an unflagged graph nor a matching count is "
-            "independent confirmation of a true gait event. Do not use these provisional labels as validated training ground truth.\n\n"
-            "A count-valid layout is not automatically an accurate gait annotation. Additional Sub05 QA flags "
-            "weak stance climbs (<35% of that trial's median), unusually long intervals (>1.5 times its median), "
-            "and paired SLT offsets outside 30-70% of that trial's median CoP stride. These are conservative "
-            "review heuristics, not new segmentation rules or validated gait thresholds. Flagged graphs show "
-            "REVIEW REQUIRED; `review_required` and `review_notes` in `phase_cuts.csv` explain each case. "
-            "Candidate cuts are retained for inspection, not silently corrected or presented as ground truth.\n\n"
-            "The detector and thresholds are Ojaswi's existing approach, applied separately to each trial and limb; "
-            "no fixed timing or Sub08 phase boundaries are copied. The 5-1-5 phase names are protocol assumptions, "
-            "not independently measured short/long step lengths. CoP extrema are signal-derived event candidates, "
-            "not independently verified heel strikes or push-off times.\n\n"
-            "Original sensor values, timestamps, missing-data flags and NaNs are preserved. Short gaps are "
-            "interpolated in memory for detection and shown pale for display, not saved as recovered measurements. "
-            "The graphs use display-only gains and offsets, not shared physical units.\n\n"
-            "The source synchronization report records a missing left-insole end trigger for `sub_21`, trial 16. "
-            "Its trial endpoint was inferred during the original export using matched clock offsets; this rerun "
-            "does not recover that trigger or realign the raw data.\n\n"
-            "The original `README.md`, provisional tables, manifests, verification reports and review sheets are "
-            "retained as historical outputs; they describe the previous segmentation, not these CoP cuts. "
-            "Unresolved source CSVs retain their previous phase columns for preservation; use the current "
-            "`phase_cuts.csv` status as authoritative for this run, not those old labels.\n\n"
-            "Reproduce only this subject with `python -B refine_sub08_h_valleys.py Sub05_H` from the repository root. "
-            "Legacy `generate_subject05.py` and resegmentation scripts can overwrite the new graphs and labels.\n"
-            if subject == "Sub05_H" else ""
-        )
-        + (
-            f"\n## {subject} run and source limitations\n\n"
-            f"{graphs} full-interval limb graphs: {resolved} provisional 5-1-5 layouts and {graphs - resolved} UNRESOLVED. "
-            f"{sum(bool(r.get('review_notes')) for r in cuts if r['status'] == 'cop_valley_cut')} count-valid layouts "
-            "also show REVIEW REQUIRED. Status and reasons for each limb are in `phase_cuts.csv`.\n\n"
-            "Ojaswi's CoP detector and its thresholds are unchanged. Each trial and limb has independently derived "
-            "timing. Saved stances are CoP valley-to-peak; full phase spans include swing. The short/long labels and "
-            "sixth-step SLT are protocol assumptions, not measured step lengths or independently verified heel strikes.\n\n"
-            "Additional QA flags weak CoP climbs (<35% of the trial median), unusually long step intervals "
-            "(>1.5 times the trial median), paired SLT offsets outside 30-70% of the trial's median CoP stride, "
-            "cuts on estimated CoP, and GI spans longer than 1.5 median CoP strides. These are review heuristics, not validated physiological thresholds. "
-            "A matching count or an unflagged graph does not establish event accuracy.\n\n"
-            "Source signals already include model-estimated samples. Every waveform value, time and *_imputed flag "
-            "is preserved; no new reconstruction or raw-data realignment is performed. Estimates are pale in graphs "
-            "and flagged in stance exports. Graph amplitude gains/offsets are display-only.\n\n"
-            "The original `recording_windows.csv` and synchronization reports remain authoritative for window provenance. "
-            "Unpaired-trigger contexts retain the full recording and are UNRESOLVED, not forced into protocol phases. "
-            "Other inferred endpoints and trigger alignment are not proof of independently measured trial boundaries.\n\n"
-            + (
-                "Sub03 specific: `Amit_1` interval 01 is a 256.03-second unmatched-start context, not a verified protocol "
-                "trial. Ordinary paired intervals start at local interval 02. `Amit_21` also has a missing left-insole "
-                "end pulse; original alignment caveats still apply.\n\n" if subject == "Sub03_H" else
-                "Sub04 specific: noisy left triggers were not used to define windows; right-insole clock sections were "
-                "aligned separately in the source export. `ashu_1` interval 11 is a 77.54-second context without a measured "
-                "end, so both limb graphs remain UNRESOLVED.\n\n"
-            )
-            + "Old README, provisional reports, manifests and review sheets are historical and describe previous cuts. "
-            "Unresolved source CSV phase columns remain unchanged; use the new `phase_cuts.csv` status for this run. "
-            "Do not use these provisional labels as validated model-training ground truth.\n\n"
-            f"Reproduce this subject only: `python -B refine_sub08_h_valleys.py {subject}`. "
-            "Legacy generation/resegmentation scripts can overwrite these outputs.\n"
-            if subject in {"Sub03_H", "Sub04_H"} else ""
-        )
+        "Phase labels in the segmented_data exports (`provisional_phase`) cover the whole phase span, swing included, and match `phase_cuts.csv` for every cut graph. "
+        "UNRESOLVED graphs get `provisional_phase` = UNRESOLVED. Graphs without a valid ordered stance layout are never forced.\n\n"
+        "Older files in this folder (previous README, provisional tables, manifests, verification reports, review sheets) describe earlier segmentations, not these cuts. "
+        "Legacy generation or resegmentation scripts can overwrite these outputs.\n\n"
+        f"Reproduce: `python export_second_engine_trains.py` (once), then `python refine_sub08_h_valleys.py {subject}`.\n",
+        encoding="utf-8",
     )
+    summary = {"subject": subject, "graphs": graphs, "cut": resolved, "unresolved": graphs - resolved, "cut_graphs_with_review_note": flagged,
+               "saved_stances": len(segment_rows), "detector_cross_check": checks,
+               "validation": "Only Sub08_H sir_21 interval 04 left has reviewer marks; all other cuts are signal-derived candidates."}
+    (graphs_root / "cop_verification.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
+    # The audit of the earlier smoothed-display run lists graph hashes that no longer exist.
+    (graphs_root / "preprocessing_audit.json").unlink(missing_ok=True)
     print(f"{subject}: {graphs} limb graphs, {resolved} segmented, {graphs - resolved} unresolved, {len(segment_rows)} stance segments saved")
 
 
 def main(argv: list[str]):
     names = argv or ["Sub08_H"]
+    if [name.lower() for name in names] == ["all"]:
+        names = list(SUBJECTS)
     lookup = {name.lower(): name for name in SUBJECTS}
     for name in names:
         if name.lower() not in lookup:

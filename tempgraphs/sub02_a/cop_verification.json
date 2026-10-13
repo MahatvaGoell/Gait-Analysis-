@@ -1,22 +1,15 @@
 {
   "subject": "Sub02_A",
   "graphs": 44,
-  "provisional_5_1_5_layouts": 43,
-  "unresolved_graphs": 1,
-  "layouts_additionally_flagged_for_review": 12,
-  "graphs_with_extra_steps": 0,
-  "saved_stance_candidates": 484,
-  "source_csvs_byte_identical": 44,
-  "visual_review_passes_completed": 1,
-  "limitation": "Signal-derived event candidates, not independently validated foot contacts or step-length labels.",
-  "partially_segmented_graphs": 1,
-  "graphs_without_any_segmentation": 0,
-  "individually_corrected_graphs": 11,
-  "existing_overview_sheets_refreshed": 18,
-  "all_native_cop_event_trains_visually_checked": 44,
-  "changed_complete_graphs_visually_checked": 11,
-  "unchanged_graphs_verified_by_hash": 33,
-  "unresolved_terminal_contacts": 1,
-  "existing_overview_sheets_pixel_verified": 18,
-  "automated_checks": "Source/output hashes, reviewed PNG equality, phase ordering, complete/unclosed interval counts, original-valued stance slices, overview pixel equality"
+  "cut": 43,
+  "unresolved": 1,
+  "cut_graphs_with_review_note": 26,
+  "saved_stances": 473,
+  "detector_cross_check": {
+    "only_this_detector_found_11_stances": 20,
+    "neither_detector_found_11_stances": 1,
+    "detectors_agree": 19,
+    "detectors_count_from_different_steps": 4
+  },
+  "validation": "Only Sub08_H sir_21 interval 04 left has reviewer marks; all other cuts are signal-derived candidates."
 }

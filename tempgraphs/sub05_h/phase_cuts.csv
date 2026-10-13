@@ -1,81 +1,81 @@
-record,trial,side,status,cop_stances_found,review_required,review_notes,QS_start_s,QS_start_sample,GI_start_s,GI_start_sample,SSSW_start_s,SSSW_start_sample,SLT_start_s,SLT_start_sample,SSLW_start_s,SSLW_start_sample,GT_start_s,GT_start_sample,first_valley_kind,GT_start_kind,rest_s,unresolved_reason
-sub_1,1,L,cop_valley_cut,12,0,,0.0,0,2.25,225,2.84,284,8.39,839,9.46,946,15.52,1552,cop_valley,cop_valley,16.33,
-sub_1,1,R,cop_valley_cut,11,0,,0.0,0,2.25,225,3.59,359,8.93,893,10.01,1001,16.04,1604,start_of_first_climb,landing_foot_contact,16.33,
-sub_1,2,L,cop_valley_cut,11,0,,0.0,0,1.91,191,3.03,303,8.6,860,9.71,971,15.77,1577,cop_valley,landing_foot_contact,15.99,
-sub_1,2,R,cop_valley_cut,12,0,,0.0,0,1.91,191,2.46,246,7.89,789,9.1,910,15.3,1530,cop_valley,cop_valley,15.99,
-sub_1,3,L,cop_valley_cut,12,0,,0.0,0,2.93,293,3.52,352,9.34,934,10.5,1050,16.72,1672,cop_valley,cop_valley,17.51,
-sub_1,3,R,cop_valley_cut,11,0,,0.0,0,2.93,293,4.2,420,9.95,995,10.99,1099,17.27,1727,start_of_first_climb,landing_foot_contact,17.51,
-sub_1,4,L,cop_valley_cut,11,0,,0.0,0,4.03,403,4.9,490,10.9,1090,12.25,1225,18.48,1848,cop_valley,landing_foot_contact,19.03,
-sub_1,4,R,cop_valley_cut,12,0,,0.0,0,4.03,403,4.42,442,10.29,1029,11.62,1162,17.97,1797,cop_valley,cop_valley,19.03,
-sub_1,5,L,cop_valley_cut,12,0,,0.0,0,2.15,215,2.68,268,8.25,825,9.37,937,15.55,1555,cop_valley,cop_valley,16.25,
-sub_1,5,R,cop_valley_cut,11,0,,0.0,0,2.15,215,3.09,309,8.81,881,9.99,999,16.02,1602,start_of_first_climb,landing_foot_contact,16.25,
-sub_1,6,L,cop_valley_cut,12,0,,0.0,0,2.25,225,2.47,247,7.74,774,9.09,909,14.74,1474,cop_valley_before_first_climb,cop_valley,16.09,
-sub_1,6,R,cop_valley_cut,12,0,,0.0,0,2.25,225,2.67,267,8.38,838,9.7,970,15.37,1537,cop_valley,cop_valley,16.09,
-sub_1,7,L,cop_valley_cut,11,1,L/R SLT offset 32 samples is not near half this trial's CoP stride (114),0.0,0,2.34,234,2.8,280,8.49,849,9.62,962,16.07,1607,cop_valley,landing_cop_notch,16.73,
-sub_1,7,R,cop_valley_cut,11,1,L/R SLT offset 32 samples is not near half this trial's CoP stride (114),0.0,0,2.34,234,3.41,341,8.81,881,10.26,1026,16.57,1657,start_of_first_climb,landing_cop_notch,16.73,
-sub_1,8,L,cop_valley_cut,11,0,,0.0,0,2.8,280,3.9,390,10.02,1002,11.15,1115,17.28,1728,cop_valley,landing_foot_contact,17.57,
-sub_1,8,R,cop_valley_cut,12,0,,0.0,0,2.8,280,3.34,334,9.31,931,10.54,1054,16.79,1679,cop_valley,cop_valley,17.57,
-sub_1,9,L,cop_valley_cut,12,1,L/R SLT offset 27 samples is not near half this trial's CoP stride (120),0.0,0,2.63,263,3.31,331,9.03,903,10.16,1016,16.34,1634,cop_valley,cop_valley,17.1,
-sub_1,9,R,cop_valley_cut,11,1,S1 CoP climb is weak relative to this trial; S1 interval is unusually long relative to this trial; L/R SLT offset 27 samples is not near half this trial's CoP stride (120),0.0,0,2.63,263,3.01,301,9.3,930,10.77,1077,16.82,1682,start_of_first_climb,landing_cop_notch,17.1,
-sub_1,10,L,cop_valley_cut,11,0,,0.0,0,2.88,288,3.9,390,9.6,960,10.86,1086,16.66,1666,cop_valley,landing_foot_contact,16.96,
-sub_1,10,R,cop_valley_cut,12,0,,0.0,0,2.88,288,3.29,329,9.01,901,10.23,1023,16.14,1614,cop_valley,cop_valley,16.96,
-sub_1,11,L,cop_valley_cut,12,0,,0.0,0,1.54,154,2.02,202,7.72,772,8.79,879,14.96,1496,cop_valley_before_first_climb,cop_valley,15.66,
-sub_1,11,R,unresolved,9,1,fewer than 11 CoP valley-to-peak stances detected,,,,,,,,,,,,,,,,fewer than 11 CoP valley-to-peak stances detected
-sub_1,12,L,cop_valley_cut,11,0,,0.0,0,2.41,241,3.43,343,9.27,927,10.38,1038,16.2,1620,cop_valley,landing_foot_contact,16.42,
-sub_1,12,R,cop_valley_cut,12,0,,0.0,0,2.41,241,2.77,277,8.56,856,9.79,979,15.67,1567,cop_valley,cop_valley,16.42,
-sub_1,13,L,cop_valley_cut,11,0,,0.0,0,3.08,308,3.7,370,9.66,966,10.82,1082,17.1,1710,cop_valley,landing_cop_notch,17.83,
-sub_1,13,R,unresolved,10,1,fewer than 11 CoP valley-to-peak stances detected,,,,,,,,,,,,,,,,fewer than 11 CoP valley-to-peak stances detected
-sub_1,14,L,cop_valley_cut,11,0,,0.0,0,2.13,213,3.14,314,9.08,908,10.19,1019,16.17,1617,cop_valley,landing_foot_contact,16.42,
-sub_1,14,R,cop_valley_cut,11,0,,0.0,0,2.13,213,2.79,279,9.62,962,10.82,1082,16.9,1690,start_of_first_climb,landing_time_from_other_limb_rhythm,16.42,
-sub_1,15,L,cop_valley_cut,12,0,,0.0,0,2.99,299,3.54,354,9.2,920,10.44,1044,16.65,1665,cop_valley,cop_valley,17.37,
-sub_1,15,R,cop_valley_cut,11,1,S1 CoP climb is weak relative to this trial,0.0,0,2.99,299,4.2,420,9.8,980,11.12,1112,17.14,1714,start_of_first_climb,landing_cop_notch,17.37,
-sub_1,16,L,cop_valley_cut,12,1,S1 CoP climb is weak relative to this trial,0.0,0,1.85,185,2.19,219,7.86,786,9.27,927,15.02,1502,foot_of_first_climb_from_standing,cop_valley,16.44,
-sub_1,16,R,cop_valley_cut,12,0,,0.0,0,1.85,185,2.59,259,8.52,852,9.77,977,15.61,1561,cop_valley,cop_valley,16.44,
-sub_1,17,L,cop_valley_cut,11,0,,0.0,0,6.61,661,6.92,692,12.45,1245,13.59,1359,20.05,2005,cop_valley,landing_cop_notch,21.12,
-sub_1,17,R,unresolved,10,1,fewer than 11 CoP valley-to-peak stances detected,,,,,,,,,,,,,,,,fewer than 11 CoP valley-to-peak stances detected
-sub_1,18,L,cop_valley_cut,11,0,,0.0,0,2.0,200,3.05,305,8.83,883,10.09,1009,16.04,1604,cop_valley,landing_foot_contact,16.37,
-sub_1,18,R,cop_valley_cut,12,0,,0.0,0,2.0,200,2.42,242,8.26,826,9.47,947,15.5,1550,cop_valley_before_first_climb,cop_valley,16.37,
-sub_1,19,L,cop_valley_cut,11,0,,0.0,0,1.96,196,2.83,283,8.46,846,9.52,952,15.85,1585,cop_valley,landing_cop_notch,16.64,
-sub_1,19,R,cop_valley_cut,11,0,,0.0,0,1.96,196,3.28,328,9.0,900,10.18,1018,16.42,1642,cop_valley,landing_foot_contact,16.64,
-sub_1,20,L,cop_valley_cut,12,1,S1 CoP climb is weak relative to this trial,0.0,0,2.4,240,2.68,268,8.06,806,9.34,934,15.28,1528,cop_valley_before_first_climb,cop_valley,16.7,
-sub_1,20,R,unresolved,10,1,fewer than 11 CoP valley-to-peak stances detected,,,,,,,,,,,,,,,,fewer than 11 CoP valley-to-peak stances detected
-sub_21,1,L,cop_valley_cut,11,0,,0.0,0,3.06,306,3.9,390,9.46,946,10.66,1066,16.85,1685,cop_valley,landing_foot_contact,17.12,
-sub_21,1,R,cop_valley_cut,11,0,,0.0,0,3.06,306,3.28,328,8.89,889,10.04,1004,16.29,1629,cop_valley,landing_cop_notch,17.12,
-sub_21,2,L,cop_valley_cut,12,0,,0.0,0,2.47,247,2.87,287,8.7,870,9.77,977,15.98,1598,cop_valley,cop_valley,16.74,
-sub_21,2,R,cop_valley_cut,11,0,,0.0,0,2.47,247,3.41,341,9.21,921,10.35,1035,16.55,1655,cop_valley,landing_foot_contact,16.74,
-sub_21,3,L,cop_valley_cut,12,0,,0.0,0,2.98,298,3.76,376,9.77,977,10.85,1085,17.19,1719,cop_valley,cop_valley,17.73,
-sub_21,3,R,cop_valley_cut,12,0,,0.0,0,2.98,298,3.21,321,9.17,917,10.33,1033,16.47,1647,cop_valley,cop_valley,17.73,
-sub_21,4,L,cop_valley_cut,12,1,L/R SLT offset 29 samples is not near half this trial's CoP stride (120),0.0,0,1.78,178,2.5,250,8.48,848,9.65,965,15.7,1570,cop_valley,cop_valley,16.37,
-sub_21,4,R,cop_valley_cut,11,1,L/R SLT offset 29 samples is not near half this trial's CoP stride (120),0.0,0,1.78,178,3.08,308,8.77,877,10.28,1028,16.19,1619,start_of_first_climb,landing_foot_contact,16.37,
-sub_21,5,L,cop_valley_cut,11,0,,0.0,0,2.35,235,3.49,349,9.71,971,10.83,1083,17.12,1712,cop_valley,landing_foot_contact,17.38,
-sub_21,5,R,unresolved,10,1,fewer than 11 CoP valley-to-peak stances detected,,,,,,,,,,,,,,,,fewer than 11 CoP valley-to-peak stances detected
-sub_21,6,L,cop_valley_cut,12,0,,0.0,0,2.18,218,2.74,274,8.39,839,9.65,965,15.54,1554,cop_valley,cop_valley,16.21,
-sub_21,6,R,cop_valley_cut,11,0,,0.0,0,2.18,218,3.24,324,9.12,912,10.25,1025,16.05,1605,cop_valley_before_first_climb,landing_foot_contact,16.21,
-sub_21,7,L,cop_valley_cut,11,0,,0.0,0,2.86,286,3.77,377,9.87,987,10.96,1096,16.8,1680,cop_valley,landing_foot_contact,17.03,
-sub_21,7,R,unresolved,9,1,fewer than 11 CoP valley-to-peak stances detected,,,,,,,,,,,,,,,,fewer than 11 CoP valley-to-peak stances detected
-sub_21,8,L,cop_valley_cut,12,0,,0.0,0,2.08,208,2.66,266,8.34,834,9.64,964,15.64,1564,cop_valley,cop_valley,16.38,
-sub_21,8,R,unresolved,10,1,fewer than 11 CoP valley-to-peak stances detected,,,,,,,,,,,,,,,,fewer than 11 CoP valley-to-peak stances detected
-sub_21,9,L,cop_valley_cut,12,1,S1 interval is unusually long relative to this trial,0.0,0,1.84,184,2.24,224,8.56,856,9.77,977,15.97,1597,start_of_first_climb,cop_valley,17.28,
-sub_21,9,R,unresolved,9,1,fewer than 11 CoP valley-to-peak stances detected,,,,,,,,,,,,,,,,fewer than 11 CoP valley-to-peak stances detected
-sub_21,10,L,cop_valley_cut,12,0,,0.0,0,2.48,248,3.04,304,9.05,905,10.17,1017,16.3,1630,cop_valley_before_first_climb,cop_valley,17.13,
-sub_21,10,R,unresolved,10,1,fewer than 11 CoP valley-to-peak stances detected,,,,,,,,,,,,,,,,fewer than 11 CoP valley-to-peak stances detected
-sub_21,11,L,cop_valley_cut,11,0,,0.0,0,2.52,252,3.6,360,9.31,931,10.46,1046,16.53,1653,cop_valley,landing_foot_contact,16.79,
-sub_21,11,R,unresolved,10,1,fewer than 11 CoP valley-to-peak stances detected,,,,,,,,,,,,,,,,fewer than 11 CoP valley-to-peak stances detected
-sub_21,12,L,cop_valley_cut,12,0,,0.0,0,2.09,209,2.48,248,8.2,820,9.55,955,16.43,1643,cop_valley,cop_valley,17.34,
-sub_21,12,R,unresolved,10,1,fewer than 11 CoP valley-to-peak stances detected,,,,,,,,,,,,,,,,fewer than 11 CoP valley-to-peak stances detected
-sub_21,13,L,cop_valley_cut,11,0,,0.0,0,1.99,199,2.55,255,8.61,861,10.25,1025,15.87,1587,cop_valley,landing_foot_contact,16.06,
-sub_21,13,R,unresolved,10,1,fewer than 11 CoP valley-to-peak stances detected,,,,,,,,,,,,,,,,fewer than 11 CoP valley-to-peak stances detected
-sub_21,14,L,cop_valley_cut,12,0,,0.0,0,2.12,212,2.62,262,8.63,863,9.78,978,15.79,1579,cop_valley,cop_valley,16.66,
-sub_21,14,R,unresolved,10,1,fewer than 11 CoP valley-to-peak stances detected,,,,,,,,,,,,,,,,fewer than 11 CoP valley-to-peak stances detected
-sub_21,15,L,cop_valley_cut,11,0,,0.0,0,2.25,225,3.22,322,8.96,896,10.18,1018,16.26,1626,cop_valley,landing_foot_contact,16.42,
-sub_21,15,R,unresolved,9,1,fewer than 11 CoP valley-to-peak stances detected,,,,,,,,,,,,,,,,fewer than 11 CoP valley-to-peak stances detected
-sub_21,16,L,cop_valley_cut,12,0,,0.0,0,2.17,217,2.67,267,8.32,832,9.6,960,15.71,1571,cop_valley,cop_valley,16.88,
-sub_21,16,R,unresolved,9,1,fewer than 11 CoP valley-to-peak stances detected,,,,,,,,,,,,,,,,fewer than 11 CoP valley-to-peak stances detected
-sub_21,17,L,cop_valley_cut,11,1,L/R SLT offset 99 samples is not near half this trial's CoP stride (116),0.0,0,1.43,143,3.5,350,9.29,929,10.8,1080,16.65,1665,cop_valley,landing_foot_contact,16.85,
-sub_21,17,R,cop_valley_cut,12,1,L/R SLT offset 99 samples is not near half this trial's CoP stride (116),0.0,0,1.43,143,2.95,295,8.3,830,9.43,943,15.63,1563,cop_valley,cop_valley,16.85,
-sub_21,18,L,cop_valley_cut,12,1,L/R SLT offset 127 samples is not near half this trial's CoP stride (122),0.0,0,2.26,226,2.66,266,8.5,850,9.64,964,15.9,1590,cop_valley,cop_valley,16.62,
-sub_21,18,R,cop_valley_cut,11,1,L/R SLT offset 127 samples is not near half this trial's CoP stride (122),0.0,0,2.26,226,3.88,388,9.77,977,11.04,1104,17.32,1732,cop_valley,landing_time_from_other_limb_rhythm,16.62,
-sub_21,19,L,cop_valley_cut,12,1,S1 CoP climb is weak relative to this trial; S1 interval is unusually long relative to this trial,0.0,0,1.32,132,1.75,175,8.27,827,9.47,947,15.62,1562,start_of_first_climb,cop_valley,17.02,
-sub_21,19,R,unresolved,10,1,fewer than 11 CoP valley-to-peak stances detected,,,,,,,,,,,,,,,,fewer than 11 CoP valley-to-peak stances detected
-sub_21,20,L,cop_valley_cut,12,0,,0.0,0,2.32,232,2.86,286,8.67,867,9.82,982,15.68,1568,cop_valley,cop_valley,16.47,
-sub_21,20,R,unresolved,11,1,candidate CoP stances do not form an ordered 5-1-5 layout,,,,,,,,,,,,,,,,candidate CoP stances do not form an ordered 5-1-5 layout
+record,trial,side,status,cop_stances_found,review_required,review_notes,cut_source,detector_cross_check,standing_shift_before_S1_left_in_GI,S1_lift_off_ratio,GI_start_kind,QS_start_s,QS_start_sample,GI_start_s,GI_start_sample,SSSW_start_s,SSSW_start_sample,SLT_start_s,SLT_start_sample,SSLW_start_s,SSLW_start_sample,GT_start_s,GT_start_sample,first_valley_kind,GT_start_kind,rest_s,unresolved_reason
+sub_1,1,L,cop_valley_cut,12,0,,primary_detector,detectors_agree,0,1.33,rise_out_of_quiet_standing,0.0,0,2.25,225,2.84,284,8.39,839,9.46,946,15.52,1552,cop_valley,cop_valley,16.33,
+sub_1,1,R,cop_valley_cut,11,0,,primary_detector,detectors_agree,0,1.01,rise_out_of_quiet_standing,0.0,0,2.25,225,3.59,359,8.93,893,10.01,1001,16.04,1604,start_of_first_climb,landing_foot_contact,16.33,
+sub_1,2,L,cop_valley_cut,11,0,,primary_detector,detectors_agree,0,1.23,rise_out_of_quiet_standing,0.0,0,1.91,191,3.03,303,8.6,860,9.71,971,15.77,1577,cop_valley,landing_foot_contact,15.99,
+sub_1,2,R,cop_valley_cut,12,0,,primary_detector,detectors_agree,0,0.96,rise_out_of_quiet_standing,0.0,0,1.91,191,2.46,246,7.89,789,9.1,910,15.3,1530,cop_valley,cop_valley,15.99,
+sub_1,3,L,cop_valley_cut,12,0,,primary_detector,detectors_agree,0,0.74,rise_out_of_quiet_standing,0.0,0,2.93,293,3.52,352,9.34,934,10.5,1050,16.72,1672,cop_valley,cop_valley,17.51,
+sub_1,3,R,cop_valley_cut,11,0,,primary_detector,detectors_agree,0,1.02,rise_out_of_quiet_standing,0.0,0,2.93,293,4.2,420,9.95,995,10.99,1099,17.27,1727,start_of_first_climb,landing_foot_contact,17.51,
+sub_1,4,L,cop_valley_cut,11,0,,primary_detector,detectors_agree,0,1.05,rise_out_of_quiet_standing,0.0,0,4.03,403,4.9,490,10.9,1090,12.25,1225,18.48,1848,cop_valley,landing_foot_contact,19.03,
+sub_1,4,R,cop_valley_cut,12,0,,primary_detector,detectors_agree,0,0.8,rise_out_of_quiet_standing,0.0,0,4.03,403,4.42,442,10.29,1029,11.62,1162,17.97,1797,cop_valley,cop_valley,19.03,
+sub_1,5,L,cop_valley_cut,12,0,,primary_detector,detectors_agree,0,1.14,rise_out_of_quiet_standing,0.0,0,2.15,215,2.68,268,8.25,825,9.37,937,15.55,1555,cop_valley,cop_valley,16.25,
+sub_1,5,R,cop_valley_cut,11,0,,primary_detector,detectors_agree,0,1.01,rise_out_of_quiet_standing,0.0,0,2.15,215,3.09,309,8.81,881,9.99,999,16.02,1602,start_of_first_climb,landing_foot_contact,16.25,
+sub_1,6,L,cop_valley_cut,12,1,only one detector found eleven stances,primary_detector,only_this_detector_found_11_stances,0,1.15,rise_out_of_quiet_standing,0.0,0,2.25,225,2.47,247,7.74,774,9.09,909,14.74,1474,cop_valley_before_first_climb,cop_valley,16.09,
+sub_1,6,R,cop_valley_cut,12,0,,primary_detector,detectors_agree,0,0.81,rise_out_of_quiet_standing,0.0,0,2.25,225,2.67,267,8.38,838,9.7,970,15.37,1537,cop_valley,cop_valley,16.09,
+sub_1,7,L,cop_valley_cut,11,0,,primary_detector,detectors_agree,0,1.12,rise_out_of_quiet_standing,0.0,0,2.34,234,2.8,280,8.49,849,9.62,962,16.07,1607,cop_valley,landing_cop_notch,16.73,
+sub_1,7,R,cop_valley_cut,11,1,S1 interval is unusually long relative to this trial; L2 interval is unusually long relative to this trial,second_detector_replaced,detectors_agree,0,0.97,rise_out_of_quiet_standing,0.0,0,2.34,234,2.61,261,9.06,906,10.26,1026,16.58,1658,cop_valley,second_engine_terminal_loading_contact_candidate,16.73,
+sub_1,8,L,cop_valley_cut,11,0,,primary_detector,detectors_agree,0,1.34,rise_out_of_quiet_standing,0.0,0,2.8,280,3.9,390,10.02,1002,11.15,1115,17.28,1728,cop_valley,landing_foot_contact,17.57,
+sub_1,8,R,cop_valley_cut,12,0,,primary_detector,detectors_agree,0,0.82,rise_out_of_quiet_standing,0.0,0,2.8,280,3.34,334,9.31,931,10.54,1054,16.79,1679,cop_valley,cop_valley,17.57,
+sub_1,9,L,cop_valley_cut,12,0,,primary_detector,detectors_agree,0,1.38,rise_out_of_quiet_standing,0.0,0,2.63,263,3.31,331,9.03,903,10.16,1016,16.34,1634,cop_valley,cop_valley,17.1,
+sub_1,9,R,cop_valley_cut,11,1,S1 CoP climb is weak relative to this trial; S1 interval is unusually long relative to this trial,second_detector_replaced,detectors_agree,0,0.92,rise_out_of_quiet_standing,0.0,0,2.63,263,2.95,295,9.6,960,10.77,1077,16.92,1692,cop_valley,second_engine_terminal_loading_contact_candidate,17.1,
+sub_1,10,L,cop_valley_cut,11,0,,primary_detector,detectors_agree,0,0.91,rise_out_of_quiet_standing,0.0,0,2.88,288,3.9,390,9.6,960,10.86,1086,16.66,1666,cop_valley,landing_foot_contact,16.96,
+sub_1,10,R,cop_valley_cut,12,0,,primary_detector,detectors_agree,0,0.73,rise_out_of_quiet_standing,0.0,0,2.88,288,3.29,329,9.01,901,10.23,1023,16.14,1614,cop_valley,cop_valley,16.96,
+sub_1,11,L,cop_valley_cut,12,0,,primary_detector,detectors_agree,0,0.88,rise_out_of_quiet_standing,0.0,0,1.54,154,2.02,202,7.72,772,8.79,879,14.96,1496,cop_valley_before_first_climb,cop_valley,15.66,
+sub_1,11,R,cop_valley_cut,11,1,only one detector found eleven stances,second_detector_replaced,only_this_detector_found_11_stances,0,0.98,rise_out_of_quiet_standing,0.0,0,1.54,154,2.39,239,8.27,827,9.33,933,15.56,1556,cop_valley,second_engine_terminal_loading_contact_candidate,15.66,
+sub_1,12,L,cop_valley_cut,11,0,,primary_detector,detectors_agree,0,0.95,rise_out_of_quiet_standing,0.0,0,2.41,241,3.43,343,9.27,927,10.38,1038,16.2,1620,cop_valley,landing_foot_contact,16.42,
+sub_1,12,R,cop_valley_cut,12,0,,primary_detector,detectors_agree,0,0.65,rise_out_of_quiet_standing,0.0,0,2.41,241,2.77,277,8.56,856,9.79,979,15.67,1567,cop_valley,cop_valley,16.42,
+sub_1,13,L,cop_valley_cut,11,0,,primary_detector,detectors_agree,0,1.47,rise_out_of_quiet_standing,0.0,0,3.08,308,3.7,370,9.66,966,10.82,1082,17.1,1710,cop_valley,landing_cop_notch,17.83,
+sub_1,13,R,cop_valley_cut,11,1,only one detector found eleven stances,second_detector_replaced,only_this_detector_found_11_stances,0,1.01,rise_out_of_quiet_standing,0.0,0,3.08,308,4.23,423,10.24,1024,11.43,1143,17.72,1772,cop_valley,second_engine_terminal_loading_contact_candidate,17.83,
+sub_1,14,L,cop_valley_cut,11,0,,primary_detector,detectors_agree,0,1.15,rise_out_of_quiet_standing,0.0,0,2.13,213,3.14,314,9.08,908,10.19,1019,16.17,1617,cop_valley,landing_foot_contact,16.42,
+sub_1,14,R,cop_valley_cut,11,1,the two detectors count from different first steps; S1 needs review,primary_detector,detectors_count_from_different_steps,0,1.05,rise_out_of_quiet_standing,0.0,0,2.13,213,2.79,279,9.62,962,10.82,1082,16.9,1690,start_of_first_climb,landing_time_from_other_limb_rhythm,16.42,
+sub_1,15,L,cop_valley_cut,12,0,,primary_detector,detectors_agree,0,1.54,rise_out_of_quiet_standing,0.0,0,2.99,299,3.54,354,9.2,920,10.44,1044,16.65,1665,cop_valley,cop_valley,17.37,
+sub_1,15,R,cop_valley_cut,11,1,only one detector found eleven stances; S1 CoP climb is weak relative to this trial,primary_detector,only_this_detector_found_11_stances,0,1.02,rise_out_of_quiet_standing,0.0,0,2.99,299,4.2,420,9.8,980,11.12,1112,17.14,1714,start_of_first_climb,landing_cop_notch,17.37,
+sub_1,16,L,cop_valley_cut,12,1,the two detectors count from different first steps; S1 needs review; S1 CoP climb is weak relative to this trial,primary_detector,detectors_count_from_different_steps,0,0.83,rise_out_of_quiet_standing,0.0,0,1.85,185,2.19,219,7.86,786,9.27,927,15.02,1502,foot_of_first_climb_from_standing,cop_valley,16.44,
+sub_1,16,R,cop_valley_cut,12,0,,primary_detector,detectors_agree,0,0.87,rise_out_of_quiet_standing,0.0,0,1.85,185,2.59,259,8.52,852,9.77,977,15.61,1561,cop_valley,cop_valley,16.44,
+sub_1,17,L,cop_valley_cut,11,0,,primary_detector,detectors_agree,0,1.19,rise_out_of_quiet_standing,0.0,0,6.61,661,6.92,692,12.45,1245,13.59,1359,20.05,2005,cop_valley,landing_cop_notch,21.12,
+sub_1,17,R,cop_valley_cut,11,1,only one detector found eleven stances,second_detector_replaced,only_this_detector_found_11_stances,0,1.0,rise_out_of_quiet_standing,0.0,0,6.61,661,7.22,722,12.99,1299,14.31,1431,20.63,2063,cop_valley,second_engine_terminal_loading_contact_candidate,21.12,
+sub_1,18,L,cop_valley_cut,11,0,,primary_detector,detectors_agree,0,1.05,rise_out_of_quiet_standing,0.0,0,2.0,200,3.05,305,8.83,883,10.09,1009,16.04,1604,cop_valley,landing_foot_contact,16.37,
+sub_1,18,R,cop_valley_cut,12,0,,primary_detector,detectors_agree,0,0.72,rise_out_of_quiet_standing,0.0,0,2.0,200,2.42,242,8.26,826,9.47,947,15.5,1550,cop_valley_before_first_climb,cop_valley,16.37,
+sub_1,19,L,cop_valley_cut,11,0,,primary_detector,detectors_agree,0,0.92,rise_out_of_quiet_standing,0.0,0,1.96,196,2.83,283,8.46,846,9.52,952,15.85,1585,cop_valley,landing_cop_notch,16.64,
+sub_1,19,R,cop_valley_cut,11,0,,primary_detector,detectors_agree,0,1.0,rise_out_of_quiet_standing,0.0,0,1.96,196,3.28,328,9.0,900,10.18,1018,16.42,1642,cop_valley,landing_foot_contact,16.64,
+sub_1,20,L,cop_valley_cut,11,1,the two detectors count from different first steps; S1 needs review,second_detector_replaced,detectors_count_from_different_steps,0,1.29,rise_out_of_quiet_standing,0.0,0,2.4,240,3.56,356,9.34,934,10.45,1045,16.43,1643,cop_valley,second_engine_terminal_loading_contact_candidate,16.7,
+sub_1,20,R,cop_valley_cut,11,1,only one detector found eleven stances; S1 interval is unusually long relative to this trial,second_detector_replaced,only_this_detector_found_11_stances,0,0.95,rise_out_of_quiet_standing,0.0,0,2.4,240,2.82,282,9.88,988,11.04,1104,17.14,1714,cop_valley,landing_time_from_other_limb_rhythm,16.7,
+sub_21,1,L,cop_valley_cut,11,0,,primary_detector,detectors_agree,0,0.81,rise_out_of_quiet_standing,0.0,0,3.06,306,3.9,390,9.46,946,10.66,1066,16.85,1685,cop_valley,landing_foot_contact,17.12,
+sub_21,1,R,cop_valley_cut,11,0,,primary_detector,detectors_agree,0,0.91,rise_out_of_quiet_standing,0.0,0,3.06,306,3.28,328,8.89,889,10.04,1004,16.29,1629,cop_valley,landing_cop_notch,17.12,
+sub_21,2,L,cop_valley_cut,12,0,,primary_detector,detectors_agree,0,1.03,rise_out_of_quiet_standing,0.0,0,2.47,247,2.87,287,8.7,870,9.77,977,15.98,1598,cop_valley,cop_valley,16.74,
+sub_21,2,R,cop_valley_cut,11,0,,primary_detector,detectors_agree,0,0.78,rise_out_of_quiet_standing,0.0,0,2.47,247,3.41,341,9.21,921,10.35,1035,16.55,1655,cop_valley,landing_foot_contact,16.74,
+sub_21,3,L,cop_valley_cut,12,0,,primary_detector,detectors_agree,0,0.92,rise_out_of_quiet_standing,0.0,0,2.98,298,3.76,376,9.77,977,10.85,1085,17.19,1719,cop_valley,cop_valley,17.73,
+sub_21,3,R,cop_valley_cut,12,1,the two detectors count from different first steps; S1 needs review,primary_detector,detectors_count_from_different_steps,0,1.02,rise_out_of_quiet_standing,0.0,0,2.98,298,3.21,321,9.17,917,10.33,1033,16.47,1647,cop_valley,cop_valley,17.73,
+sub_21,4,L,cop_valley_cut,12,1,only one detector found eleven stances; L/R SLT offset 29 samples is not near half this trial's CoP stride (120),primary_detector,only_this_detector_found_11_stances,0,0.87,rise_out_of_quiet_standing,0.0,0,1.78,178,2.5,250,8.48,848,9.65,965,15.7,1570,cop_valley,cop_valley,16.37,
+sub_21,4,R,cop_valley_cut,11,1,only one detector found eleven stances; L/R SLT offset 29 samples is not near half this trial's CoP stride (120),primary_detector,only_this_detector_found_11_stances,0,0.9,rise_out_of_quiet_standing,0.0,0,1.78,178,3.08,308,8.77,877,10.28,1028,16.19,1619,start_of_first_climb,landing_foot_contact,16.37,
+sub_21,5,L,cop_valley_cut,11,1,only one detector found eleven stances,primary_detector,only_this_detector_found_11_stances,0,0.94,rise_out_of_quiet_standing,0.0,0,2.35,235,3.49,349,9.71,971,10.83,1083,17.12,1712,cop_valley,landing_foot_contact,17.38,
+sub_21,5,R,unresolved,10,1,fewer than 11 CoP valley-to-peak stances detected,,neither_detector_found_11_stances,0,,,,,,,,,,,,,,,,,,fewer than 11 CoP valley-to-peak stances detected
+sub_21,6,L,cop_valley_cut,12,0,,primary_detector,detectors_agree,0,0.91,rise_out_of_quiet_standing,0.0,0,2.18,218,2.74,274,8.39,839,9.65,965,15.54,1554,cop_valley,cop_valley,16.21,
+sub_21,6,R,cop_valley_cut,11,0,,primary_detector,detectors_agree,0,0.67,rise_out_of_quiet_standing,0.0,0,2.18,218,3.24,324,9.12,912,10.25,1025,16.05,1605,cop_valley_before_first_climb,landing_foot_contact,16.21,
+sub_21,7,L,cop_valley_cut,11,1,only one detector found eleven stances; limb barely unloads after S1 (0.58 of its next swings); S1 may be a weight shift,primary_detector,only_this_detector_found_11_stances,0,0.58,rise_out_of_quiet_standing,0.0,0,2.86,286,3.77,377,9.87,987,10.96,1096,16.8,1680,cop_valley,landing_foot_contact,17.03,
+sub_21,7,R,unresolved,9,1,fewer than 11 CoP valley-to-peak stances detected,,neither_detector_found_11_stances,0,,,,,,,,,,,,,,,,,,fewer than 11 CoP valley-to-peak stances detected
+sub_21,8,L,cop_valley_cut,12,0,,primary_detector,detectors_agree,0,0.74,rise_out_of_quiet_standing,0.0,0,2.08,208,2.66,266,8.34,834,9.64,964,15.64,1564,cop_valley,cop_valley,16.38,
+sub_21,8,R,unresolved,10,1,fewer than 11 CoP valley-to-peak stances detected,,neither_detector_found_11_stances,0,,,,,,,,,,,,,,,,,,fewer than 11 CoP valley-to-peak stances detected
+sub_21,9,L,cop_valley_cut,11,1,the two detectors count from different first steps; S1 needs review; GI spans more than 1.5 median CoP strides; movement onset needs review,second_detector_replaced,detectors_count_from_different_steps,0,1.21,rise_out_of_quiet_standing,0.0,0,1.84,184,4.06,406,9.77,977,11.22,1122,17.15,1715,cop_valley,second_engine_terminal_loading_contact_candidate,17.28,
+sub_21,9,R,cop_valley_cut,11,1,only one detector found eleven stances; S4 interval is unusually long relative to this trial; L5 CoP climb is weak relative to this trial,second_detector_replaced,only_this_detector_found_11_stances,0,1.01,rise_out_of_quiet_standing,0.0,0,1.84,184,3.45,345,10.4,1040,11.71,1171,17.76,1776,cop_valley,landing_time_from_other_limb_rhythm,17.28,
+sub_21,10,L,cop_valley_cut,12,1,only one detector found eleven stances,primary_detector,only_this_detector_found_11_stances,0,0.8,rise_out_of_quiet_standing,0.0,0,2.48,248,3.04,304,9.05,905,10.17,1017,16.3,1630,cop_valley_before_first_climb,cop_valley,17.13,
+sub_21,10,R,unresolved,10,1,fewer than 11 CoP valley-to-peak stances detected,,neither_detector_found_11_stances,0,,,,,,,,,,,,,,,,,,fewer than 11 CoP valley-to-peak stances detected
+sub_21,11,L,cop_valley_cut,11,0,,primary_detector,detectors_agree,0,1.55,rise_out_of_quiet_standing,0.0,0,2.52,252,3.6,360,9.31,931,10.46,1046,16.53,1653,cop_valley,landing_foot_contact,16.79,
+sub_21,11,R,unresolved,10,1,fewer than 11 CoP valley-to-peak stances detected,,neither_detector_found_11_stances,0,,,,,,,,,,,,,,,,,,fewer than 11 CoP valley-to-peak stances detected
+sub_21,12,L,cop_valley_cut,12,0,,primary_detector,detectors_agree,0,1.35,rise_out_of_quiet_standing,0.0,0,2.09,209,2.48,248,8.2,820,9.55,955,16.43,1643,cop_valley,cop_valley,17.34,
+sub_21,12,R,unresolved,10,1,fewer than 11 CoP valley-to-peak stances detected,,neither_detector_found_11_stances,0,,,,,,,,,,,,,,,,,,fewer than 11 CoP valley-to-peak stances detected
+sub_21,13,L,cop_valley_cut,11,0,,primary_detector,detectors_agree,0,0.91,rise_out_of_quiet_standing,0.0,0,1.99,199,2.55,255,8.61,861,10.25,1025,15.87,1587,cop_valley,landing_foot_contact,16.06,
+sub_21,13,R,unresolved,10,1,fewer than 11 CoP valley-to-peak stances detected,,neither_detector_found_11_stances,0,,,,,,,,,,,,,,,,,,fewer than 11 CoP valley-to-peak stances detected
+sub_21,14,L,cop_valley_cut,12,1,only one detector found eleven stances,primary_detector,only_this_detector_found_11_stances,0,1.13,rise_out_of_quiet_standing,0.0,0,2.12,212,2.62,262,8.63,863,9.78,978,15.79,1579,cop_valley,cop_valley,16.66,
+sub_21,14,R,unresolved,10,1,fewer than 11 CoP valley-to-peak stances detected,,neither_detector_found_11_stances,0,,,,,,,,,,,,,,,,,,fewer than 11 CoP valley-to-peak stances detected
+sub_21,15,L,cop_valley_cut,11,0,,primary_detector,detectors_agree,0,1.0,rise_out_of_quiet_standing,0.0,0,2.25,225,3.22,322,8.96,896,10.18,1018,16.26,1626,cop_valley,landing_foot_contact,16.42,
+sub_21,15,R,unresolved,9,1,fewer than 11 CoP valley-to-peak stances detected,,neither_detector_found_11_stances,0,,,,,,,,,,,,,,,,,,fewer than 11 CoP valley-to-peak stances detected
+sub_21,16,L,cop_valley_cut,12,0,,primary_detector,detectors_agree,0,1.08,rise_out_of_quiet_standing,0.0,0,2.17,217,2.67,267,8.32,832,9.6,960,15.71,1571,cop_valley,cop_valley,16.88,
+sub_21,16,R,unresolved,9,1,fewer than 11 CoP valley-to-peak stances detected,,neither_detector_found_11_stances,0,,,,,,,,,,,,,,,,,,fewer than 11 CoP valley-to-peak stances detected
+sub_21,17,L,cop_valley_cut,11,1,only one detector found eleven stances; GI spans more than 1.5 median CoP strides; movement onset needs review; L/R SLT offset 99 samples is not near half this trial's CoP stride (116),primary_detector,only_this_detector_found_11_stances,0,0.99,rise_out_of_quiet_standing,0.0,0,1.43,143,3.5,350,9.29,929,10.8,1080,16.65,1665,cop_valley,landing_foot_contact,16.85,
+sub_21,17,R,cop_valley_cut,12,1,only one detector found eleven stances; L/R SLT offset 99 samples is not near half this trial's CoP stride (116),primary_detector,only_this_detector_found_11_stances,0,1.06,rise_out_of_quiet_standing,0.0,0,1.43,143,2.95,295,8.3,830,9.43,943,15.63,1563,cop_valley,cop_valley,16.85,
+sub_21,18,L,cop_valley_cut,12,0,,primary_detector,detectors_agree,0,1.27,rise_out_of_quiet_standing,0.0,0,2.26,226,2.66,266,8.5,850,9.64,964,15.9,1590,cop_valley,cop_valley,16.62,
+sub_21,18,R,unresolved,11,1,"its layout does not alternate with the other limb, whose cuts both detectors confirm (weak or noisy insole signal)",,only_this_detector_found_11_stances,0,,,,,,,,,,,,,,,,,,"its layout does not alternate with the other limb, whose cuts both detectors confirm (weak or noisy insole signal)"
+sub_21,19,L,cop_valley_cut,12,1,the two detectors count from different first steps; S1 needs review; S1 CoP climb is weak relative to this trial; S1 interval is unusually long relative to this trial,primary_detector,detectors_count_from_different_steps,0,0.85,rise_out_of_quiet_standing,0.0,0,1.32,132,1.75,175,8.27,827,9.47,947,15.62,1562,start_of_first_climb,cop_valley,17.02,
+sub_21,19,R,cop_valley_cut,11,1,only one detector found eleven stances; T interval is unusually long relative to this trial; L5 CoP climb is weak relative to this trial,second_detector_replaced,only_this_detector_found_11_stances,0,0.97,rise_out_of_quiet_standing,0.0,0,1.32,132,2.75,275,8.87,887,10.87,1087,16.98,1698,second_engine_filtered_first_cop_climb,landing_time_from_other_limb_rhythm,17.02,
+sub_21,20,L,cop_valley_cut,12,0,,primary_detector,detectors_agree,0,0.95,rise_out_of_quiet_standing,0.0,0,2.32,232,2.86,286,8.67,867,9.82,982,15.68,1568,cop_valley,cop_valley,16.47,
+sub_21,20,R,unresolved,11,1,candidate CoP stances do not form an ordered 5-1-5 layout,,neither_detector_found_11_stances,0,,,,,,,,,,,,,,,,,,candidate CoP stances do not form an ordered 5-1-5 layout

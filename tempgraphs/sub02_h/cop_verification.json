@@ -1,15 +1,13 @@
 {
   "subject": "Sub02_H",
   "graphs": 84,
-  "provisional_5_1_5_layouts": 71,
-  "unresolved_graphs": 13,
-  "layouts_additionally_flagged_for_review": 0,
-  "graphs_with_extra_steps": 4,
-  "saved_stance_candidates": 785,
-  "source_csvs_byte_identical": 84,
-  "visual_review_passes_completed": 2,
-  "visual_review_scope": "All 84 native CoP event traces and all 84 complete multi-sensor graph previews; reviewed preview hashes compared against production PNGs.",
-  "review_date": "2026-10-11",
-  "protected_existing_files_byte_identical": 12032,
-  "limitation": "Signal-derived event candidates, not independently validated foot contacts or step-length labels."
+  "cut": 84,
+  "unresolved": 0,
+  "cut_graphs_with_review_note": 13,
+  "saved_stances": 924,
+  "detector_cross_check": {
+    "detectors_agree": 71,
+    "detectors_count_from_different_steps": 13
+  },
+  "validation": "Only Sub08_H sir_21 interval 04 left has reviewer marks; all other cuts are signal-derived candidates."
 }
