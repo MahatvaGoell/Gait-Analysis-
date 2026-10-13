@@ -55,10 +55,12 @@ import tempfile
 from pathlib import Path
 
 import numpy as np
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 from scipy.signal import find_peaks, medfilt
 
-from regenerate_tempgraphs import SOURCE_ROOT, font, finite_fill, moving_mean, parse_csv, runs
+
+ROOT = Path(__file__).resolve().parent
+SOURCE_ROOT = ROOT / "tempgraphs"
 
 
 # subject -> (folder with <record>/trial_##_<l|r>_segmented.csv, folder that holds the graphs)
@@ -87,6 +89,74 @@ ANCHORS = (200, 170, 145, 120, 100, 80, 60, 40, 400, 380)
 BANDS = [(10, 340, 1.0)] * 8 + [(365, 435, 2.5), (345, 425, .08)]
 PHASE_TITLES = {"QS": "QS", "GI": "GI", "SSSW": "Steady state short step (SSSW)", "SLT": "SLT",
                 "SSLW": "Steady state long step (SSLW)", "GT": "GT"}
+
+
+# ---------------------------------------------------------------- reading and small helpers
+
+def font(size: int, bold: bool = False):
+    candidates = [
+        "/System/Library/Fonts/Supplemental/Arial Bold.ttf" if bold else "/System/Library/Fonts/Supplemental/Arial.ttf",
+        "/System/Library/Fonts/Helvetica.ttc",
+        "C:/Windows/Fonts/arialbd.ttf" if bold else "C:/Windows/Fonts/arial.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" if bold else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+    ]
+    for candidate in candidates:
+        try:
+            return ImageFont.truetype(candidate, size)
+        except OSError:
+            pass
+    return ImageFont.load_default(size=size)
+
+
+def parse_csv(path: Path) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """Times, the ten signals (8 FMG, CoP, vGRF; blank = NaN) and their model-estimate flags of one export."""
+    rows = list(csv.DictReader(path.open(encoding="utf-8")))
+    times = np.array([float(row["time_seconds"]) for row in rows], dtype=float)
+    values = np.array([
+        [float(row.get(f"FMG_channel_{channel}") or "nan") for channel in range(1, 9)] +
+        [float(row.get("CoP") or "nan"), float(row.get("vGRF") or "nan")]
+        for row in rows
+    ], dtype=float)
+    imputed = np.array([
+        [int(float(row.get(f"FMG_channel_{channel}_imputed", "0") or 0)) for channel in range(1, 9)] +
+        [int(float(row.get("CoP_imputed", "0") or 0)), int(float(row.get("vGRF_imputed", "0") or 0))]
+        for row in rows
+    ], dtype=bool)
+    return times, values, imputed
+
+
+def finite_fill(values: np.ndarray) -> np.ndarray:
+    """Bridge blank samples by linear interpolation (for detection and display only)."""
+    result = np.asarray(values, dtype=float).copy()
+    x = np.arange(len(result))
+    for column in range(result.shape[1]):
+        valid = np.isfinite(result[:, column])
+        if valid.any():
+            result[:, column] = np.interp(x, x[valid], result[valid, column])
+        else:
+            result[:, column] = 0.0
+    return result
+
+
+def moving_mean(values: np.ndarray, width: int = 9) -> np.ndarray:
+    if width <= 1:
+        return values.copy()
+    pad = width // 2
+    padded = np.pad(values, ((pad, pad), (0, 0)), mode="edge")
+    cumsum = np.cumsum(padded, axis=0, dtype=float)
+    cumsum = np.vstack([np.zeros((1, values.shape[1])), cumsum])
+    return (cumsum[width:] - cumsum[:-width]) / width
+
+
+def runs(mask: np.ndarray):
+    """(start, end) of every run of True values."""
+    start = None
+    for index, value in enumerate(mask):
+        if value and start is None:
+            start = index
+        if start is not None and (not value or index == len(mask) - 1):
+            yield start, index if not value else index + 1
+            start = None
 
 
 def smooth(x: np.ndarray, width: int) -> np.ndarray:
@@ -964,8 +1034,10 @@ def process(subject: str):
         "- `phase_cuts.csv`, `phase_intervals.csv`: phase cuts per limb graph, in seconds and samples.\n\n"
         "Phase labels in the segmented_data exports (`provisional_phase`) cover the whole phase span, swing included, and match `phase_cuts.csv` for every cut graph. "
         "UNRESOLVED graphs get `provisional_phase` = UNRESOLVED. Graphs without a valid ordered stance layout are never forced.\n\n"
-        "Older files in this folder (previous README, provisional tables, manifests, verification reports, review sheets) describe earlier segmentations, not these cuts. "
-        "Legacy generation or resegmentation scripts can overwrite these outputs.\n\n"
+        "The other files in this folder (the older `README.md`, `complete_trial_manifest.csv`, `summary.json`, `provenance.json`, the synchronization, "
+        "recording-window and missing-value reports) document how the 100 Hz exports were produced from the raw recordings. "
+        "Any phase timing or segmentation count in them belongs to an earlier provisional segmentation, not to these cuts. "
+        "The export-generation scripts redraw the graphs in their old form, so rerun this script after them.\n\n"
         f"Reproduce: `python export_second_engine_trains.py` (once), then `python refine_sub08_h_valleys.py {subject}`.\n",
         encoding="utf-8",
     )

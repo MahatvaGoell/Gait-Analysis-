@@ -50,6 +50,6 @@ The graphs follow the reference figure: sample axis, phase names on lines, arrow
 
 Phase labels in the segmented_data exports (`provisional_phase`) cover the whole phase span, swing included, and match `phase_cuts.csv` for every cut graph. UNRESOLVED graphs get `provisional_phase` = UNRESOLVED. Graphs without a valid ordered stance layout are never forced.
 
-Older files in this folder (previous README, provisional tables, manifests, verification reports, review sheets) describe earlier segmentations, not these cuts. Legacy generation or resegmentation scripts can overwrite these outputs.
+The other files in this folder (the older `README.md`, `complete_trial_manifest.csv`, `summary.json`, `provenance.json`, the synchronization, recording-window and missing-value reports) document how the 100 Hz exports were produced from the raw recordings. Any phase timing or segmentation count in them belongs to an earlier provisional segmentation, not to these cuts. The export-generation scripts redraw the graphs in their old form, so rerun this script after them.
 
 Reproduce: `python export_second_engine_trains.py` (once), then `python refine_sub08_h_valleys.py Sub08_H`.
