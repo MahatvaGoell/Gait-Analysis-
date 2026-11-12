@@ -6,7 +6,8 @@ Two additions to run_cycle.py, both available to a device at run time:
   unlabelled calibration recording. Every feature is standardised with the mean and SD of that
   subject's (and band's) calibration windows. Calibration walks are never scored.
 * Context: each window also gets the change of its features from the window before it in the same
-  walk (for GI, the 1 s of quiet standing before the rise). Only past data are used.
+  walk (for GI, the 1 s of quiet standing before the rise). Only past data are used. A previous window
+  that contains estimated FMG gives no change (zeros) and sets a flag, so estimated data never enter the input.
 
 All configurations are scored on the same test windows (calibration walks removed everywhere).
 
@@ -49,18 +50,21 @@ def build(graphs, dirs):
             seg = g["fmg"][a:b + 1] - g["baseline"]
             prev = g["fmg"][previous[0]:previous[1] + 1] - g["baseline"]
             measured = not g["estimated"][a:b + 1].any()
+            prev_measured = not g["estimated"][previous[0]:previous[1] + 1].any()
             rows.append({"subject": g["subject"], "band": f"{g['subject']}/{g['side']}", "trial": f"{key[0]}/{key[1]}#{key[2]}",
-                         "label": label, "calibration": key in calibration, "measured": measured,
+                         "label": label, "calibration": key in calibration, "measured": measured, "prev_measured": prev_measured,
                          "f": features(resample(seg), True), "f_prev": features(resample(prev), True)})
             previous = (a, b)
     return rows
 
 
-def calibrate(F: np.ndarray, bands: np.ndarray, is_cal: np.ndarray) -> np.ndarray:
+def calibrate(F: np.ndarray, bands: np.ndarray, is_cal: np.ndarray, ref_from: np.ndarray | None = None) -> np.ndarray:
+    """Standardise F per band with the calibration windows of ref_from (default F itself)."""
+    R = F if ref_from is None else ref_from
     out = np.empty_like(F)
     for band in set(bands):
         m = bands == band
-        ref = F[m & is_cal] if (m & is_cal).sum() >= 10 else F[m]
+        ref = R[m & is_cal] if (m & is_cal).sum() >= 10 else R[m]
         out[m] = (F[m] - ref.mean(0)) / (ref.std(0) + 1e-6)
     return out
 
@@ -77,14 +81,16 @@ if __name__ == "__main__":
     trials = np.array([r["trial"] for r in rows]); y = np.array([r["label"] for r in rows])
     is_cal = np.array([r["calibration"] for r in rows])
     F = np.array([r["f"] for r in rows]); P = np.array([r["f_prev"] for r in rows])
-    Fc, Pc = calibrate(F, bands, is_cal), calibrate(P, bands, is_cal)
+    Fc, Pc = calibrate(F, bands, is_cal), calibrate(P, bands, is_cal, ref_from=F)   # P uses the statistics of measured windows
+    prev_ok = np.array([r["prev_measured"] for r in rows])
+    D, Dc = np.where(prev_ok[:, None], F - P, 0.0), np.where(prev_ok[:, None], Fc - Pc, 0.0)
     print(f"{len(y)} measured windows; {is_cal.sum()} in calibration walks (never scored); test windows per class:",
           {c: int(((y == c) & ~is_cal).sum()) for c in CLASSES})
     configs = {
         "baseline": F,
         "+calibration": Fc,
-        "+context": np.column_stack([F, F - P]),
-        "+calibration+context": np.column_stack([Fc, Fc - Pc]),
+        "+context": np.column_stack([F, D, prev_ok]),
+        "+calibration+context": np.column_stack([Fc, Dc, prev_ok]),
     }
     summary = []
     for cfg, X in configs.items():

@@ -17,6 +17,55 @@ These numbers are what the conference paper reports. They come from 8 healthy su
 
 Labels are still provisional, because sir has not confirmed the walking direction. Normal-step recordings have not been located.
 
+## Progress
+
+All numbers below are LOSO balanced accuracy (BA), mean ± SD over the 8 healthy subjects.
+
+### O1: calibration + context (`results/cycle_context_summary.csv`) — done
+
+The first two walks of each direction per subject serve as calibration and are not scored. On that test set:
+
+| Config | SVM | HGB |
+|---|---|---|
+| Baseline | 55.7 ± 8.7 | 55.1 ± 8.6 |
+| + calibration + context | **67.3 ± 10.7** | **69.0 ± 5.4** |
+
+- Within-subject, SVM stays at about 81.
+- Transition recall with SVM rises from about 20% to 37–39%.
+- Calibration + context makes LDA worse (55.7), so LDA is not used further.
+
+### O2: transitions (`results/cycle_transitions_summary.csv`) — done
+
+Scored on the same 7,196 windows as the paper.
+
+| Method | SVM | HGB |
+|---|---|---|
+| Single window (reference) | 57.5 ± 8.1 | 57.3 ± 7.8 |
+| History (previous 2 windows) | 63.3 ± 10.7 | 67.2 ± 8.0 |
+| Two-stage | 54.2 | 55.2 |
+| Two-stage + history | 62.3 | 63.1 |
+| Order filter (uses the protocol order) | 63.8 ± 12.3 | 67.9 ± 10.5 |
+
+- The gain comes from the history of previous windows.
+- Two-stage does not help and is dropped.
+- The order filter adds little over history alone.
+- The best transition recall is 38% (S→L, SVM history) and 28% (L→S, HGB order filter).
+
+### O3: nested-LOSO tuning (`results/cycle_tuning_summary.csv`, `cycle_tuning_chosen.csv`) — done
+
+| Model | Fixed | Tuned |
+|---|---|---|
+| SVM | 57.5 | 58.2 |
+| HGB | 57.3 | 59.3 |
+
+Tuning gains only about 1–2 points. The SVM settings chosen change from fold to fold. HGB almost always picks learning rate 0.03 and depth 3, which is now the HGB default for further runs. Tuning matters much less than calibration and context.
+
+### Next (Ojaswi)
+
+- Combine calibration with the 2-window history in one model, to get the best per-cycle result.
+- O4 is waiting for sir's answers.
+- O5 (amputee labels) is next.
+
 ## Step 0: before anyone starts (Ojaswi, once)
 
 1. Commit and push the model code, which is still uncommitted: `common/`, `study1/`, `results/*.csv`, `paper/`, `.gitignore`, `README.md`, `AGENTS.md`, `CLAUDE.md` and this file. Do not commit `NewSegmentedGraphsFinal/` (577 MB) or `datasets/`.
