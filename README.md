@@ -73,6 +73,8 @@ segmented_data/                        100 Hz exports; `provisional_phase` match
 
 The remaining files in a subject folder (`complete_trial_manifest.csv`, `summary.json`, `provenance.json`, synchronization, recording-window and missing-value reports, and the older `README.md`) document how the 100 Hz exports were produced from the raw recordings. Any phase timing in them belongs to an earlier provisional segmentation.
 
+`NewSegmentedGraphsFinal/` holds per-phase cutouts made from the CoP cuts: one folder per phase (`QS/`, `GI/`, `SSSW/`, `SLT/`, `SSLW/`, `GT/`), and in each one normalised graph of that phase per cut limb graph, by subject (708 per phase). The README in each phase folder explains its axes. GT shows the 3 s after the twelfth CoP valley, not the whole standing tail of the recording; QS is drawn against the walking range without stretching, so it looks as flat as it is.
+
 `QS/`, `GI/`, `GT/`, `SLT/`, `SSLW/`, `SSSW/` and the `Segmented Average …` folders hold per-phase plots and averages from an earlier stage. They were made with the earlier provisional phase labels and have not been regenerated from the CoP cuts.
 
 ## Scripts
@@ -81,6 +83,7 @@ The remaining files in a subject folder (`complete_trial_manifest.csv`, `summary
 refine_sub08_h_valleys.py         CoP segmentation, graphs, stance segments and tables for every set
 export_second_engine_trains.py    Records the second detector's candidates in second_engine_trains.json
 refine_subject03_04.py            Second detector (with refine_subject01_02.py and refine_subject01_02_amputee.py)
+make_phase_cutouts.py             Normalised per-phase cutouts in NewSegmentedGraphsFinal/ (run: python make_phase_cutouts.py QS GI SSSW SLT SSLW GT)
 
 subject08_segmentation.py, generate_subjects01_to04.py, generate_additional_subjects.py,
 tempgraphs/sub05_h/generate_subject05.py

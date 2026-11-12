@@ -1,0 +1,15 @@
+protocol,class,precision,recall,f1,support,accuracy,kappa,fit_seconds_per_fold,predict_ms_per_example
+LOSO,GI,62.0,86.0,72.1,570,,,,
+LOSO,short,78.0,56.7,65.7,2670,,,,
+LOSO,long,72.5,67.0,69.6,2753,,,,
+LOSO,short_to_long,17.7,21.0,19.2,300,,,,
+LOSO,long_to_short,11.9,19.9,14.9,306,,,,
+LOSO,GT,49.8,88.1,63.6,597,,,,
+LOSO,overall,,,,7196,62.5,0.492,1.04,0.305
+within-subject,GI,92.2,94.9,93.5,570,,,,
+within-subject,short,94.5,95.2,94.8,2670,,,,
+within-subject,long,92.1,93.4,92.8,2753,,,,
+within-subject,short_to_long,73.3,62.3,67.4,300,,,,
+within-subject,long_to_short,50.5,48.7,49.6,306,,,,
+within-subject,GT,94.8,92.0,93.4,597,,,,
+within-subject,overall,,,,7196,90.9,0.869,0.03,0.043

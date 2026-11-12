@@ -1,0 +1,9 @@
+subject,balanced_accuracy,macro_f1
+Sub01_H,32.6,30.0
+Sub02_H,32.8,29.0
+Sub03_H,30.7,28.1
+Sub04_H,30.8,26.1
+Sub05_H,32.8,28.9
+Sub06_H,25.8,24.6
+Sub07_H,33.9,31.0
+Sub08_H,33.2,29.4
