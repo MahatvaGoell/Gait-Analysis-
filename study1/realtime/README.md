@@ -34,3 +34,30 @@ predictions, independently of debounce.
 
 The run uses provisional walking-direction labels. The recording interval is selected using
 reference annotations for offline benchmarking; this is not a demonstrated live deployment.
+
+## Window and channel ablations (M2)
+
+```text
+python -m study1.realtime.run_ablations
+python -m study1.realtime.run_ablations --model HGB
+```
+
+LDA compares 100, 200, 300 and 400 ms crossed with the full band, each thigh compartment
+alone, and each leave-one-compartment-out mask. Channel groups are imported from the cycle
+track. LOSO is primary; within-subject holds out whole physical trials, with both limbs
+grouped together. The supplementary HGB run compares the four full-band durations under
+LOSO with a fixed 80 boosting iterations and seed 0. It does not test reduced channel groups.
+
+Every configuration uses the same 20 ms endpoints, 60 ms training grid, and eligibility
+mask: the full 400 ms history must be measured and finite in all eight channels.
+Shorter inputs only see their own trailing samples. Consequently, M2 coverage and scores
+can differ from M1, and the masked-channel comparison does not estimate dropout tolerance.
+All scaling remains fold-local, and calibration walks are excluded.
+
+Each command writes a separate `results/realtime_m2_<model>_summary.csv`, per-participant
+scores and a long-form confusion matrix (one row per configuration and true class).
+Median event delay is in milliseconds, calculated only among detections; a blank means
+no confirmed detections. Compare delay alongside detection rate and excess switches.
+Rankings are exploratory: use an independent test or nested selection before claiming
+the top configuration as an unbiased performance estimate. Direction labels and the
+channel-to-compartment mapping are provisional.

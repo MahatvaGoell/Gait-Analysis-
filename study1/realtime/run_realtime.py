@@ -54,7 +54,11 @@ def window_features(x: np.ndarray) -> np.ndarray:
                            np.abs(np.diff(x, axis=1)).mean(1), slope], axis=1)
 
 
-def build(graphs, dirs, length):
+def build(graphs, dirs, length, *, match_length=None):
+    """Optionally require measured data for a longer window to match ablation cohorts."""
+    match_length = length if match_length is None else match_length
+    if not 2 <= length <= match_length:
+        raise ValueError("Require 2 <= length <= match_length")
     order = walk_order(graphs)
     walks = collections.defaultdict(list)
     for key, (block, walk) in order.items():
@@ -67,20 +71,20 @@ def build(graphs, dirs, length):
         if key in calibration or direction not in ("short_to_long", "long_to_short"):
             continue
         wins = cycle_windows(g, direction)
-        start, end = max(length, g["rise"] - PRE), min(g["n"] - 1, wins[-1][2] + 100)
+        start, end = max(match_length, g["rise"] - PRE), min(g["n"] - 1, wins[-1][2] + 100)
         label = np.full(g["n"], "standing", dtype=object)
         for name, a, b, _ in wins:
             label[a:b] = name
         fmg = g["fmg"]
         ends = np.arange(start, end, STRIDE)
-        idx = ends[:, None] - np.arange(length)[::-1][None, :]
+        idx = ends[:, None] - np.arange(match_length)[::-1][None, :]
         bad = g["estimated"][idx].any(axis=(1, 2)) | ~np.isfinite(fmg[idx]).all(axis=(1, 2))
         ends, idx = ends[~bad], idx[~bad]
         if not len(ends):
             continue
         events = {"GI": g["rise"], "transition": g["valleys"][5], "GT": g["valleys"][11]}
-        data.append({"graph": gi, "subject": g["subject"],
-                     "X": window_features(fmg[idx]), "y": label[ends], "t": ends, "events": events,
+        data.append({"graph": gi, "subject": g["subject"], "trial_key": key,
+                     "X": window_features(fmg[idx[:, -length:]]), "y": label[ends], "t": ends, "events": events,
                      "event_ends": {"GI": g["valleys"][1], "transition": g["valleys"][6], "GT": wins[-1][2]},
                      "transition_class": direction})
     return data
