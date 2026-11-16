@@ -65,3 +65,19 @@ no confirmed detections. Compare delay alongside detection rate and excess switc
 Rankings are exploratory: use an independent test or nested selection before claiming
 the top configuration as an unbiased performance estimate. Direction labels and the
 channel-to-compartment mapping are provisional.
+
+### Findings on the matched cohort
+
+The 400 ms full band led LDA under both LOSO (32.24% balanced accuracy) and
+within-subject testing (43.74%). Posterior alone (S5 and S6) led single compartments
+under LOSO at 31.33%, but detected no transition or GT events. Removing the anterior
+group yielded 32.10% under LOSO, while GI detection dropped from 51.60% to 14.95%.
+These results do not support dropping channels.
+
+The compact full-band HGB sweep also ranked 400 ms first for LOSO balanced accuracy
+(36.29%). It detected 75.27% of reference transitions with a 260 ms median delay among
+hits. Its pooled directional transition precision was only 5.99% at the window level:
+the two correctly predicted transition counts divided by all windows predicted as
+either transition class. The run also had 59 median excess switches per limb trial.
+High detection within the annotated interval does not establish reliable online
+transition signaling.
