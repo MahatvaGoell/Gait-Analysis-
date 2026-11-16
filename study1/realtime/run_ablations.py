@@ -22,7 +22,8 @@ from study1.realtime.run_realtime import LABELS, RESULTS, ROOT, TRAIN_STRIDE, bu
 LENGTHS = (10, 20, 30, 40)
 FULL_BAND = tuple(range(8))
 LABEL_CODES = np.arange(len(LABELS))
-HGB_ITERATIONS = 80  # Fixed before this sweep, not selected from test scores.
+HGB_ITERATIONS = 24  # Compact supplementary sweep, not the M1 HGB configuration.
+HGB_TRAIN_STRIDE = 12
 EVENTS = ("GI", "transition", "GT")
 
 
@@ -52,7 +53,8 @@ def held_out_predictions(X, y, stride_mask, splits, model_name):
         estimator = (
             LinearDiscriminantAnalysis(solver="lsqr", shrinkage="auto") if model_name == "LDA"
             else HistGradientBoostingClassifier(class_weight="balanced", max_iter=HGB_ITERATIONS,
-                                               early_stopping=False, random_state=0)
+                                               early_stopping=False, max_bins=63, max_leaf_nodes=15,
+                                               random_state=0)
         )
         model = make_pipeline(StandardScaler(), estimator)
         model.fit(X[train], y[train])
@@ -131,7 +133,8 @@ def run(graphs, model_name, output):
         y = np.array([LABELS.index(label) for label in y])
         subjects = np.repeat([d["subject"] for d in data], [len(d["y"]) for d in data])
         trials = np.repeat(["/".join(map(str, d["trial_key"])) for d in data], [len(d["y"]) for d in data])
-        stride_mask = np.concatenate([(d["t"] - d["t"][0]) % TRAIN_STRIDE == 0 for d in data])
+        train_stride = TRAIN_STRIDE if model_name == "LDA" else HGB_TRAIN_STRIDE
+        stride_mask = np.concatenate([(d["t"] - d["t"][0]) % train_stride == 0 for d in data])
         splits = {"LOSO": list(loso_splits(subjects))}
         if model_name == "LDA":
             splits["within-subject"] = list(within_subject_splits(subjects, trials))

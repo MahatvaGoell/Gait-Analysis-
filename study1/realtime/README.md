@@ -46,10 +46,14 @@ LDA compares 100, 200, 300 and 400 ms crossed with the full band, each thigh com
 alone, and each leave-one-compartment-out mask. Channel groups are imported from the cycle
 track. LOSO is primary; within-subject holds out whole physical trials, with both limbs
 grouped together. The supplementary HGB run compares the four full-band durations under
-LOSO with a fixed 80 boosting iterations and seed 0. It does not test reduced channel groups.
+LOSO with a compact fixed budget (24 boosting iterations, at most 15 leaves and 63 bins,
+120 ms training stride, seed 0). This is not the M1 HGB configuration, and it does not
+test reduced channel groups.
 
-Every configuration uses the same 20 ms endpoints, 60 ms training grid, and eligibility
+Every configuration uses the same 20 ms scored endpoints and eligibility
 mask: the full 400 ms history must be measured and finite in all eight channels.
+Within LDA, the training stride stays fixed at 60 ms; within the HGB sweep it stays fixed
+at 120 ms.
 Shorter inputs only see their own trailing samples. Consequently, M2 coverage and scores
 can differ from M1, and the masked-channel comparison does not estimate dropout tolerance.
 All scaling remains fold-local, and calibration walks are excluded.
